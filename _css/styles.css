@@ -54,19 +54,32 @@ a {
     color: blue;
     text-decoration: none;
     }
-    
+
+/* added font for paragraph */
+
 p1 {
     font-size: 0.8em;
     font-style: normal;
     text-decoration: none;
 }
 
+p1.center {
+    font-size: 0.8em;
+    font-style: normal;
+    text-decoration: none;
+    text-align: center;
+}
 
-    
+
+
+/* this applies to search bar and register form */
+
 form {
     text-align: center;
+    width: inherit;
     }
-    
+
+/* Input format for form */
 input {
     text-align: center;
     }
@@ -78,7 +91,7 @@ select {
     }
     
 button {
-    padding: 2px 4px; 
+      : 2px 4px; 
     height: 15px;
     border-radius: 25px;
     display: inline-block;
@@ -110,7 +123,6 @@ nav a:link {
     text-decoration: none;
     color: white;
     }
-    
     
 nav a:visited {
     text-decoration: none;
@@ -144,16 +156,15 @@ nav a:visited {
     
 #eventTypeNavBar {
     list-style-type: none;
-    margin: 0;
-    padding: 0;
+
     overflow: hidden; 
-    background: #ffab41;
+    background: #bcbcbc;
     }
     
 .eventTypeTab {
     float: left;
     }
-    
+
 li a{
     display: block;
     text-align: center;
@@ -161,7 +172,32 @@ li a{
     text-decoration: none;
     color: white;
     }
-    
+
+/* For event tab */
+
+li b {
+    display: block;
+    text-align: left;
+    text-decoration: none;
+    color: white;
+}
+
+li b:hover:not(.active){
+    background-color: #bcbcbc;
+}
+
+ul.b {
+    list-style-type: none;
+    background-color: #bcbcbc;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; 
+}
+
+.active {
+    background-color: #ffab41;
+}
+
 #pageFooter {
     background: #FFE4C4; 
     }
@@ -268,4 +304,18 @@ li a{
 /* Dropdown button's colour when hover is on top */
 .dropdown:hover .dropbtn {
     background-color: #ffe6cc;
+}
+
+
+input[type=text] {
+    width: 93%;
+    box-sizing: border-box;
+    border: 0px;
+    border-radius: 3px;
+    font-size: 12px;
+    text-align: left;
+    background-color: white;
+    background-image: url('searchicon.png');
+    background-position: 0px 1px; 
+    background-repeat: no-repeat;
 }
