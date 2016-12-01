@@ -319,3 +319,9 @@ input[type=text] {
     background-position: 0px 1px; 
     background-repeat: no-repeat;
 }
+
+.favouriteStar {
+	font-size:10px;
+	color:blue
+}
+		
