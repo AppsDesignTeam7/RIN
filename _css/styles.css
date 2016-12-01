@@ -1,9 +1,18 @@
+/* STYLING FOR HTML ELEMENT TAGS */
+
+/* style for the whole page */
 html {
 	margin: 0;
 	padding: 0;
     background-color: white;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    font-weight: normal;
+	font-style: normal;
+    color: black;
+    font-size: 1em;
 }
 
+/* style for all non-header elements*/
 body {
 	width: 90%;
 	margin: 0 auto;
@@ -12,10 +21,12 @@ body {
     background: white;
 }
 
+/* stlye for the header section  */
 header {
         background: #FFE4C4;
     }
     
+/*h1 is the page title RIN*/
 h1 {
 	font-family: "Trebuchet MS", Helvetica, sans-serif;
 	font-size: 3em;
@@ -25,7 +36,8 @@ h1 {
 	padding: 0px 0px;
     color: black;
 }
-    
+
+/*h2 is the subtitle (e.g. Manage My Events)*/
 h2 {font-family: "Trebuchet MS", Helvetica, sans-serif;
 	font-size: 1em;
 	font-weight: normal;
@@ -35,63 +47,8 @@ h2 {font-family: "Trebuchet MS", Helvetica, sans-serif;
     color: black;
     }
     
-h3 {
-	font-size: 1em;
-	font-weight: bold;
-	font-style: normal;
-    color: gray;
-    }
-    
-h4 {
-    font-size: 1em;
-    font-weight: bold;
-    font-style: normal;
-    color: gray;
-    text-align: center;
-    }
-    
-a {
-    color: blue;
-    text-decoration: none;
-    }
-
-/* added font for paragraph */
-
-p1 {
-    font-size: 0.8em;
-    font-style: normal;
-    text-decoration: none;
-}
-
-p1.center {
-    font-size: 0.8em;
-    font-style: normal;
-    text-decoration: none;
-    text-align: center;
-}
-
-
-
-/* this applies to search bar and register form */
-
-form {
-    text-align: center;
-    width: inherit;
-    }
-
-/* Input format for form */
-input {
-    text-align: center;
-    }
-    
-select {
-    display: block;
-    margin: 0 auto;
-    width: 24%;
-    }
-    
 button {
-      : 2px 4px; 
+    padding: 2px 4px; 
     height: 15px;
     border-radius: 25px;
     display: inline-block;
@@ -104,163 +61,36 @@ ul {
     padding: 0;
     }
 
-aside {
-    float: right;
-    background: #FFE4C4;
-    border-color: gray;
-}
-    
-.formSubmissionButton {
-    display: block;
-    margin: 0 auto;
-    }
-    
+
+
+/* applies to the sign in page - or anything we want it to be center */
 .centerText {
     text-align: center;
     }
-    
-nav a:link {
-    text-decoration: none;
-    color: white;
-    }
-    
-nav a:visited {
-    text-decoration: none;
-    color: white;
-    }
-    
+
+/* NAVIGATION BAR STYLING */
+/* MABEL - change positioning of this so it sits in the same line at h2 (where h2 is e.g. 'Home') */
+
+/* Section for the navigation buttons, including Home, Create New Event */
 #siteNavBar{
     float: right;
     }
 
+/* MIGHT NEED EDITING */
+/* Buttons for site navigation */
 .siteNavButton {
-    background: #ffab41;
+background: #ffab41;
     color: white;
-    }
+}
 
-#searchBar {
-    clear: right;
-    background: #e3e3e3;
-    }
-    
-#searchButton {
-    float: right;
-    color: white;
-    background: #ffab41;
-    }
 
-#eventTypeNav {
-    width: 100%;
-    float: center;
-    }
-    
-#eventTypeNavBar {
-    list-style-type: none;
-
-    overflow: hidden; 
-    background: #bcbcbc;
-    }
-    
-.eventTypeTab {
-    float: left;
-    }
-
-li a{
-    display: block;
-    text-align: center;
-    padding: 0px 16px;
+/* Applies only to the links that are within the tag #siteNavBar */
+#siteNavBar a {
     text-decoration: none;
     color: white;
     }
-
-/* For event tab */
-
-li b {
-    display: block;
-    text-align: left;
-    text-decoration: none;
-    color: white;
-}
-
-li b:hover:not(.active){
-    background-color: #bcbcbc;
-}
-
-ul.b {
-    list-style-type: none;
-    background-color: #bcbcbc;
-    margin: 0;
-    padding: 0;
-    overflow: hidden; 
-}
-
-.active {
-    background-color: #ffab41;
-}
-
-#pageFooter {
-    background: #FFE4C4; 
-    }
     
-#pageFooter a {
-    color: black;
-    text-decoration: none;
-    font-size: 0.7em;
-    }
-    
-#footerLinks {
-    font-family: "Trebuchet MS", Helvetica, sans-serif;
-	font-size: 0.7em;
-	font-weight: normal;
-	font-style: normal;
-    color: black;
-    }
-
-#speaker{
-    }
-    
-.eventSummarySection{
-    border-bottom-color: black;
-    border-bottom-width: 0.5em;
-    }
-    
-.eventImage {
-    width: 50px;
-    height: 50px;
-    float: left;
-    }
-    
-.eventSummaryDetails {
-    list-style-type: none;
-    color: darkgray;
-    font-size: 0.7em;
-    border-bottom-color: black;
-    border-bottom-width: 0.5em;
-    }
-    
-.favouriteButton {
-    float: right;
-    width: 2em;
-    height: 2em;
-    background: white;
-    
-    }
-    
-.calendarButton {
-    float: right;
-    width: 2em;
-    height: 2em;
-    background: white;
-    }
-    
-.editEventButton {
-    float: right;
-    width: 20%;
-    height: 10%;
-    background: lightgray;
-    color: gray;
-    }
-    
+/* For the drop down list from account */ 
 .dropbtn {
     background-color: #ffab41;
     color: white;
@@ -306,8 +136,17 @@ ul.b {
     background-color: #ffe6cc;
 }
 
+/* STYLING FOR SEARCH SECTION */
 
-input[type=text] {
+/* MABEL - CHANGE POSITION FOR THIS */
+/* encompasses the search field and the search button */
+#searchBar {
+    clear: right; /*change into position */
+    background: #e3e3e3;
+    }
+    
+/* user types search terms here */
+#searchField {
     width: 93%;
     box-sizing: border-box;
     border: 0px;
@@ -320,8 +159,219 @@ input[type=text] {
     background-repeat: no-repeat;
 }
 
-.favouriteStar {
-	font-size:10px;
-	color:blue
+
+/* for search button */
+#searchButton {
+    float: right;
+    color: white;
+    background: #ffab41;
+    }
+
+
+/* TO BE FOUND */
+h3 {
+	font-size: 1em;
+	font-weight: bold;
+	font-style: normal;
+    color: gray;
+    }
+
+/*h3 is the small at the top of individual pages, e.g. "Register"*/
+h4 {
+    font-size: 1em;
+    font-weight: bold;
+    font-style: normal;
+    color: gray;
+    text-align: center;
+    }
+    
+
+    
+/* STYLE FOR EXPANDED SEARCH PART */
+
+/*The search filter section */
+#expandedSearch{
+    background: #e3e3e3;
+    
+    }
+
+/* MABEL */
+/* style for the form holding the checkboxes for the filter terms */
+#filterText {
+
+};
+
+/* TO POSITION */
+/* Subject filters section */
+#subjectFilters {
+
+};
+
+/* TO POSITION */
+/* contains all date filters */
+#dateFilters {
+
+};
+
+/* TO RESIZE AND REPOSITION */
+.day {
+};
+
+/* TO RESIZE AND REPOSITION */
+.month {
+};
+
+/* TO RESIZE AND REPOSITION */
+.year {
+};
+
+
+/* STYLING FOR THE TABS (COURSES, CONFERENCES, ETC) */
+
+/* Encompasses the seminars, courses, and conferences tabs */
+/* Background section for the list containing the tabs seminars etc. */
+/* this is a ul */
+#eventNavList {
+    list-style-type: none;
+    overflow: hidden; 
+    background: #bcbcbc;
+    width: 100%;
+    float: center;
+    margin: 0;
+    padding: 0;
+    }
+
+
+/* for list item containing the courses, seminars, conferences buttons */
+.eventTypeNavButton {
+    display: block;
+    text-align: left;
+    padding: 0px 16px;
+    text-decoration: none;
+    color: white;
 }
-		
+
+/* APPLY TO BUTTON */
+eventTypeNavButton:hover:not(.active){
+    background-color: #bcbcbc;
+}
+
+/* APPLY TO BUTTON */
+eventTypeNavButton {
+    list-style-type: none;
+    background-color: #bcbcbc;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; 
+}
+
+
+.active {
+    background-color: #ffab41;
+}
+
+/* END OF EVENT NAVIGATION LIST */
+
+
+/* MAIRI - TO SORT OUT THE FOLLOWING SECTION, INCLUDING ACCORDION */
+
+/* STYLING FOR EVENTS SUMMARY AND INFORMATION SECTION */
+
+.eventImage {
+    width: 50px;
+    height: 50px;
+    float: left;
+    }
+    
+.eventSummaryDetails {
+    list-style-type: none;
+    color: darkgray;
+    font-size: 0.7em;
+    border-bottom-color: black;
+    border-bottom-width: 0.5em;
+    }
+    
+.favouriteButton {
+    float: right;
+    width: 2em;
+    height: 2em;
+    background: white;
+    
+    }
+    
+.calendarButton {
+    float: right;
+    width: 2em;
+    height: 2em;
+    background: white;
+    }
+    
+.editEventButton {
+    float: right;
+    width: 20%;
+    height: 10%;
+    background: lightgray;
+    color: gray;
+    }
+    
+/* END OF EVENTS AND SUMMARY AND INFORMATION SECTION */
+
+
+/* MABLE - for the icons, try to externalise the style. Also, change all pixels to ems. */
+
+/*For anchor tags*/
+a {
+    color: blue;
+    text-decoration: none;
+    }
+    
+/* STYLING FOR THE FORM PAGES (REGISTRATION, LOGIN) */
+
+/* Applies to all forms forms */
+form{
+    text-align: center;
+    width: inherit;
+    }
+
+/* Input format for form */
+input {
+    text-align: center;
+    }
+
+/* Styling for select element for drop-down forms */
+select {
+    display: block;
+    margin: 0 auto;
+    width: 24%;
+    }
+
+/* Additional styling for form submission button */
+.formSubmissionButton {
+    display: block;
+    margin: 0 auto;
+    }
+    
+/* STYLING FOR PAGE FOOTER */
+
+#pageFooter {
+    background: #FFE4C4; 
+    }
+    
+#pageFooter a {
+    color: black;
+    text-decoration: none;
+    font-size: 0.7em;
+    font-weight: normal;
+	font-style: normal;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    }
+
+/* HELP PAGE STYLING */
+
+.helpPageText {
+    font-size: 0.8em;
+    font-style: normal;
+    text-decoration: none;
+    text-align: center;
+}
+
