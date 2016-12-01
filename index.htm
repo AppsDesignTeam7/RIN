@@ -4,6 +4,9 @@
 <meta charset = "utf-8">
 <title>RIN Homepage</title>
 <link rel="stylesheet" type="text/css" href="_css/styles.css">
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 </head>
 <body>
     
@@ -11,7 +14,7 @@
     <h1>RIN</h1>
     <h2>Homepage</h2>
     
-<nav role = "navigation" id="siteNavBar">
+<nav role = "navigation" id="siteNavBar">    
     <button type="button" class="siteNavButton">
         <a href = "index.htm">Home</a></button>
     <button type = "button" class = "siteNavButton">
@@ -21,21 +24,21 @@
     <button type="button" class="siteNavButton">
         <a href="help.htm" id="linkToHelpPage">Help</a></button>
 </nav>
-
+    
 <section id="searchBar">
 <button type = "button" id="searchButton">Search</button>
 <form id= "button">
-<input type="text" name="searchItem">
+<input type="text" name="search" placeholder="Search..">
 </form>
 </section>
 
-<nav role = "navigation" id="eventTypeNav">
-    <ul id="eventTypeNavBar">
-        <li class="eventTypeTab"><a>Seminars</a></li>
-        <li class="eventTypeTab"><a>Courses</a></li>
-        <li class="eventTypeTab"><a>Conferences</a></li>
-    </ul>
-</nav>
+
+<ul class = "b"> 
+    <li><b class="active" href="seminars.htm">Seminars</b></li>
+    <li><b href="courses.htm">Courses</b></li>
+    <li><b href="conferences.htm">Conferences</b></li> 
+</ul>
+
     
 </header>
 
@@ -45,9 +48,9 @@
 <h3>On Muggle Teapots</h3>
     <img src="image_event1.jpg" alt = "Img1" class= "eventImage">
     <button type = "button" class = "favouriteButton">
-        <img src = "starImg.jpg" alt = "fav"></button>
+        <i class="fa fa-plus-square" style="font-size:10px;color:red;"></i></button>
     <button type = "button" class = "calendarButton">
-        <img src = "calendarImg.jpg" alt = "cal"></button>
+        <i class="fa fa-calendar" style="font-size:10px;color:orange;"></i></button>
     
     <ul class="eventSummaryDetails">
         <li>Mr Weasley</li>
@@ -63,9 +66,9 @@
 <h3>The Employment Conditions of House Elves</h3>
     <img src="image_event2.jpg" alt = "Img2" class= "eventImage">
      <button type = "button" class = "favouriteButton">
-        <img src = "starImg.jpg" alt = "fav"></button>
+        <i class="fa fa-plus-square" style="font-size:10px;color:red;"></i></button>
     <button type = "button" class = "calendarButton">
-        <img src = "calendarImg.jpg" alt = "cal"></button>
+        <i class="fa fa-calendar" style="font-size:10px;color:orange;"></i></button>
     
     <ul class="eventSummaryDetails">
         <li>Hermione Granger</li>
@@ -81,9 +84,9 @@
 <h3>The Use of the Patronus</h3>
     <img src="image_event3.jpg" alt = "Img3" class= "eventImage">
     <button type = "button" class = "favouriteButton">
-        <img src = "starImg.jpg" alt = "fav"></button>
+        <i class="fa fa-plus-square" style="font-size:10px;color:red;"></i></button>
     <button type = "button" class = "calendarButton">
-        <img src = "calendarImg.jpg" alt = "cal"></button>
+        <i class="fa fa-calendar" style="font-size:10px;color:orange;"></i></button>
     
     <ul class="eventSummaryDetails">
         <li>Harry Potter</li>
@@ -98,9 +101,9 @@
 <h3>The Twelve Uses of Dragon Blood</h3>
     <img src="image_event4.jpg" alt = "Img4" class= "eventImage">
     <button type = "button" class = "favouriteButton">
-        <img src = "starImg.jpg" alt = "fav"></button>
+        <i class="fa fa-plus-square" style="font-size:10px;color:red;"></i></button>
     <button type = "button" class = "calendarButton">
-        <img src = "calendarImg.jpg" alt = "cal"></button>
+        <i class="fa fa-calendar" style="font-size:10px;color:orange;"></i></button>
     
     <ul class="eventSummaryDetails">
         <li>Dumbledore</li>
@@ -116,9 +119,9 @@
 <h3>Wingardium Leviosa</h3>
     <img src="image_event5.jpg" alt = "Img5" class= "eventImage">
     <button type = "button" class = "favouriteButton">
-        <img src = "starImg.jpg" alt = "fav"></button>
+        <i class="fa fa-plus-square" style="font-size:10px;color:red;"></i></button>
     <button type = "button" class = "calendarButton">
-        <img src = "calendarImg.jpg" alt = "cal"></button>
+        <i class="fa fa-calendar" style="font-size:10px;color:orange;"></i></button>
     
     <ul class="eventSummaryDetails">
         <li>Professor Flitwick</li>
@@ -134,9 +137,9 @@
 <h3>Animagi</h3>
     <img src="image_event6.jpg" alt = "Img6" class= "eventImage">
     <button type = "button" class = "favouriteButton">
-        <img src = "starImg.jpg" alt = "fav"></button>
+        <i class="fa fa-plus-square" style="font-size:10px;color:red;"></i></button>
     <button type = "button" class = "calendarButton">
-        <img src = "calendarImg.jpg" alt = "cal"></button>
+        <i class="fa fa-calendar" style="font-size:10px;color:orange;"></i></button>
     
     <ul class="eventSummaryDetails">
         <li>Professor Minerva McGonagall, MSc</li>
@@ -159,5 +162,3 @@
 </footer>
 </body>
 </html>
-    
-    
