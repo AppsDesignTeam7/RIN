@@ -168,14 +168,6 @@ background: #ffab41;
     }
 
 
-/* TO BE FOUND */
-h3 {
-	font-size: 1em;
-	font-weight: bold;
-	font-style: normal;
-    color: gray;
-    }
-
 /*h3 is the small at the top of individual pages, e.g. "Register"*/
 h4 {
     font-size: 1em;
@@ -275,45 +267,141 @@ eventTypeNavButton {
 
 /* MAIRI - TO SORT OUT THE FOLLOWING SECTION, INCLUDING ACCORDION */
 
-/* STYLING FOR EVENTS SUMMARY AND INFORMATION SECTION */
+/* ACCORDION STYLING */
 
-.eventImage {
-    width: 50px;
-    height: 50px;
-    float: left;
+/* removes the arrow from the side of the accordion panels */
+.accordion .ui-icon {
+    display: none;
+}
+
+/* styles the accordion header - that is, what is visible when the accordion is unexpanded */
+.accordion .ui-accordion-header {
+    background: white;
+    margin: 0px;
+    padding: 1em 1em;
+    color: gray;
+    height: 120px;
     }
     
+/* for active accordion header */
+.accordion .ui-accordion-header-active {
+    border-bottom: none;
+    padding-bottom: 0em;
+}
+    
+/* styles the accordion content - that is, what becomes visible when the accordion is expanded */
+.accordion .ui-accordion-content {
+    background: white;
+    color: gray;
+    margin: 0em;
+    padding-left: 1.6em;
+    padding-top: 0.5em;
+    padding-bottom: 0em;
+    }
+    
+/* EVENT DETAILS STYLING */
+
+/* for event title */
+h3 {
+	font-size: 1em;
+	font-weight: bold;
+	font-style: normal;
+    color: gray;
+    padding: 0em;
+    margin: 0em;
+}
+    
+/* for the user-uploaded image for the event */
+.eventImage {
+    width: 4.2em;
+    height: 4.2em;
+    float: left;
+    padding: 0em;
+    padding-top: 0.9em;
+    margin: 0em;
+    }
+    
+/*styling for icons */
+
+/* styling for star icon */
+.fa.fa-star {
+    color: lightgray;
+    position: absolute;
+    right: 2.7em;
+    top: 1.1em;
+    display: inline;
+}
+
+/* styling for calender icon */
+.fa.fa-calendar {
+    color: lightgray;
+    position: absolute;
+    right: 1em;
+    top: 1.1em;
+    display: inline;
+}
+
+/* for the container with un-expanded event summary (including images and icons) */
+.eventSummarySection {
+    position: relative;
+
+    }
+    
+/* for summary of the event; the details of the event visible before it is expanded (not including images and icons) */
 .eventSummaryDetails {
     list-style-type: none;
+    font-size: 0.7em;
+    padding-top: 1em;
+    padding-left: 7em;
+    color: gray;
+ }
+    
+/* the further details of the event that are displayed when it has been expanded */
+.furtherDetails {
     color: darkgray;
     font-size: 0.7em;
-    border-bottom-color: black;
-    border-bottom-width: 0.5em;
-    }
-    
-.favouriteButton {
-    float: right;
-    width: 2em;
-    height: 2em;
-    background: white;
-    
-    }
-    
-.calendarButton {
-    float: right;
-    width: 2em;
-    height: 2em;
-    background: white;
-    }
-    
-.editEventButton {
-    float: right;
-    width: 20%;
-    height: 10%;
-    background: lightgray;
+    padding-bottom: 0em;
+    margin-bottom: 0em;
     color: gray;
-    }
+ }
     
+/* styling for the hastags */
+.hastags a {
+    color: darkblue;
+}
+
+/* styling for the link to the event site */
+.linkToEventSite a {
+    color: darkblue;
+}
+
+
+/* REMOVED - FROM WHEN ICONS WERE ON BUTTONS */
+/*
+.favouriteButton {
+    position: absolute;
+    right: 4em;
+    display: inline;
+    width: 2em;
+    height: 2em;
+    background: white;
+    background: white;
+}
+*/
+
+/*
+.calendarButton {
+    position: absolute;
+    right: 4em;
+    display: inline;
+    width: 2em;
+    height: 2em;
+    background: white;
+}
+*/
+/* END OF REMOVED */
+
+
 /* END OF EVENTS AND SUMMARY AND INFORMATION SECTION */
 
 
@@ -375,3 +463,40 @@ select {
     text-align: center;
 }
 
+/* MANAGE MY EVENTS PAGE STYLING */
+
+.eventApprovalStatus {
+    position: absolute;
+    right: 5%;
+    top: 2em;
+    display: inline-block;
+    color: red;
+    size: 10px;
+}
+
+.editEventButton {
+    /*float: right;*/
+    position: absolute;
+    bottom: 20%;
+    right: 5%;
+    background: lightgray;
+    color: gray;
+    display: inline;
+    line-height: 1em;
+    padding: 0px;
+}
+
+.eventAttendanceDetails {
+    position: absolute;
+    top: 2em;
+    right: 1em;
+    display: block;
+    height: 1em;
+    font-size: 0.5em;
+}
+
+.editEventText{
+    font-size: 10px;
+    display: inline-block;
+}
+    
