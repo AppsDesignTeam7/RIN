@@ -1,9 +1,18 @@
+/* STYLING FOR HTML ELEMENT TAGS */
+
+/* style for the whole page */
 html {
 	margin: 0;
 	padding: 0;
     background-color: white;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    font-weight: normal;
+	font-style: normal;
+    color: black;
+    font-size: 1em;
 }
 
+/* style for all non-header elements*/
 body {
 	width: 90%;
 	margin: 0 auto;
@@ -12,10 +21,16 @@ body {
     background: white;
 }
 
+/* stlye for the header section  */
 header {
         background: #FFE4C4;
     }
+
+.notBlueLink{
+    color:black;
+}
     
+/*h1 is the page title RIN*/
 h1 {
 	font-family: "Trebuchet MS", Helvetica, sans-serif;
 	font-size: 3em;
@@ -25,8 +40,10 @@ h1 {
 	padding: 0px 0px;
     color: black;
 }
-    
-h2 {font-family: "Trebuchet MS", Helvetica, sans-serif;
+
+/*h2 is the subtitle (e.g. Manage My Events)*/
+h2 {
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
 	font-size: 1em;
 	font-weight: normal;
 	font-style: normal;
@@ -34,67 +51,24 @@ h2 {font-family: "Trebuchet MS", Helvetica, sans-serif;
 	padding: 0px 0px;
     color: black;
     }
-    
-h3 {
-	font-size: 1em;
-	font-weight: bold;
+
+/* new font format for paragraph text */
+h5 {
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+	font-size: 0.6em;
+	font-weight: normal;
 	font-style: normal;
-    color: gray;
-    }
-    
-h4 {
-    font-size: 1em;
-    font-weight: bold;
-    font-style: normal;
-    color: gray;
-    text-align: center;
-    }
-    
-a {
-    color: blue;
-    text-decoration: none;
-    }
-
-/* added font for paragraph */
-
-p1 {
-    font-size: 0.8em;
-    font-style: normal;
-    text-decoration: none;
+	margin: 0 0 0;
+	padding: 0px 0px;
+    color: grey;
+    text-align: left;
 }
 
-p1.center {
-    font-size: 0.8em;
-    font-style: normal;
-    text-decoration: none;
-    text-align: center;
-}
-
-
-
-/* this applies to search bar and register form */
-
-form {
-    text-align: center;
-    width: inherit;
-    }
-
-/* Input format for form */
-input {
-    text-align: center;
-    }
-    
-select {
-    display: block;
-    margin: 0 auto;
-    width: 24%;
-    }
-    
 button {
-      : 2px 4px; 
-    height: 15px;
+    height: 20%;
+    border: none;
+    word-wrap:break-word;
     border-radius: 25px;
-    display: inline-block;
     text-align: center;
     }
 
@@ -104,99 +78,405 @@ ul {
     padding: 0;
     }
 
-aside {
+
+/* applies to the sign in page - or anything we want it to be center */
+.centerText {
+    text-align: center;
+    }
+
+/* NAVIGATION BAR STYLING */
+/* MABEL - change positioning of this so it sits in the same line at h2 (where h2 is e.g. 'Home') */
+
+/* Section for the navigation buttons, including Home, Create New Event */
+#siteNavBar{
     float: right;
-    background: #FFE4C4;
-    border-color: gray;
+    position: relative;
+    top: -20px;
+    }
+
+/* MIGHT NEED EDITING */
+/* Buttons for site navigation */
+.siteNavButton {
+background: #ffab41;
+    color: white;
+}
+
+/* Applies only to the links that are within the tag #siteNavBar */
+#siteNavBar a {
+    text-decoration: none;
+    color: white;
+    }
+    
+/* For the drop down list z-index from My account */ 
+#iefix {
+    position: relative;
+    z-index: 100000;
+}
+
+/* Drop down button - My account */ 
+.dropbtn {
+    background-color: #ffab41;
+    color: white;
+    height: 20%;
+    font-size: 0.55em;
+    border: none;
+    cursor: pointer;
+    
+}
+
+/* Drop down position - My account */ 
+.dropdown {
+    position: relative;
+    display: inline-block;
+    top: 0px;
+    
+}
+
+/* Dropdown list background */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    z-index: = 2000;
+    background-color: #bcbcbc;
+    min-width: 8px;
+    box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.2);
+    overflow:hidden;
+}
+
+/* Dropdown list text */
+.dropdown-content a {
+    color: white;
+    padding: 2px 4px;
+    text-decoration: none;
+    display: block;
+    font-size: 0.55em;
+}
+
+/* Dropdown list's colour when hover is on top */
+.dropdown-content a:hover {
+    background-color: #e6e6e6
+}
+
+/* Dropdown list when hover on top */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {display:block;}
+
+/* STYLING FOR SEARCH SECTION */
+
+/* encompasses the search field and the search button */
+#searchBar {
+    position: relative;
+    background: #e3e3e3;
+    height: 26px;
+    }
+    
+/* user types search terms here */
+#searchField {
+    width: 80%;
+    border: 0px;
+    border-radius: 3px;
+    font-size: 12px;
+    text-align: left;
+    background-color: white;
+    position: relative;
+    top:-18px;
+    right: -2px;
+}
+
+/* for search button */
+#searchButton {
+    position: relative;
+    right: -220px;
+    bottom: -5px;
+    color: white;
+    float:right;
+    width: 15%;
+    height:60%;
+    background-color: #ffab41;
+    }
+
+/*h4 is the small at the top of individual pages, e.g. "Register"*/
+h4 {
+    font-size: 1em;
+    font-weight: bold;
+    font-style: normal;
+    color: gray;
+    text-align: center;
+    }
+    
+/*The search filter section */
+#expandedSearch{
+    width: 100%;
+    height: 8.5em;
+    float: left;
+    position: relative;
+    background-color: #e3e3e3;
+    }
+
+/* style for the form holding the checkboxes for the filter terms */
+#filterText {
+    font-size: 0.6em;
+    font-style: normal;
+    color: gray;
+    text-align: left;
+    width: 50%;
+    height: 12.5em;
+    float: left;
+    position: relative;
+    right: -10px;
+    background-color: #F5F5F5;
+    top:3px;
+}
+
+/* Class for the style of checkbox, in order to overwrite the style of "input" */
+.checkbox {
+    text-align: center;
+    width: 3em;
+    position: relative;
+    top: 2px;
+    }
+
+/* TO POSITION */
+/* contains all date filters */
+#dateFromFilters {
+    font-size:1em;
+    font-style: normal;
+    float: left;
+    position: relative;
+    right: -22px;
+    width: 45%;
+    top:3px;
+    background-color: #F5F5F5;
+    height: 7.5em;
+}
+
+/* For expanded search's day selection */
+.day {
+     font-size: 0.6em;
+    font-style: normal;
+    color: gray;
+    text-align: left;
+    width: 120px ;
+}
+
+/* For expanded search's month selection */
+.month {
+    font-size: 0.6em;
+    font-style: normal;
+    color: gray;
+    text-align: left;
+    width: 120px ;
+}
+
+/* For expanded search's year selection */
+.year {
+    font-size: 0.6em;
+    font-style: normal;
+    color: gray;
+    text-align: left;
+    width: 120px;
+}
+
+
+
+/* STYLING FOR THE TABS (COURSES, CONFERENCES, ETC) */
+
+/* Encompasses the seminars, courses, and conferences tabs */
+/* Background section for the list containing the tabs seminars etc. */
+/* this is a ul */
+#eventNavList {
+    list-style-type: none;
+    overflow: hidden; 
+    background: #e3e3e3;
+    width: 100%;
+    height:px;
+    position: relaitve;
+    margin: 0;
+    padding: 0;
+    }
+
+
+/* for list item containing the courses, seminars, conferences buttons */
+
+/* this is the background section for courses, seminars, conferences buttons */
+.eventTypeNavButton {
+    text-align: center;
+    width: 33.3%;
+    overflow:hidden;
+    float:left;
+    color: white;
+    position: static;
+    align-items: 
+    background-color: #e3e3e3; 
+}
+
+/* Background colour for seminar button */
+.active {
+    background-color: #FFE4C4;
+} 
+
+/*This is the individual button setting*/
+seminarsButton {
+    width: 33.3%;
+    padding: 2px 33.3%; 
+    height: 15%;
+    color: white;
+    font-style: bold;
+    display: inline-block;
+    text-align: center;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    }
+
+/* END OF EVENT NAVIGATION LIST */
+
+/* ACCORDION STYLING */
+/* removes the arrow from the side of the accordion panels */
+.accordion .ui-icon {
+    display: none;
+}
+
+/* styles the accordion header - that is, what is visible when the accordion is unexpanded */
+.accordion .ui-accordion-header {
+    background: white;
+    margin: 0px;
+    padding: 1em 1em;
+    color: gray;
+    height: 120px;
+    }
+    
+/* for active accordion header */
+.accordion .ui-accordion-header-active {
+    border-bottom: none;
+    padding-bottom: 0em;
 }
     
+/* styles the accordion content - that is, what becomes visible when the accordion is expanded */
+.accordion .ui-accordion-content {
+    background: white;
+    color: gray;
+    margin: 0em;
+    padding-left: 1.6em;
+    padding-top: 0.5em;
+    padding-bottom: 0em;
+    }
+    
+/* EVENT DETAILS STYLING */
+
+/* for event title */
+h3 {
+	font-size: 1em;
+	font-weight: bold;
+	font-style: normal;
+    color: gray;
+    padding: 0em;
+    margin: 0em;
+}
+    
+/* for the user-uploaded image for the event */
+.eventImage {
+    width: 4.2em;
+    height: 4.2em;
+    float: left;
+    padding: 0em;
+    padding-top: 0.9em;
+    margin: 0em;
+    }
+    
+/*styling for icons */
+
+/* styling for star icon */
+.fa.fa-star {
+    color: lightgray;
+    position: absolute;
+    right: 2.7em;
+    top: 1.1em;
+    display: inline;
+}
+
+/* styling for calender icon */
+.fa.fa-calendar {
+    color: lightgray;
+    position: absolute;
+    right: 1em;
+    top: 1.1em;
+    display: inline;
+}
+
+/* for the container with un-expanded event summary (including images and icons) */
+.eventSummarySection {
+    position: relative;
+
+    }
+    
+/* for summary of the event; the details of the event visible before it is expanded (not including images and icons) */
+.eventSummaryDetails {
+    list-style-type: none;
+    font-size: 0.7em;
+    padding-top: 1em;
+    padding-left: 7em;
+    color: gray;
+ }
+    
+/* the further details of the event that are displayed when it has been expanded */
+.furtherDetails {
+    color: darkgray;
+    font-size: 0.7em;
+    padding-bottom: 0em;
+    margin-bottom: 0em;
+    color: gray;
+ }
+    
+/* styling for the hastags */
+.hastags a {
+    color: darkblue;
+}
+
+/* styling for the link to the event site */
+.linkToEventSite a {
+    color: darkblue;
+}
+
+/* END OF EVENTS AND SUMMARY AND INFORMATION SECTION */
+
+
+/*For anchor tags*/
+a {
+    color: blue;
+    text-decoration: none;
+    }
+    
+/* STYLING FOR THE FORM PAGES (REGISTRATION, LOGIN) */
+
+/* Applies to all forms forms */
+form{
+    text-align: center;
+    width: inherit;
+    }
+
+/* Input format for form */
+input {
+    text-align: center;
+    width: 20em;
+    }
+
+/* Styling for select element for drop-down forms */
+select {
+    display: block;
+    margin: 0 auto;
+    width: 20.7em;
+    }
+
+/* Additional styling for form submission button */
 .formSubmissionButton {
     display: block;
     margin: 0 auto;
     }
     
-.centerText {
-    text-align: center;
-    }
-    
-nav a:link {
-    text-decoration: none;
-    color: white;
-    }
-    
-nav a:visited {
-    text-decoration: none;
-    color: white;
-    }
-    
-#siteNavBar{
-    float: right;
-    }
-
-.siteNavButton {
-    background: #ffab41;
-    color: white;
-    }
-
-#searchBar {
-    clear: right;
-    background: #e3e3e3;
-    }
-    
-#searchButton {
-    float: right;
-    color: white;
-    background: #ffab41;
-    }
-
-#eventTypeNav {
-    width: 100%;
-    float: center;
-    }
-    
-#eventTypeNavBar {
-    list-style-type: none;
-
-    overflow: hidden; 
-    background: #bcbcbc;
-    }
-    
-.eventTypeTab {
-    float: left;
-    }
-
-li a{
-    display: block;
-    text-align: center;
-    padding: 0px 16px;
-    text-decoration: none;
-    color: white;
-    }
-
-/* For event tab */
-
-li b {
-    display: block;
-    text-align: left;
-    text-decoration: none;
-    color: white;
-}
-
-li b:hover:not(.active){
-    background-color: #bcbcbc;
-}
-
-ul.b {
-    list-style-type: none;
-    background-color: #bcbcbc;
-    margin: 0;
-    padding: 0;
-    overflow: hidden; 
-}
-
-.active {
-    background-color: #ffab41;
-}
+/* STYLING FOR PAGE FOOTER */
 
 #pageFooter {
     background: #FFE4C4; 
@@ -206,116 +486,88 @@ ul.b {
     color: black;
     text-decoration: none;
     font-size: 0.7em;
-    }
-    
-#footerLinks {
-    font-family: "Trebuchet MS", Helvetica, sans-serif;
-	font-size: 0.7em;
-	font-weight: normal;
+    font-weight: normal;
 	font-style: normal;
-    color: black;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
     }
 
-#speaker{
-    }
-    
-.eventSummarySection{
-    border-bottom-color: black;
-    border-bottom-width: 0.5em;
-    }
-    
-.eventImage {
-    width: 50px;
-    height: 50px;
-    float: left;
-    }
-    
-.eventSummaryDetails {
-    list-style-type: none;
-    color: darkgray;
-    font-size: 0.7em;
-    border-bottom-color: black;
-    border-bottom-width: 0.5em;
-    }
-    
-.favouriteButton {
-    float: right;
-    width: 2em;
-    height: 2em;
-    background: white;
-    
-    }
-    
-.calendarButton {
-    float: right;
-    width: 2em;
-    height: 2em;
-    background: white;
-    }
-    
-.editEventButton {
-    float: right;
-    width: 20%;
-    height: 10%;
-    background: lightgray;
-    color: gray;
-    }
-    
-.dropbtn {
-    background-color: #ffab41;
-    color: white;
-    padding: 2px 4px;
-    font-size: 10px;
-    border: none;
-    cursor: pointer;
+/* HELP PAGE STYLING */
+
+.helpPageText {
+    font-size: 0.8em;
+    font-style: normal;
+    text-decoration: none;
+    text-align: left;
 }
 
-.dropdown {
-    position: relative;
+/* MANAGE MY EVENTS PAGE STYLING */
+
+.eventApprovalStatus {
+    position: absolute;
+    right: 5%;
+    top: 2em;
+    display: inline-block;
+    color: red;
+    size: 1em;
+}
+
+.eventApprovalStatusText {
+    font-size: 0.7em;
     display: inline-block;
 }
 
-/* Dropdown list content */
-.dropdown-content {
-    display: none;
+.editEventButton {
+    /*float: right;*/
     position: absolute;
-    background-color: #bcbcbc;
-    min-width: 8px;
-    box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.2);
+    bottom: 20%;
+    right: 5%;
+    height: 15%;
+    width: 14%;
+    background: lightgray;
+    color: gray;
+    display: inline;
+    padding: 0px;
 }
 
-/* Dropdown list text */
-.dropdown-content a {
-    color: black;
-    padding: 2px 4px;
-    text-decoration: none;
+.eventAttendanceDetails {
+    position: absolute;
+    top: 2em;
+    right: 1em;
     display: block;
-    font-size: 10px;
+    height: 1em;
+    font-size: 0.5em;
 }
 
-/* Dropdown list's colour when hover is on top */
-.dropdown-content a:hover {background-color: #e6e6e6}
-
-/* Dropdown list */
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-/* Dropdown button's colour when hover is on top */
-.dropdown:hover .dropbtn {
-    background-color: #ffe6cc;
+.editEventText{
+    font-size: 0.7em;
+    display: inline-block;
 }
 
 
-input[type=text] {
-    width: 93%;
-    box-sizing: border-box;
-    border: 0px;
-    border-radius: 3px;
-    font-size: 12px;
-    text-align: left;
-    background-color: white;
-    background-image: url('searchicon.png');
-    background-position: 0px 1px; 
-    background-repeat: no-repeat;
+/* Account Page Settings */
+
+/* Style for the button's text */
+.AccountSettingText {
+    position: relative;
+    height: 15%;
+    width: 14%;
+    display: inline;
+    padding: 0px;
+    font-size: 1em;
 }
+
+/* Style and size for the button */
+.resetPasswordButton{
+    font-size: 0.7em;
+    display: inline-block;
+    background: #ffab41;
+    color: white;
+    border-radius: 25px;
+    float:left;
+}
+
+/* Style for the link to be white*/
+.AccountSettingLink{
+    color:white;
+}
+ 

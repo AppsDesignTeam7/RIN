@@ -14,25 +14,33 @@
  <div id="linkToHome">
     <h1>RIN</h1>
     <h2>Homepage</h2>
-     
     </div>
 </a>
 
-<nav role = "navigation" id="siteNavBar">    
+<div id= "iefx">    
+<nav role = "navigation" id="siteNavBar">
     <button type="button" class="siteNavButton">
-        <a href = "index.htm">Home</a></button>
+        <a href = "indexLoggedIn.htm">Home</a></button>
     <button type = "button" class = "siteNavButton">
         <a href = "createEvent.htm">Create New Event</a></button>
+        <nav class="dropdown">
+            <button type="button" class = "dropbtn siteNavButton">My Account</button>
+            <div class="dropdown-content">
+            <a href="myFavourites1.htm">My Favourites</a>
+            <a href="manageMyEvents.htm">Manage My Events</a>
+            <a href="accountSettings.htm">Account Settings</a>  
+            <a href="index.htm">Logout</a>
+            </div>
+        </nav>
     <button type="button" class="siteNavButton">
-        <a href="login.htm">Login/Register</a></button>
-    <button type="button" class="siteNavButton">
-        <a href="help.htm" id="linkToHelpPage">Help</a></button>
+        <a href="helpLogged.htm" id="linkToHelpPage">Help</a></button>  
 </nav>
-
-<section id="searchBar">
+</div>
+    
+<div id="searchBar">
 <button type = "button" id="searchButton">Search</button>
 <input type="text" name="search" placeholder="Search.." id="searchField">
-</section>
+</div>
 
 <div id = "expandedSearch">
 

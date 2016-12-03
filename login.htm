@@ -8,8 +8,15 @@
 
 <body>
     
-<header>
- <h1>RIN</h1>
+<header role = "banner">
+<a href = "index.htm">
+ <div id="linkToHome">
+    <h1>RIN</h1>
+    <h2>Sign in</h2>
+     <br>
+    </div>
+</a>
+ 
 </header>
 
 <main>
@@ -17,24 +24,31 @@
 <h4>Sign In</h4>
 
 <form>
-<input type = "email" name = "emailAddressInput"><br>
-<input type="password" name = "passWord">
+<input type = "email" name = "emailAddressInput" placeholder = "Your email address"><br>
+    <br>
+<input type="password" name = "passWord" placeholder = "password">
 </form>
 
 <br>
     
-<button type = "submit" class="formSubmissionButton">Sign In</button>
+<button type = "submit" class="formSubmissionButton" id="signInButton"><a href ="index.htm" class="notBlueLink">Sign In</a></button>
 
-<p class = "centerText">
+<br>
+    
+<h5 class = "centerText">
 No account? <a href="register.htm">Create one!</a>
-</p>
+</h5>
 
-<p class = "centerText"><a href="resetPassword.htm"> Forgot my password </a>
+<br>
+
+<h5 class = "centerText"><a href="resetPassword.htm"> Forgot my password </a></h5>
 
 </main>
 
+<script src = "_scripts/loginScript.js"></script>
+
 </body>
- 
+
 </html>
 
 
