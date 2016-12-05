@@ -6,10 +6,9 @@
 <link rel="stylesheet" type="text/css" href="_css/styles.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
-
 </head>
 <body>
-    
+
 <header role = "banner">
 <a href = "index.htm">
  <div id="linkToHome">
@@ -18,52 +17,59 @@
     </div>
 </a>
 
-    
-<nav role = "navigation" id="siteNavBar">    
+<div id= "iefx">    
+<nav role = "navigation" id="siteNavBar">
     <button type="button" class="siteNavButton">
-        <a href = "index.htm">Home</a></button>
+        <a href = "indexLoggedIn.htm">Home</a></button>
     <button type = "button" class = "siteNavButton">
         <a href = "createEvent.htm">Create New Event</a></button>
+        <nav class="dropdown">
+            <button type="button" class = "dropbtn siteNavButton">My Account</button>
+            <div class="dropdown-content">
+            <a href="myFavourites1.htm">My Favourites</a>
+            <a href="manageMyEvents.htm">Manage My Events</a>
+            <a href="accountSettings.htm">Account Settings</a>  
+            <a href="index.htm">Logout</a>
+            </div>
+        </nav>
     <button type="button" class="siteNavButton">
-        <a href="login.htm">Login/Register</a></button>
-    <button type="button" class="siteNavButton">
-        <a href="help.htm" id="linkToHelpPage">Help</a></button>
+        <a href="helpLogged.htm" id="linkToHelpPage">Help</a></button>  
 </nav>
+</div>
     
-<section id="searchBar">
+<div id="searchBar">
 <button type = "button" id="searchButton">Search</button>
 <input type="text" name="search" placeholder="Search.." id="searchField">
-</section>
+</div>
 
-<section id = "expandedSearch">
+<div id = "expandedSearch">
+
 
 <div id = "subjectFilters">
 
 <form action="" id = "filterText">
 
-<input type = "checkbox" name = "subjectFilter" value = "Social Science">Social Science<br>
+<input class = "checkbox" type = "checkbox" name = "subjectFilter" value = "Social Science">Social Science<br>
 
-<input type="checkbox" name = "subjectFilter" value="epidemeology">
+<input class = "checkbox" type="checkbox" name = "subjectFilter" value="epidemeology">
 Epidemeology <br>
 
-<input type = "checkbox" name = "subjectFilter" value = "Cognitive Science">Cognitive Science<br>
+<input class = "checkbox" type = "checkbox" name = "subjectFilter" value = "Cognitive Science">Cognitive Science<br>
 
-<input type = "checkbox" name = "subjectFilter" value = "History of Science">History of Science<br>
+<input class = "checkbox" type = "checkbox" name = "subjectFilter" value = "History of Science">History of Science<br>
 
-<input type = "checkbox" name = "subjectFilter" value = "Behavioural Science">Behavioural Science<br>
+<input class = "checkbox" type = "checkbox" name = "subjectFilter" value = "Behavioural Science">Behavioural Science<br>
 
 </form>
 
 </div>
 
-<div id = "dateFilters">
 
-<p>From</p>
+<div id = "dateFromFilters">
 
-<div id = "dateFromFilter">
-
+        <h5>From</h5>
 <select class = "day">
-<option value = "1">1</option>
+    <option value = "1">1</option>
     <option value = "2">2</option>
     <option value = "3">3</option>
     <option value = "4">4</option>
@@ -75,6 +81,84 @@ Epidemeology <br>
     <option value = "10">10</option>
     <option value = "11">11</option>
     <option value = "12">12</option>
+    <option value = "13">13</option>
+    <option value = "14">14</option>
+    <option value = "15">15</option>
+    <option value = "16">16</option>
+    <option value = "17">17</option>
+    <option value = "18">18</option>
+    <option value = "19">19</option>
+    <option value = "20">20</option>
+    <option value = "21">21</option>
+    <option value = "22">22</option>
+    <option value = "23">23</option>
+    <option value = "24">24</option>
+    <option value = "25">25</option>
+    <option value = "26">26</option>
+    <option value = "27">27</option>
+    <option value = "28">28</option>
+    <option value = "29">29</option>
+    <option value = "30">30</option>
+    <option value = "31">31</option>
+</select>
+
+<select class = "month">
+    <option value = "January">January</option>
+    <option value = "February">February</option>
+    <option value = "March">March</option>
+    <option value = "April">April</option>
+    <option value = "May">May</option>
+    <option value = "June">June</option>
+    <option value = "July">July</option>
+    <option value = "August">August</option>
+    <option value = "September">September</option>
+    <option value = "October">October</option>
+    <option value = "November">November</option>
+    <option value = "December">December</option>
+</select>
+
+<select class = "year">
+    <option value = "2016">2016</option>
+    <option value = "2017">2017</option>
+    <option value = "2018">2018</option>
+    <option value = "2019">2019</option>
+    <option value =  "2020">2020</option>
+</select>
+
+
+<h5>To:</h5>
+<select class = "day">
+    <option value = "1">1</option>
+    <option value = "2">2</option>
+    <option value = "3">3</option>
+    <option value = "4">4</option>
+    <option value = "5">5</option>
+    <option value = "6">6</option>
+    <option value = "7">7</option>
+    <option value = "8">8</option>
+    <option value = "9">9</option>
+    <option value = "10">10</option>
+    <option value = "11">11</option>
+    <option value = "12">12</option>
+    <option value = "13">13</option>
+    <option value = "14">14</option>
+    <option value = "15">15</option>
+    <option value = "16">16</option>
+    <option value = "17">17</option>
+    <option value = "18">18</option>
+    <option value = "19">19</option>
+    <option value = "20">20</option>
+    <option value = "21">21</option>
+    <option value = "22">22</option>
+    <option value = "23">23</option>
+    <option value = "24">24</option>
+    <option value = "25">25</option>
+    <option value = "26">26</option>
+    <option value = "27">27</option>
+    <option value = "28">28</option>
+    <option value = "29">29</option>
+    <option value = "30">30</option>
+    <option value = "31">31</option>
 </select>
 
 <select class = "month">
@@ -102,77 +186,46 @@ Epidemeology <br>
 
 </div>
 
-<p>To:</p>
-<select class = "day">
-<option value = "1">1</option>
-    <option value = "2">2</option>
-    <option value = "3">3</option>
-    <option value = "4">4</option>
-    <option value = "5">5</option>
-    <option value = "6">6</option>
-    <option value = "7">7</option>
-    <option value = "8">8</option>
-    <option value = "9">9</option>
-    <option value = "10">10</option>
-    <option value = "11">11</option>
-    <option value = "12">12</option>
-</select>
-
-<select class = "month">
-    <option value = "January">January</option>
-    <option value = "February">February</option>
-    <option value = "March">March</option>
-    <option value = "April">April</option>
-    <option value = "May">May</option>
-    <option value = "June">June</option>
-    <option value = "July">July</option>
-    <option value = "August">August</option>
-    <option value = "September">September</option>
-    <option value = "October">October</option>
-    <option value = "November">November</option>
-    <option value = "December">December</option>
-</select>
-
-<select class = "year">
-    <option value = "2016">2016</option>
-    <option value = "2017">2017</option>
-    <option value = "2018">2018</option>
-    <option value = "2019">2019</option>
-    <option value =  "2020">2020</option>
-</select>
-
-</div>
-
-</section>
+</div>  
 
 <nav role = "navigation">
-<ul id = "eventNavList">
-    <li class="eventTypeNavButton"><button id="seminarsNav" >Seminars</button></li>
-    <li class="eventTypeNavButton" ><button id = "coursesNav" >Courses</button></li>
-    <li class="eventTypeNavButton"><button id = "conferencesNav" >Confereneces</button></li>
-</ul>
+<div id = "eventNavList">
+    <li class="eventTypeNavButton active"><seminarsButton id="seminarsNav" >Seminars</seminarsButton></li>
+    <li class="eventTypeNavButton" ><seminarsButton id = "coursesNav" >Courses</seminarsButton></li>
+    <li class="eventTypeNavButton"><seminarsButton id = "conferencesNav">Confereneces</seminarsButton></li>
+</div>
 </nav>
-    
+
+
 </header>
 
-<main role = "main">
+<main role = "main"></main>
 
 <!--Beginining of accordion 1-->
 
 <!--SEMINARS TAB CONTENT-->
 
+<main role = "main">
+
+<!--SEMINARS TAB CONTENT-->
+
 <section id="seminars">
+
+<!--start of seminars accordion-->
 <div class = "accordion">
 
-<!--Event 1-->
+<!--Seminar 1-->
+
+<!--seminar 1 accordion header - e.g. what is visible when the section is unexpanded --> 
 <section class = "eventSummarySection">
+
 <h3>On Muggle Teapots</h3>
-    <img src="image_event1.jpg" alt = "Img1" class= "eventImage">
-    <button type = "button" class = "favouriteButton">
-        <i class="fa fa-plus-square" style="font-size:10px;color:red;" class="favouriteStar"></i></button>
-    <button type = "button" class = "calendarButton">
-        <i class="fa fa-calendar" style="font-size:10px;color:orange;"></i></button>
-    
+
+<img src="_images/teapot.jpg" alt = "Img1" class= "eventImage">  
+
+<i class="fa fa-calendar fa-2x"></i>
+<i class="fa fa-star fa-2x" aria-hidden="true"></i>
+
     <ul class="eventSummaryDetails">
         <li>Mr Weasley</li>
         <li>Department of Muggle Relations</li>
@@ -183,52 +236,78 @@ Epidemeology <br>
     
 </section>
 
-    <div class="furtherDetails">
+<!--seminar 1 accordion contents - e.g. what is visible when the section has been expanded-->
+<div class="furtherDetails">
         
-
-        <p>Free</p>
+<h5>Free</h5>
         
-        <p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Si quae forte-possumus. Re mihi non aeque satisfacit, et quidem locis pluribus. Si quidem, inquit, tollerem, sed relinquo. Hoc etsi multimodis reprehendi potest, tamen accipio, quod dant.</p>
+<h5>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Si quae forte-possumus. Re mihi non aeque satisfacit, et quidem locis pluribus. Si quidem, inquit, tollerem, sed relinquo. Hoc etsi multimodis reprehendi potest, tamen accipio, quod dant.</h5>
         
-
-        <p>#teapots #arthurweasley #mugglestudies</p>
-
+<h5 class = "hastags">
+<a href = "index.htm">#teapots</a> 
+<a href = "index.htm">#arthurweasley</a>
+<a href = "index.htm">#mugglestudies</a>
+</h5>
         
-     
-        <a href="https://www.ucl.ac.uk" class = "linkToEventSite">http://www.ministryofmagic.com</a>
+<h5 class = "linkToEventSite">
+<a href="https://www.ucl.ac.uk">http://www.ministryofmagic.com</a>
+</h5>
     
-    </div>
+</div>
+<!--end of seminar 1 contents-->
     
-<!--Event 2-->
+<!--Seminar 2-->
+<!--seminar 2 accordion header--> 
 <section class = "eventSummarySection">
+
 <h3>The Employment Conditions of House Elves</h3>
-    <img src="image_event2.jpg" alt = "Img2" class= "eventImage">
-     <button type = "button" class = "favouriteButton">
-        <i class="fa fa-plus-square" style="font-size:10px;color:red;"></i></button>
-    <button type = "button" class = "calendarButton">
-        <i class="fa fa-calendar" style="font-size:10px;color:orange;"></i></button>
+
+<img src="_images/dobby.jpg" alt = "Img2" class= "eventImage">
+    
+<i class="fa fa-calendar fa-2x"></i>
+<i class="fa fa-star fa-2x" aria-hidden="true"></i>
     
     <ul class="eventSummaryDetails">
         <li>Hermione Granger</li>
         <li>Society for the Promotion of Elfish Welfare</li>
-        <li>Hogwarts</li>
+        <li>Hogwarts School of Witchcraft and Wizadry</li>
         <li>18:00</li>
         <li>Tuesday 29th November 2016</li>
     </ul>
+    
 </section>
 
-    <div>
-    <p>Event details here</p>
-    </div>
+<!--seminar 2 accordion contents-->
+<div class="furtherDetails">
+        
+<h5>Free</h5>
+        
+<h5>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Si quae forte-possumus. Re mihi non aeque satisfacit, et quidem locis pluribus. Si quidem, inquit, tollerem, sed relinquo. Hoc etsi multimodis reprehendi potest, tamen accipio, quod dant.</h5>
+        
+<h5 class = "hastags">
+<a href = "index.htm">#houseelves</a>
+<a href = "index.htm">#employmentconditions</a> 
+<a href = "index.htm">#elfrights</a>
+<a href = "index.htm">#SPEW</a>
+
+</h5>
+        
+<h5 class = "linkToEventSite">
+<a href="https://www.ucl.ac.uk">http://www.hogwarts/spew.com</a>
+</h5>
     
-<!--Event 3-->
+</div>
+<!--end of seminar 2 accordion contents -->
+    
+<!--Seminar 3-->
+<!--seminar 3 accordion header-->
 <section class = "eventSummarySection">
 <h3>The Use of the Patronus</h3>
-    <img src="image_event3.jpg" alt = "Img3" class= "eventImage">
-    <button type = "button" class = "favouriteButton">
-        <i class="fa fa-plus-square" style="font-size:10px;color:red;"></i></button>
-    <button type = "button" class = "calendarButton">
-        <i class="fa fa-calendar" style="font-size:10px;color:orange;"></i></button>
+
+<img src="_images/patronus_stag.jpg" alt = "Img3" class= "eventImage">
+
+<i class="fa fa-calendar fa-2x"></i>
+<i class="fa fa-star fa-2x" aria-hidden="true"></i>
     
     <ul class="eventSummaryDetails">
         <li>Harry Potter</li>
@@ -237,28 +316,53 @@ Epidemeology <br>
         <li>19:00</li>
         <li>Wednesday 30th November 2016</li>
     </ul>
+
 </section>
 
-    <div>
-    <p>Event details here</p>
-    </div>
+<!--seminar 3 accordion contents-->
+<div class="furtherDetails">
+        
+<h5>Free</h5>
+        
+<h5>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Si quae forte-possumus. Re mihi non aeque satisfacit, et quidem locis pluribus. Si quidem, inquit, tollerem, sed relinquo. Hoc etsi multimodis reprehendi potest, tamen accipio, quod dant.</h5>
+        
+<h5 class = "hastags">
+<a href = "index.htm">#patronus</a>
+<a href = "index.htm">#patronustechniques</a> 
+<a href = "index.htm">#defenceagainstthedarkarts</a>
+<a href = "index.htm">#dumbledoresarmy</a>
+<a href = "index.htm">#DA</a>
+
+</h5>
+        
+<h5 class = "linkToEventSite">
+<a href="https://www.ucl.ac.uk">http://www.hogwarts/da.com</a>
+</h5>
     
 </div>
+<!--end of accordion contents 3 -->
+    
+</div>
+<!--end of seminar accordion-->
 </section>
     
 <!--COURSES TAB CONTENT-->
 
 <section id = "courses">
+
+<!--Courses Accordion -->
 <div class = "accordion">
 
 <!--Course 1-->
+<!--Course 1 accordion header-->
 <section class = "eventSummarySection">
+
 <h3>The Twelve Uses of Dragon Blood</h3>
-    <img src="image_event4.jpg" alt = "Img4" class= "eventImage">
-    <button type = "button" class = "favouriteButton">
-        <i class="fa fa-plus-square" style="font-size:10px;color:red;"></i></button>
-    <button type = "button" class = "calendarButton">
-        <i class="fa fa-calendar" style="font-size:10px;color:orange;"></i></button>
+
+<img src="_images/dragon.jpg" alt = "Img4" class= "eventImage">
+
+<i class="fa fa-calendar fa-2x"></i>
+<i class="fa fa-star fa-2x" aria-hidden="true"></i>
     
     <ul class="eventSummaryDetails">
         <li>Dumbledore</li>
@@ -270,18 +374,34 @@ Epidemeology <br>
     
 </section>
 
-<div>
-    <p>Event details here</p>
-    </div>
+<!--Course 1 accordion contents-->
+<div class="furtherDetails">
+        
+<h5>Free</h5>
+        
+<h5>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Si quae forte-possumus. Re mihi non aeque satisfacit, et quidem locis pluribus. Si quidem, inquit, tollerem, sed relinquo. Hoc etsi multimodis reprehendi potest, tamen accipio, quod dant.</h5>
+        
+<h5 class = "hastags">
+<a href = "index.htm">#dragon</a>
+
+</h5>
+        
+<h5 class = "linkToEventSite">
+<a href="https://www.ucl.ac.uk">http://www.hogwarts/da.com</a>
+</h5>
     
-<!--Courses 2-->
+</div>
+<!--end of course 1 accordion contents-->
+    
+<!--Course 2-->
+<!--Course 2 accordion header-->
 <section class = "eventSummarySection">
 <h3>Wingardium Leviosa</h3>
-    <img src="image_event5.jpg" alt = "Img5" class= "eventImage">
-    <button type = "button" class = "favouriteButton">
-        <i class="fa fa-plus-square" style="font-size:10px;color:red;"></i></button>
-    <button type = "button" class = "calendarButton">
-        <i class="fa fa-calendar" style="font-size:10px;color:orange;"></i></button>
+
+<img src="_images/wand.jpg" alt = "Img5" class= "eventImage">
+
+<i class="fa fa-calendar fa-2x"></i>
+<i class="fa fa-star fa-2x" aria-hidden="true"></i>
     
     <ul class="eventSummaryDetails">
         <li>Professor Flitwick</li>
@@ -293,18 +413,34 @@ Epidemeology <br>
     
 </section>
 
-        <div>
-        <p>Further details</p>
-        </div>
+<!--Course 2 accordion contents-->
+<div class="furtherDetails">
+        
+<h5>Free</h5>
+        
+<h5>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Si quae forte-possumus. Re mihi non aeque satisfacit, et quidem locis pluribus. Si quidem, inquit, tollerem, sed relinquo. Hoc etsi multimodis reprehendi potest, tamen accipio, quod dant.</h5>
+        
+<h5 class = "hastags">
+<a href = "index.htm">#swishandflick</a>
+
+</h5>
+        
+<h5 class = "linkToEventSite">
+<a href="https://www.ucl.ac.uk">http://www.hogwarts/da.com</a>
+</h5>
+    
+</div>
         
 <!--Course 3-->
+<!--Course 3 accordion header-->
 <section class = "eventSummarySection">
+
 <h3>Animagi</h3>
-    <img src="image_event6.jpg" alt = "Img6" class= "eventImage">
-    <button type = "button" class = "favouriteButton">
-        <i class="fa fa-plus-square" style="font-size:10px;color:red;"></i></button>
-    <button type = "button" class = "calendarButton">
-        <i class="fa fa-calendar" style="font-size:10px;color:orange;"></i></button>
+
+<img src="_images/cat.jpg" alt = "Img6" class= "eventImage">
+
+<i class="fa fa-calendar fa-2x"></i>
+<i class="fa fa-star fa-2x" aria-hidden="true"></i>
     
     <ul class="eventSummaryDetails">
         <li>Professor Minerva McGonagall, MSc</li>
@@ -313,102 +449,161 @@ Epidemeology <br>
         <li>20:00</li>
         <li>Thursday 1st November 2016</li>
     </ul>
-    
-    <div>
-    <p> Further details</p>
-    </div>    
-    
+
 </section>
+
+<!--Course 3 accordion contents-->
+<div class="furtherDetails">
+        
+<h5>Free</h5>
+        
+<h5>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Si quae forte-possumus. Re mihi non aeque satisfacit, et quidem locis pluribus. Si quidem, inquit, tollerem, sed relinquo. Hoc etsi multimodis reprehendi potest, tamen accipio, quod dant.</h5>
+    
+<h5 class = "hastags">
+<a href = "index.htm">#animagi</a>
+
+</h5>
+        
+<h5 class = "linkToEventSite">
+<a href="https://www.ucl.ac.uk">http://www.hogwarts/da.com</a>
+</h5>
+    
+</div>
+<!--end of course 3 accordion contents-->   
 
 </div>
+<!--end of accordion for courses-->
 </section>
 
-
 <!--CONFERENCES TAB CONTENT-->
-
 <section id = "conferences">
+
+<!--Start of conferences accordion-->
 <div class = "accordion">
 
+<!--conference 1 accordion header-->
 <section class = "eventSummarySection">
+
 <h3>The Elder Wand: The Most Significant of the Deathly Hallows?</h3>
-    <img src="image_event1.jpg" alt = "Img1" class= "eventImage">
-    <button type = "button" class = "favouriteButton">
-        <i class="fa fa-plus-square" style="font-size:10;color:red;" class="favouriteStar"></i></button>
-    <button type = "button" class = "calendarButton">
-        <i class="fa fa-calendar" style="font-size:10px;color:orange;"></i></button>
+
+<img src="_images/elderWand.jpg" alt = "Img1" class= "eventImage">
+
+<i class="fa fa-calendar fa-2x"></i>
+<i class="fa fa-star fa-2x" aria-hidden="true"></i>
     
     <ul class="eventSummaryDetails">
-        <li>Mr Weasley</li>
-        <li>Department of Muggle Relations</li>
+        <li>Dumbledore</li>
+        <li>Department of Mysteries</li>
         <li>Ministry of Magic</li>
         <li>17:00</li>
         <li>Monday 28th November 2016</li>
     </ul>
 </section>
 
-    <div class="furtherDetails">
-        
+<!--conference 1 accordion contents-->
 
-        <p>Free</p>
+<div class="furtherDetails">
         
-        <p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Si quae forte-possumus. Re mihi non aeque satisfacit, et quidem locis pluribus. Si quidem, inquit, tollerem, sed relinquo. Hoc etsi multimodis reprehendi potest, tamen accipio, quod dant.</p>
+<h5>Free</h5>
         
+<h5>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Si quae forte-possumus. Re mihi non aeque satisfacit, et quidem locis pluribus. Si quidem, inquit, tollerem, sed relinquo. Hoc etsi multimodis reprehendi potest, tamen accipio, quod dant.</h5>
+        
+<h5 class = "hastags">
+<a href = "index.htm">#dumbledore</a>
 
-        <p>#teapots #arthurweasley #mugglestudies</p>
-
-        <a href="https://www.ucl.ac.uk" class = "linkToEventSite">http://www.ministryofmagic.com</a>
+</h5>
+        
+<h5 class = "linkToEventSite">
+<a href="https://www.ucl.ac.uk">http://www.hogwarts/da.com</a>
+</h5>
     
-    </div>
+</div>    
     
+    
+<!--Conference 2-->
+<!--conference 2 accordion header-->
 <section class = "eventSummarySection">
+
 <h3>The Legacy of Albus Dumbledore</h3>
-    <img src="image_event2.jpg" alt = "Img2" class= "eventImage">
-    <button type = "button" class = "favouriteButton">
-        <i class="fa fa-plus-square" style="font-size:10;color:red;" class="favouriteStar"></i></button>
-    <button type = "button" class = "calendarButton">
-        <i class="fa fa-calendar" style="font-size:10px;color:orange;"></i></button>
+
+<img src="_images/dumbledore.jpg" alt = "Img2" class= "eventImage">
+
+<i class="fa fa-calendar fa-2x"></i>
+<i class="fa fa-star fa-2x" aria-hidden="true"></i>
     
     <ul class="eventSummaryDetails">
         <li>Hermione Granger</li>
-        <li>Society for the Promotion of Elfish Welfare</li>
-        <li>Hogwarts</li>
+        <li>The Great Hall</li>
+        <li>Hogwarts School of Witchcraft and Wizardy</li>
         <li>18:00</li>
         <li>Tuesday 29th November 2016</li>
     </ul>
    
 </section>
 
-    <div>
-    <p>Event details here</p>
-    </div>
+<!--conference 2 accordion contents-->
+<div class="furtherDetails">
+        
+<h5>Free</h5>
+        
+<h5>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Si quae forte-possumus. Re mihi non aeque satisfacit, et quidem locis pluribus. Si quidem, inquit, tollerem, sed relinquo. Hoc etsi multimodis reprehendi potest, tamen accipio, quod dant.</h5>
+        
+<h5 class = "hastags">
+<a href = "index.htm">#dumbledore</a>
+
+</h5>
+        
+<h5 class = "linkToEventSite">
+<a href="https://www.ucl.ac.uk">http://www.hogwarts/da.com</a>
+</h5>
     
+</div>
+<!--end of course 1 accordion contents-->
+
+<!--Conference 3-->
+<!--conference 3 accordion header-->
 <section class = "eventSummarySection">
 <h3>An Evening with Nearly Headless Nick</h3>
-    <img src="image_event3.jpg" alt = "Img3" class= "eventImage">
-    <button type = "button" class = "favouriteButton">
-        <i class="fa fa-plus-square" style="font-size:10;color:red;" class="favouriteStar"></i></button>
-    <button type = "button" class = "calendarButton">
-        <i class="fa fa-calendar" style="font-size:10px;color:orange;"></i></button>
+
+<img src="_images/nearlyHeadlessNick.jpg" alt = "Img3" class= "eventImage">
+    
+<i class="fa fa-calendar fa-2x"></i>
+<i class="fa fa-star fa-2x" aria-hidden="true"></i>
     
     <ul class="eventSummaryDetails">
-        <li>Harry Potter</li>
-        <li>Hogwarts School of WitchCraft and Wizardry</li>
+        <li>Nearly Headless Nick</li>
         <li>The Dungeons</li>
+        <li>Hogwarts School of WitchCraft and Wizardry</li>
         <li>19:00</li>
         <li>Wednesday 30th November 2016</li>
     </ul>
 </section>
 
-    <div>
-    <p>Further details</p>
-    </div>
+<!--conference 3 accordion contents-->
+<div class="furtherDetails">
         
+<h5>Free</h5>
+        
+<h5>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Si quae forte-possumus. Re mihi non aeque satisfacit, et quidem locis pluribus. Si quidem, inquit, tollerem, sed relinquo. Hoc etsi multimodis reprehendi potest, tamen accipio, quod dant.</h5>
+        
+<h5 class = "hastags">
+<a href = "index.htm">#ghoststories</a>
+
+</h5>
+        
+<h5 class = "linkToEventSite">
+<a href="https://www.ucl.ac.uk">http://www.hogwarts/da.com</a>
+</h5>
+    
 </div>
+<!--end of conference 3 accordion contents-->
+
+</div>  
+<!--end of accordion 3-->
 
 </section>
-
 </main>
-    
+
 <footer id="pageFooter">
     <p>
         <a href="tandc.htm">Terms and Conditions</a> 

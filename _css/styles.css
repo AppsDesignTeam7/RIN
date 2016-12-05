@@ -25,6 +25,10 @@ body {
 header {
         background: #FFE4C4;
     }
+
+.notBlueLink{
+    color:black;
+}
     
 /*h1 is the page title RIN*/
 h1 {
@@ -38,7 +42,8 @@ h1 {
 }
 
 /*h2 is the subtitle (e.g. Manage My Events)*/
-h2 {font-family: "Trebuchet MS", Helvetica, sans-serif;
+h2 {
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
 	font-size: 1em;
 	font-weight: normal;
 	font-style: normal;
@@ -46,12 +51,24 @@ h2 {font-family: "Trebuchet MS", Helvetica, sans-serif;
 	padding: 0px 0px;
     color: black;
     }
-    
+
+/* new font format for paragraph text */
+h5 {
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+	font-size: 0.6em;
+	font-weight: normal;
+	font-style: normal;
+	margin: 0 0 0;
+	padding: 0px 0px;
+    color: grey;
+    text-align: left;
+}
+
 button {
-    padding: 2px 4px; 
-    height: 15px;
+    height: 20%;
+    border: none;
+    word-wrap:break-word;
     border-radius: 25px;
-    display: inline-block;
     text-align: center;
     }
 
@@ -60,7 +77,6 @@ ul {
     margin: 0;
     padding: 0;
     }
-
 
 
 /* applies to the sign in page - or anything we want it to be center */
@@ -74,6 +90,8 @@ ul {
 /* Section for the navigation buttons, including Home, Create New Event */
 #siteNavBar{
     float: right;
+    position: relative;
+    top: -20px;
     }
 
 /* MIGHT NEED EDITING */
@@ -83,100 +101,105 @@ background: #ffab41;
     color: white;
 }
 
-
 /* Applies only to the links that are within the tag #siteNavBar */
 #siteNavBar a {
     text-decoration: none;
     color: white;
     }
     
-/* For the drop down list from account */ 
+/* For the drop down list z-index from My account */ 
+#iefix {
+    position: relative;
+    z-index: 100000;
+}
+
+/* Drop down button - My account */ 
 .dropbtn {
     background-color: #ffab41;
     color: white;
-    padding: 2px 4px;
-    font-size: 10px;
+    height: 20%;
+    font-size: 0.55em;
     border: none;
     cursor: pointer;
+    
 }
 
+/* Drop down position - My account */ 
 .dropdown {
     position: relative;
     display: inline-block;
+    top: 0px;
+    
 }
 
-/* Dropdown list content */
+/* Dropdown list background */
 .dropdown-content {
     display: none;
     position: absolute;
+    z-index: = 2000;
     background-color: #bcbcbc;
     min-width: 8px;
     box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.2);
+    overflow:hidden;
 }
 
 /* Dropdown list text */
 .dropdown-content a {
-    color: black;
+    color: white;
     padding: 2px 4px;
     text-decoration: none;
     display: block;
-    font-size: 10px;
+    font-size: 0.55em;
 }
 
 /* Dropdown list's colour when hover is on top */
-.dropdown-content a:hover {background-color: #e6e6e6}
+.dropdown-content a:hover {
+    background-color: #e6e6e6
+}
 
-/* Dropdown list */
+/* Dropdown list when hover on top */
 .dropdown:hover .dropdown-content {
     display: block;
 }
 
-/* Dropdown button's colour when hover is on top */
-.dropdown:hover .dropbtn {
-    background-color: #ffe6cc;
-}
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {display:block;}
 
 /* STYLING FOR SEARCH SECTION */
 
-/* MABEL - CHANGE POSITION FOR THIS */
 /* encompasses the search field and the search button */
 #searchBar {
-    clear: right; /*change into position */
+    position: relative;
     background: #e3e3e3;
+    height: 26px;
     }
     
 /* user types search terms here */
 #searchField {
-    width: 93%;
-    box-sizing: border-box;
+    width: 80%;
     border: 0px;
     border-radius: 3px;
     font-size: 12px;
     text-align: left;
     background-color: white;
-    background-image: url('searchicon.png');
-    background-position: 0px 1px; 
-    background-repeat: no-repeat;
+    position: relative;
+    top:-18px;
+    right: -2px;
 }
-
 
 /* for search button */
 #searchButton {
-    float: right;
+    position: relative;
+    right: -220px;
+    bottom: -5px;
     color: white;
-    background: #ffab41;
+    float:right;
+    width: 15%;
+    height:60%;
+    background-color: #ffab41;
     }
 
-
-/* TO BE FOUND */
-h3 {
-	font-size: 1em;
-	font-weight: bold;
-	font-style: normal;
-    color: gray;
-    }
-
-/*h3 is the small at the top of individual pages, e.g. "Register"*/
+/*h4 is the small at the top of individual pages, e.g. "Register"*/
 h4 {
     font-size: 1em;
     font-weight: bold;
@@ -185,45 +208,79 @@ h4 {
     text-align: center;
     }
     
-
-    
-/* STYLE FOR EXPANDED SEARCH PART */
-
 /*The search filter section */
 #expandedSearch{
-    background: #e3e3e3;
-    
+    width: 100%;
+    height: 8.5em;
+    float: left;
+    position: relative;
+    background-color: #e3e3e3;
     }
 
-/* MABEL */
 /* style for the form holding the checkboxes for the filter terms */
 #filterText {
+    font-size: 0.6em;
+    font-style: normal;
+    color: gray;
+    text-align: left;
+    width: 50%;
+    height: 12.5em;
+    float: left;
+    position: relative;
+    right: -10px;
+    background-color: #F5F5F5;
+    top:3px;
+}
 
-};
-
-/* TO POSITION */
-/* Subject filters section */
-#subjectFilters {
-
-};
+/* Class for the style of checkbox, in order to overwrite the style of "input" */
+.checkbox {
+    text-align: center;
+    width: 3em;
+    position: relative;
+    top: 2px;
+    }
 
 /* TO POSITION */
 /* contains all date filters */
-#dateFilters {
+#dateFromFilters {
+    font-size:1em;
+    font-style: normal;
+    float: left;
+    position: relative;
+    right: -22px;
+    width: 45%;
+    top:3px;
+    background-color: #F5F5F5;
+    height: 7.5em;
+}
 
-};
-
-/* TO RESIZE AND REPOSITION */
+/* For expanded search's day selection */
 .day {
-};
+     font-size: 0.6em;
+    font-style: normal;
+    color: gray;
+    text-align: left;
+    width: 120px ;
+}
 
-/* TO RESIZE AND REPOSITION */
+/* For expanded search's month selection */
 .month {
-};
+    font-size: 0.6em;
+    font-style: normal;
+    color: gray;
+    text-align: left;
+    width: 120px ;
+}
 
-/* TO RESIZE AND REPOSITION */
+/* For expanded search's year selection */
 .year {
-};
+    font-size: 0.6em;
+    font-style: normal;
+    color: gray;
+    text-align: left;
+    width: 120px;
+}
+
 
 
 /* STYLING FOR THE TABS (COURSES, CONFERENCES, ETC) */
@@ -234,90 +291,157 @@ h4 {
 #eventNavList {
     list-style-type: none;
     overflow: hidden; 
-    background: #bcbcbc;
+    background: #e3e3e3;
     width: 100%;
-    float: center;
+    height:px;
+    position: relaitve;
     margin: 0;
     padding: 0;
     }
 
 
 /* for list item containing the courses, seminars, conferences buttons */
+
+/* this is the background section for courses, seminars, conferences buttons */
 .eventTypeNavButton {
-    display: block;
-    text-align: left;
-    padding: 0px 16px;
-    text-decoration: none;
+    text-align: center;
+    width: 33.3%;
+    overflow:hidden;
+    float:left;
     color: white;
+    position: static;
+    align-items: 
+    background-color: #e3e3e3; 
 }
 
-/* APPLY TO BUTTON */
-eventTypeNavButton:hover:not(.active){
-    background-color: #bcbcbc;
-}
-
-/* APPLY TO BUTTON */
-eventTypeNavButton {
-    list-style-type: none;
-    background-color: #bcbcbc;
-    margin: 0;
-    padding: 0;
-    overflow: hidden; 
-}
-
-
+/* Background colour for seminar button */
 .active {
-    background-color: #ffab41;
-}
+    background-color: #FFE4C4;
+} 
+
+/*This is the individual button setting*/
+seminarsButton {
+    width: 33.3%;
+    padding: 2px 33.3%; 
+    height: 15%;
+    color: white;
+    font-style: bold;
+    display: inline-block;
+    text-align: center;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    }
 
 /* END OF EVENT NAVIGATION LIST */
 
+/* ACCORDION STYLING */
+/* removes the arrow from the side of the accordion panels */
+.accordion .ui-icon {
+    display: none;
+}
 
-/* MAIRI - TO SORT OUT THE FOLLOWING SECTION, INCLUDING ACCORDION */
-
-/* STYLING FOR EVENTS SUMMARY AND INFORMATION SECTION */
-
-.eventImage {
-    width: 50px;
-    height: 50px;
-    float: left;
+/* styles the accordion header - that is, what is visible when the accordion is unexpanded */
+.accordion .ui-accordion-header {
+    background: white;
+    margin: 0px;
+    padding: 1em 1em;
+    color: gray;
+    height: 120px;
     }
     
+/* for active accordion header */
+.accordion .ui-accordion-header-active {
+    border-bottom: none;
+    padding-bottom: 0em;
+}
+    
+/* styles the accordion content - that is, what becomes visible when the accordion is expanded */
+.accordion .ui-accordion-content {
+    background: white;
+    color: gray;
+    margin: 0em;
+    padding-left: 1.6em;
+    padding-top: 0.5em;
+    padding-bottom: 0em;
+    }
+    
+/* EVENT DETAILS STYLING */
+
+/* for event title */
+h3 {
+	font-size: 1em;
+	font-weight: bold;
+	font-style: normal;
+    color: gray;
+    padding: 0em;
+    margin: 0em;
+}
+    
+/* for the user-uploaded image for the event */
+.eventImage {
+    width: 4.2em;
+    height: 4.2em;
+    float: left;
+    padding: 0em;
+    padding-top: 0.9em;
+    margin: 0em;
+    }
+    
+/*styling for icons */
+
+/* styling for star icon */
+.fa.fa-star {
+    color: lightgray;
+    position: absolute;
+    right: 2.7em;
+    top: 1.1em;
+    display: inline;
+}
+
+/* styling for calender icon */
+.fa.fa-calendar {
+    color: lightgray;
+    position: absolute;
+    right: 1em;
+    top: 1.1em;
+    display: inline;
+}
+
+/* for the container with un-expanded event summary (including images and icons) */
+.eventSummarySection {
+    position: relative;
+
+    }
+    
+/* for summary of the event; the details of the event visible before it is expanded (not including images and icons) */
 .eventSummaryDetails {
     list-style-type: none;
+    font-size: 0.7em;
+    padding-top: 1em;
+    padding-left: 7em;
+    color: gray;
+ }
+    
+/* the further details of the event that are displayed when it has been expanded */
+.furtherDetails {
     color: darkgray;
     font-size: 0.7em;
-    border-bottom-color: black;
-    border-bottom-width: 0.5em;
-    }
-    
-.favouriteButton {
-    float: right;
-    width: 2em;
-    height: 2em;
-    background: white;
-    
-    }
-    
-.calendarButton {
-    float: right;
-    width: 2em;
-    height: 2em;
-    background: white;
-    }
-    
-.editEventButton {
-    float: right;
-    width: 20%;
-    height: 10%;
-    background: lightgray;
+    padding-bottom: 0em;
+    margin-bottom: 0em;
     color: gray;
-    }
+ }
     
+/* styling for the hastags */
+.hastags a {
+    color: darkblue;
+}
+
+/* styling for the link to the event site */
+.linkToEventSite a {
+    color: darkblue;
+}
+
 /* END OF EVENTS AND SUMMARY AND INFORMATION SECTION */
 
-
-/* MABLE - for the icons, try to externalise the style. Also, change all pixels to ems. */
 
 /*For anchor tags*/
 a {
@@ -336,13 +460,14 @@ form{
 /* Input format for form */
 input {
     text-align: center;
+    width: 20em;
     }
 
 /* Styling for select element for drop-down forms */
 select {
     display: block;
     margin: 0 auto;
-    width: 24%;
+    width: 20.7em;
     }
 
 /* Additional styling for form submission button */
@@ -372,6 +497,77 @@ select {
     font-size: 0.8em;
     font-style: normal;
     text-decoration: none;
-    text-align: center;
+    text-align: left;
 }
 
+/* MANAGE MY EVENTS PAGE STYLING */
+
+.eventApprovalStatus {
+    position: absolute;
+    right: 5%;
+    top: 2em;
+    display: inline-block;
+    color: red;
+    size: 1em;
+}
+
+.eventApprovalStatusText {
+    font-size: 0.7em;
+    display: inline-block;
+}
+
+.editEventButton {
+    /*float: right;*/
+    position: absolute;
+    bottom: 20%;
+    right: 5%;
+    height: 15%;
+    width: 14%;
+    background: lightgray;
+    color: gray;
+    display: inline;
+    padding: 0px;
+}
+
+.eventAttendanceDetails {
+    position: absolute;
+    top: 2em;
+    right: 1em;
+    display: block;
+    height: 1em;
+    font-size: 0.5em;
+}
+
+.editEventText{
+    font-size: 0.7em;
+    display: inline-block;
+}
+
+
+/* Account Page Settings */
+
+/* Style for the button's text */
+.AccountSettingText {
+    position: relative;
+    height: 15%;
+    width: 14%;
+    display: inline;
+    padding: 0px;
+    font-size: 1em;
+}
+
+/* Style and size for the button */
+.resetPasswordButton{
+    font-size: 0.7em;
+    display: inline-block;
+    background: #ffab41;
+    color: white;
+    border-radius: 25px;
+    float:left;
+}
+
+/* Style for the link to be white*/
+.AccountSettingLink{
+    color:white;
+}
+ 
