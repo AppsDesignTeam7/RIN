@@ -52,6 +52,7 @@ h2 {
     color: black;
     }
 
+/* NOTE: Saw a video on lynda.com that said not to use h5 unless referrring to headings so we can maybe make a new class for the text in the event descriptions instead of using h5 for it? Like <p class = "moreDetails">? */
 /* new font format for paragraph text */
 h5 {
     font-family: "Trebuchet MS", Helvetica, sans-serif;
@@ -110,7 +111,7 @@ background: #ffab41;
 /* For the drop down list z-index from My account */ 
 #iefix {
     position: relative;
-    z-index: 100000;
+    /*z-index: 100000;*/
 }
 
 /* Drop down button - My account */ 
@@ -129,6 +130,7 @@ background: #ffab41;
     position: relative;
     display: inline-block;
     top: 0px;
+    z-index: 3; /*This fixed the dropdown menun issue */
     
 }
 
@@ -136,7 +138,7 @@ background: #ffab41;
 .dropdown-content {
     display: none;
     position: absolute;
-    z-index: = 2000;
+    /*z-index: = 2000;*/
     background-color: #bcbcbc;
     min-width: 8px;
     box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.2);
@@ -212,7 +214,7 @@ h4 {
 #expandedSearch{
     width: 100%;
     height: 8.5em;
-    float: left;
+   /* float: left;*/ /*THIS WAS THE REASON FOR THE PROBLEM ON THE FAVOURITES PAGE */
     position: relative;
     background-color: #e3e3e3;
     }
