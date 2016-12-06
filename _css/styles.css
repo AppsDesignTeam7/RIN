@@ -421,20 +421,12 @@ h3 {
     display: inline;
 }*/
 
-
+/* styling for calendar button */
 .addtocalendar.atc-style-button-icon.atc-style-menu-wb {
     color: lightgray;
     position: absolute;
     right: 2.1em;
     top: 2em;
-    display: inline;
-}
-
-.calendarButton {
-    color: lightgray;
-    position: absolute;
-    right: 1em;
-    top: 1.1em;
     display: inline;
 }
 
