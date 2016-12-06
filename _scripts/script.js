@@ -24,11 +24,18 @@ window.onload = function () {
         alert("Added to Favourites");
         });
    
+   /*
    $(".accordion .fa.fa-calendar").click(function (event) {
         event.stopPropagation();
         event.preventDefault();
         $(this).css("color","DarkBlue");
         alert("Added to calender");
+        });*/
+        
+    $( ".accordion .addtocalendar.atc-style-button-icon.atc-style-menu-wb").click(function(event) {
+       event.stopPropagation();
+        event.preventDefault();
+        $(this).css("color","DarkBlue");
         });
    
    seminars.style.display = "block";
@@ -96,15 +103,7 @@ document.getElementById("searchButton").onclick = function () {
     expandedSearch.style.display = "none";
 };
 
-document.getElementById("dropdown").onfocus = function () {
+document.getElementsByClassName("dropbtn").onfocus = function () {
     
     dropdown.style.display = "block";
 };
-
-/*
-favouriteStar.onclick = function () {
-
-    favouriteStar.color = "blue";
-    
-};*/
-
