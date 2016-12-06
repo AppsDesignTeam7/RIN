@@ -17,7 +17,8 @@ window.onload = function () {
    heightStyle: "content"
     
    });
- 
+   
+   
    $( ".accordion .fa.fa-star").click(function(event) {
        event.stopPropagation();
         event.preventDefault();
@@ -31,7 +32,7 @@ window.onload = function () {
         $(this).css("color","DarkBlue");
         alert("Added to calender");
         });
-   
+
     favourites.style.display = "block";
  
    expandedSearch.style.display = "none";
