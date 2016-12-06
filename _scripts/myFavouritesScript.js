@@ -21,8 +21,8 @@ window.onload = function () {
    $( ".accordion .fa.fa-star").click(function(event) {
        event.stopPropagation();
         event.preventDefault();
-        $(this).css("color","Gold");
-        alert("Added to Favourites");
+        $(this).css("color","lightGray");
+        alert("Removed from Favourites");
         });
    
    $(".accordion .fa.fa-calendar").click(function (event) {
