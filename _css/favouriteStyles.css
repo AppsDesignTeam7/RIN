@@ -1,0 +1,8 @@
+/* styling for star icon */
+.fa.fa-star {
+    color: gold;
+    position: absolute;
+    right: 2.7em;
+    top: 1.1em;
+    display: inline;
+}

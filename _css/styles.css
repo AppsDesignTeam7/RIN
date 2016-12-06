@@ -360,9 +360,9 @@ seminarsButton {
 .accordion .ui-accordion-content {
     background: white;
     color: gray;
-    margin: 0em;
+    margin: 0;
     padding-left: 1.6em;
-    padding-top: 0.5em;
+    padding-top: 0;
     padding-bottom: 0em;
     }
     
@@ -411,7 +411,6 @@ h3 {
 /* for the container with un-expanded event summary (including images and icons) */
 .eventSummarySection {
     position: relative;
-
     }
     
 /* for summary of the event; the details of the event visible before it is expanded (not including images and icons) */
@@ -424,14 +423,47 @@ h3 {
  }
     
 /* the further details of the event that are displayed when it has been expanded */
-.furtherDetails {
+.furtherDetails p {
+/*
     color: darkgray;
     font-size: 0.7em;
     padding-bottom: 0em;
     margin-bottom: 0em;
     color: gray;
+    */
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+	font-size: 0.6em;
+	font-weight: normal;
+	font-style: normal;
+	margin: 1em 0; /* 1em for top and bottom margins, which is default for <p> */
+	padding: 0px 0px;
+    color: grey;
+    text-align: left;
  }
+ 
+ p.firstDetailsLine {
+     margin-top: 0;
+     padding-top: 0;
+}
+
+.furtherDetails {
+margin-top: 0;
+padding-top: 0;
+}
+ 
+ 
+ /* NOTE: Saw a video on lynda.com that said not to use h5 unless referrring to headings so we can maybe make a new class for the text in the event descriptions instead of using h5 for it? Like <p class = "moreDetails">? */
+ /*
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+	font-size: 0.6em;
+	font-weight: normal;
+	font-style: normal;
+	margin: 0 0 0;
+	padding: 0px 0px;
+    color: grey;
+    text-align: left;
     
+    */
 /* styling for the hastags */
 .hastags a {
     color: darkblue;
