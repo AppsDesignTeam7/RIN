@@ -322,11 +322,12 @@ h4 {
 } 
 
 /*This is the individual button setting*/
-seminarsButton {
+
+div.seminarsButton {
     width: 33.3%;
     padding: 2px 33.3%; 
     height: 15%;
-    color: white;
+    color: Black;
     font-style: bold;
     display: inline-block;
     text-align: center;
@@ -347,7 +348,8 @@ seminarsButton {
     margin: 0px;
     padding: 1em 1em;
     color: gray;
-    height: 120px;
+    /*min-height: 120px;*/
+    min-height: 120px;
     }
     
 /* for active accordion header */
@@ -365,6 +367,16 @@ seminarsButton {
     padding-top: 0;
     padding-bottom: 0em;
     }
+
+/* styling for hashtags */
+.accordion .ui-accordion-content .hashtag{ 
+    color: #ffab41;
+}
+
+/* styling for link to events site */
+.accordion .ui-accordion-content .linkToEventSite{ 
+    color: darkblue;
+}
     
 /* EVENT DETAILS STYLING */
 
@@ -400,7 +412,25 @@ h3 {
 }
 
 /* styling for calender icon */
+/*
 .fa.fa-calendar {
+    color: lightgray;
+    position: absolute;
+    right: 1em;
+    top: 1.1em;
+    display: inline;
+}*/
+
+
+.addtocalendar.atc-style-button-icon.atc-style-menu-wb {
+    color: lightgray;
+    position: absolute;
+    right: 2.1em;
+    top: 2em;
+    display: inline;
+}
+
+.calendarButton {
     color: lightgray;
     position: absolute;
     right: 1em;
@@ -464,15 +494,6 @@ padding-top: 0;
     text-align: left;
     
     */
-/* styling for the hastags */
-.hastags a {
-    color: darkblue;
-}
-
-/* styling for the link to the event site */
-.linkToEventSite a {
-    color: darkblue;
-}
 
 /* END OF EVENTS AND SUMMARY AND INFORMATION SECTION */
 
