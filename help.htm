@@ -2,28 +2,46 @@
 <html lang="en">
 <head>
 <meta charset = "utf-8">
-<title>Help</title>
+<title>Help Page</title>
 <link rel="stylesheet" type="text/css" href="_css/styles.css">
 </head>
     
 <header role = "banner">
     <h1>RIN</h1>
     <h2>Help</h2>
-  
     
-<nav role = "navigation" id="siteNavBar">    
+<div id= "iefx">    
+
+<nav role = "navigation" id="siteNavBar">
     <button type="button" class="siteNavButton">
         <a href = "index.htm">Home</a></button>
     <button type = "button" class = "siteNavButton">
         <a href = "createEvent.htm">Create New Event</a></button>
+        
+<!--LOGIN BUTTON - PHP to display this section when user is not logged in -->
     <button type="button" class="siteNavButton">
         <a href="login.htm">Login/Register</a></button>
-    <button type="button" class="siteNavButton">
-        <a href="help.htm" id="linkToHelpPage">Help</a></button>
-</nav>
-    
-      <br>
+<!--END OF LOGIN BUTTON -->
 
+<!--DROPDOWN NAV - PHP to display this section when user is logged in -->
+<!--
+    <nav class="dropdown">
+        <button type="button" class = "dropbtn">My Account</button>
+            <div class="dropdown-content">
+            <a href="myFavourites.htm">My Favourites</a>
+            <a href="manageMyEvents.htm">Manage My Events</a>
+            <a href="resetPassword.htm">Reset Password</a>
+            <a href="index.htm">Logout</a>
+            </div>
+    </nav>
+-->
+<!--END OF DROPDOWN NAV -->
+        
+    <button type="button" class="siteNavButton">
+        <a href="helpLogged.htm" id="linkToHelpPage">Help</a></button>  
+</nav>
+</div>
+<br>
 </header>
 
 <body>
