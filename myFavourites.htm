@@ -3,6 +3,9 @@
 <head>
 <meta charset = "utf-8">
 <title>My Favourites</title>
+<!-- 1. Include style -->
+<link href="_css/atc-style-button-icon.css" rel="stylesheet" type="text/css">
+<link href="_css/atc-style-menu-wb.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css" href="_css/styles.css">
 
 <!--TO ALTER LATER - the addition of this overriding spreadsheet is likely not the best way to do this. To find a better way -->
@@ -12,6 +15,16 @@
 <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
 </head>
 <body>
+
+    <!-- 2. Include script -->
+     <script type="text/javascript">(function () {
+            if (window.addtocalendar)if(typeof window.addtocalendar.start == "function")return;
+            if (window.ifaddtocalendar == undefined) { window.ifaddtocalendar = 1;
+                var d = document, s = d.createElement('script'), g = 'getElementsByTagName';
+                s.type = 'text/javascript';s.charset = 'UTF-8';s.async = true;
+                s.src = ('https:' == window.location.protocol ? 'https' : 'http')+'://addtocalendar.com/atc/1.5/atc.min.js';
+                var h = d[g]('body')[0];h.appendChild(s); }})();
+    </script>
 
 <header role = "banner">
 <a href = "index.htm">
@@ -210,7 +223,24 @@ Epidemeology <br>
 
 <img src="_images/teapot.jpg" alt = "Img1" class= "eventImage">  
 
-<i class="fa fa-calendar fa-2x"></i>
+<!--<i class="fa fa-calendar fa-2x"></i>-->
+
+<span class="addtocalendar atc-style-button-icon atc-style-menu-wb">
+        <a class="atcb-link">
+        <i class="fa fa-calendar fa-2x" class="addToCalendar"></i>
+        </a>	
+        <var class="atc_event">
+            <var class="atc_date_start">2016-11-28 17:00:00</var>
+            <var class="atc_date_end">2016-11-28 18:00:00</var>
+            <var class="atc_timezone">Europe/London</var>
+            <var class="atc_title">On Muggle Teapots</var>
+            <var class="atc_description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Si quae forte-possumus. Re mihi non aeque satisfacit, et quidem locis pluribus. Si quidem, inquit, tollerem, sed relinquo. Hoc etsi multimodis reprehendi potest, tamen accipio, quod dant.</var>
+            <var class="atc_location">Ministry of Magic</var>
+            <var class="atc_organizer">Arthur Weasley</var>
+            <var class="atc_organizer_email">a.weasley@ministryofmagic.org</var>
+        </var>
+</span>
+
 <i class="fa fa-star fa-2x" aria-hidden="true"></i>
 
     <ul class="eventSummaryDetails">
@@ -251,7 +281,24 @@ Epidemeology <br>
 
 <img src="_images/dobby.jpg" alt = "Img2" class= "eventImage">
     
-<i class="fa fa-calendar fa-2x"></i>
+<!--<i class="fa fa-calendar fa-2x"></i>-->
+
+<span class="addtocalendar atc-style-button-icon atc-style-menu-wb">
+        <a class="atcb-link">
+        <i class="fa fa-calendar fa-2x" class="addToCalendar"></i>
+        </a>	
+        <var class="atc_event">
+            <var class="atc_date_start">2016-11-28 17:00:00</var>
+            <var class="atc_date_end">2016-11-28 18:00:00</var>
+            <var class="atc_timezone">Europe/London</var>
+            <var class="atc_title">On Muggle Teapots</var>
+            <var class="atc_description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Si quae forte-possumus. Re mihi non aeque satisfacit, et quidem locis pluribus. Si quidem, inquit, tollerem, sed relinquo. Hoc etsi multimodis reprehendi potest, tamen accipio, quod dant.</var>
+            <var class="atc_location">Ministry of Magic</var>
+            <var class="atc_organizer">Arthur Weasley</var>
+            <var class="atc_organizer_email">a.weasley@ministryofmagic.org</var>
+        </var>
+</span>
+
 <i class="fa fa-star fa-2x" aria-hidden="true"></i>
     
     <ul class="eventSummaryDetails">
@@ -293,7 +340,24 @@ Epidemeology <br>
 
 <img src="_images/patronus_stag.jpg" alt = "Img3" class= "eventImage">
 
-<i class="fa fa-calendar fa-2x"></i>
+<!--<i class="fa fa-calendar fa-2x"></i>-->
+
+<span class="addtocalendar atc-style-button-icon atc-style-menu-wb">
+        <a class="atcb-link">
+        <i class="fa fa-calendar fa-2x" class="addToCalendar"></i>
+        </a>	
+        <var class="atc_event">
+            <var class="atc_date_start">2016-11-28 17:00:00</var>
+            <var class="atc_date_end">2016-11-28 18:00:00</var>
+            <var class="atc_timezone">Europe/London</var>
+            <var class="atc_title">On Muggle Teapots</var>
+            <var class="atc_description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Si quae forte-possumus. Re mihi non aeque satisfacit, et quidem locis pluribus. Si quidem, inquit, tollerem, sed relinquo. Hoc etsi multimodis reprehendi potest, tamen accipio, quod dant.</var>
+            <var class="atc_location">Ministry of Magic</var>
+            <var class="atc_organizer">Arthur Weasley</var>
+            <var class="atc_organizer_email">a.weasley@ministryofmagic.org</var>
+        </var>
+</span>
+
 <i class="fa fa-star fa-2x" aria-hidden="true"></i>
     
     <ul class="eventSummaryDetails">
