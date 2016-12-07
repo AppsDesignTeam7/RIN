@@ -17,26 +17,36 @@ window.onload = function () {
     
    });
  
+
    $( ".accordion .fa.fa-star").click(function(event) {
+// when the favourite star is clicked, the normal expansion function of the accordion is stoppped (this is to allow the star area of the accordion to be clickable)
        event.stopPropagation();
         event.preventDefault();
-        $(this).css("color","Gold");
+        $(this).css("color","Gold"); /* changes favourite star colour to gold on click */
         alert("Added to Favourites");
         });
    
-   /*
+
    $(".accordion .fa.fa-calendar").click(function (event) {
+// stops the normal expansion function of the accordion when when the  calendar button is clicked.
         event.stopPropagation();
         event.preventDefault();
-        $(this).css("color","DarkBlue");
-        alert("Added to calender");
-        });*/
-        
+        $(this).css("color","DarkBlue"); /* changes the colour of the calendar to DarkBlue on click */
+        alert("Added to calendar");
+        });
+     
     $( ".accordion .addtocalendar.atc-style-button-icon.atc-style-menu-wb").click(function(event) {
+// stops the normal expansion function of the accordion when when the add to calendar area (either the add to calendar button or the calendar button menu) is clicked
        event.stopPropagation();
         event.preventDefault();
-        $(this).css("color","DarkBlue");
         });
+        
+    $ ( ".accordion li.atc-item").click(function (event) {
+        event.stopPropagation();
+        event.preventDefault();
+        
+        
+    });
    
    seminars.style.display = "block";
    courses.style.display = "none";

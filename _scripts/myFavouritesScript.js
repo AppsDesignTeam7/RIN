@@ -32,6 +32,17 @@ window.onload = function () {
         $(this).css("color","DarkBlue");
         alert("Added to calender");
         });
+        
+    $( ".accordion .addtocalendar.atc-style-button-icon.atc-style-menu-wb").click(function(event) {
+// stops the normal expansion function of the accordion when when the add to calendar area (either the add to calendar button or the calendar button menu) is clicked
+       event.stopPropagation();
+        event.preventDefault();
+        });
+        
+    $ ( ".accordion li.atc-item").click(function (event) {
+        event.stopPropagation();
+        event.preventDefault();
+        });
 
     favourites.style.display = "block";
  
