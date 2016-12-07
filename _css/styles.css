@@ -377,6 +377,54 @@ div.seminarsButton {
 .accordion .ui-accordion-content .linkToEventSite{ 
     color: darkblue;
 }
+
+/* STYLING FOR ADD TO CALENDAR BUTTON */
+
+/* styling for whole add to calendar section (including both calendar button icon and menu) */
+.addtocalendar {
+    color: lightgray;
+    position: absolute;
+    right: 2.1em;
+    top: 2em;
+    display: inline;
+}
+
+/* styling for calendar menu list */
+.atc-style-menu-wb .atcb-list {
+    width: auto; 
+    border: 1px solid rgb(186,186,186);
+    border-radius: 2px;
+    box-shadow: 0 0 5px #AAA;
+}
+
+/* styling for the calendar menu */ 
+.atcb-list {
+    position: absolute;
+    /*right: 200%;*/
+    left: -100%;
+    /*width: auto;*/
+
+}
+
+/* styling for calendar menu items */
+.atc-style-menu-wb .atcb-item-link,
+.atc-style-menu-wb .atcb-item-link:hover,
+.atc-style-menu-wb .atcb-item-link:active,
+.atc-style-menu-wb .atcb-item-link:focus
+{
+    color: #000;
+    font-family: "Verdana";
+    font-size: 0.5em;
+    text-decoration: none;
+    outline: none;
+    padding: 5px 15px;
+}
+
+.fa.fa-calendar {
+    color: lightgray;
+}
+
+/* END OF STYLING FOR ADD TO CALENDAR BUTTON */
     
 /* EVENT DETAILS STYLING */
 
@@ -421,14 +469,12 @@ h3 {
     display: inline;
 }*/
 
-/* styling for calendar button */
-.addtocalendar.atc-style-button-icon.atc-style-menu-wb {
-    color: lightgray;
-    position: absolute;
-    right: 2.1em;
-    top: 2em;
-    display: inline;
-}
+
+
+
+
+
+
 
 /* for the container with un-expanded event summary (including images and icons) */
 .eventSummarySection {
