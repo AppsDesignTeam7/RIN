@@ -7,18 +7,21 @@
 
 .addtocalendar var{
     display: none;
+     z-index: 900;
 }
 
 .addtocalendar {
     position: relative;
     display: inline-block;
     background: transparent!important;
+     z-index: 900;
 }
 
 .atcb-link {
     display: block;
     outline: none!important;
     cursor: pointer;
+     z-index: 900;
 }
 
 .atcb-link:focus~ul,
@@ -43,11 +46,13 @@
     margin: 0;
     padding: 0;
     background: #fff;
+     z-index: 900;
 }
 
 .atcb-item {
     float: none;
     text-align: left;
+     z-index: 900;
 }
 
 .atcb-item-link
@@ -55,6 +60,7 @@
     text-decoration: none;
     outline: none;
     display: block;
+     z-index: 900;
 }
 
 .atcb-item.hover,
@@ -77,4 +83,5 @@
     text-decoration: none;
     outline: none;
     padding: 2px 2px;
+     z-index: 900;
 }

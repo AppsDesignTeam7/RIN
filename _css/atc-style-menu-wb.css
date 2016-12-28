@@ -7,24 +7,28 @@
 
 .addtocalendar var{
     display: none;
+     z-index: 10000;
 }
 
 .addtocalendar {
     position: relative;
     display: inline-block;
     background: transparent!important;
+     z-index: 900;
 }
 
 .atcb-link {
     display: block;
     outline: none!important;
     cursor: pointer;
+     z-index: 10000;
 }
 
 .atcb-link:focus~ul,
 .atcb-link:active~ul,
 .atcb-list:hover{
     visibility:visible;
+     z-index: 10000;
 }
 
 .atcb-list {
@@ -33,7 +37,7 @@
     top: 100%;
     left: 0;
     width: 170px;
-    z-index: 900;
+    z-index: 10000;
 }
 
 .atcb-list,
@@ -43,11 +47,13 @@
     margin: 0;
     padding: 0;
     background: #fff;
+     z-index: 10000;
 }
 
 .atcb-item {
     float: none;
     text-align: left;
+     z-index: 10000;
 }
 
 .atcb-item-link
@@ -55,6 +61,7 @@
     text-decoration: none;
     outline: none;
     display: block;
+     z-index: 10000;
 }
 
 .atcb-item.hover,
@@ -74,6 +81,7 @@
     border: 1px solid rgb(186,186,186);
     border-radius: 2px;
     box-shadow: 0 0 5px #AAA;
+     z-index: 10000;
 }
 
 .atc-style-menu-wb .atcb-list,
@@ -81,6 +89,7 @@
 {
     background: #fff;
     color: #000;
+     z-index: 10000;
 }
 
 .atc-style-menu-wb .atcb-item,
@@ -89,6 +98,7 @@
     line-height: 1.3em;
     vertical-align: middle;
     zoom: 1;
+     z-index: 10000;
 }
 
 .atc-style-menu-wb .atcb-item-link,
@@ -102,6 +112,7 @@
     text-decoration: none;
     outline: none;
     padding: 5px 15px;
+     z-index: 10000;
 }
 
 .atc-style-menu-wb .atcb-item-link:hover,
@@ -109,10 +120,12 @@
 .atc-style-menu-wb .atcb-item-link:focus
 {
     color: #fff;
+     z-index: 10000;
 }
 
 .atc-style-menu-wb .atcb-item.hover,
 .atc-style-menu-wb .atcb-item:hover {
     background: rgb(66,129,244);
+     z-index: 10000;
 }
 
