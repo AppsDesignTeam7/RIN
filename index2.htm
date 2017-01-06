@@ -12,7 +12,7 @@
 <link href="_css/atc-style-menu-wb.css" rel="stylesheet" type="text/css">
 
 
-<link rel="stylesheet" type="text/css" href="_css/styles.css">
+<link rel="stylesheet" type="text/css" href="_css/styles2.css">
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
@@ -42,29 +42,26 @@
      
 </div>
 </a>
-
-
-<!--CODE USED FOR TESTING - NOT TO BE USED IN FINAL VERSION -->
-<!--The following works and adds the information to calendar. Presumably the problem with the calendar in the accordion (that the calendar does not actually add events to the calendar) is with the accordion itself
-<span class="addtocalendar atc-style-button-icon atc-style-menu-wb">
-        <a class="atcb-link">
-        <i class="fa fa-calendar fa-2x" class="addToCalendar"></i>
-        </a>	
-        <var class="atc_event">
-            <var class="atc_date_start">2016-11-28 17:00:00</var>
-            <var class="atc_date_end">2016-11-28 18:00:00</var>
-            <var class="atc_timezone">Europe/London</var>
-            <var class="atc_title">On Muggle Teapots</var>
-            <var class="atc_description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Si quae forte-possumus. Re mihi non aeque satisfacit, et quidem locis pluribus. Si quidem, inquit, tollerem, sed relinquo. Hoc etsi multimodis reprehendi potest, tamen accipio, quod dant.</var>
-            <var class="atc_location">Ministry of Magic</var>
-            <var class="atc_organizer">Arthur Weasley</var>
-            <var class="atc_organizer_email">a.weasley@ministryofmagic.org</var>
-        </var>
-    </span>
--->
-
+</div>
 
 <!--Site navigation new-->
+<ul id="navBar">
+    <li class="navLink" id="homeLink"><a href="index2.htm" class="indexLink">Home</a></li>
+    <li class="navLink" id="createEventLink"><a href="createEvent.htm">Create New Event</a></li>
+    <li class = "dropdown" class="navLink" id="myAccountLink">
+        <a href="javascript:void(0)" class="dropbtn">My Account</a>
+        <div class="dropdown-content">
+            <a href="myFavourites.htm">My Favourites</a>
+            <a href="manageMyEvent.htm">Manage My Events</a>
+            <a href="resetPassword.htm">Reset Password</a>
+            <a href="index.htm">Logout</a>
+            </div>
+    </li>
+    <li class="navLink" id="helpLink"><a href="help.htm">Help</a></li>
+</ul>
+
+<!--Site navigation new-->
+<!--
 <nav role = "navigation" id = "siteNavBar">
 <div id = "siteNavList">
 
@@ -87,50 +84,7 @@
 </nav>
 
 </div>
-
-<!--
-<nav role = "navigation">
-<div id = "eventNavList">
-    <li class="eventTypeNavButton active" id="seminarsNav"><div class="seminarsButton">Seminars</div></li>
-    <li class="eventTypeNavButton" id = "coursesNav"><div class = "coursesButton"><div class="seminarsButton">Courses</div></div></li>
-    <li class="eventTypeNavButton" id = "conferencesNav"><div class="seminarsButton">Conferences</div></li>
-</div>
-</nav>-->
-
-
-<!--Site navigation-->
-<!--
-<nav role = "navigation" id="siteNavBar">    
-    <a href = "index.htm"><button type="button" class="siteNavButton">
-        Home</button></a>
-   <a href = "createEvent.htm"> <button type = "button" class = "siteNavButton">
-        Create New Event</button></a>-->
-        
-<!--PHP to display this section when user is not logged in -->
-<!--
-    <button type="button" class="siteNavButton">
-        <a href="login.htm">Login/Register</a></button>
- -->
-<!-------------->
-
-<!--PHP to display this section when user is logged in -->
-<!--
-    <nav class="dropdown">
-        <button type="button" class="siteNavButton" class = "dropbtn" >My Account</button>
-            <div class="dropdown-content">
-            <a href="myFavourites.htm">My Favourites</a>
-            <a href="manageMyEvents.htm">Manage My Events</a>
-            <a href="resetPassword.htm">Reset Password</a>
-            <a href="index.htm">Logout</a>
-            </div>
-    </nav>-->
-<!-------- -->
-        <!--
-     <a href="help.htm" id="linkToHelpPage"><button type="button" class="siteNavButton">
-       Help</button></a>
-</nav>
-
-</div>-->
+-->
 
 <!--Search bar-->
 <section id="searchBar">
