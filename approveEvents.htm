@@ -1,0 +1,276 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta charset = "utf-8">
+<title>Event Approval</title>
+<!-- 1. Include style -->
+<link href="_css/atc-style-button-icon.css" rel="stylesheet" type="text/css">
+<link href="_css/atc-style-menu-wb.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="_css/styles.css">
+
+<!--TO ALTER LATER - the addition of this overriding spreadsheet is likely not the best way to do this. To find a better way -->
+<link rel="stylesheet" type="text/css" href="_css/favouriteStyles.css">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+</head>
+<body>
+
+<header role = "banner">
+<a href = "index.htm">
+ <div id="linkToHome">
+    <h1>RIN</h1>
+    <h2>Event Approval</h2>
+    </div>
+</a>
+
+<div id= "iefx">    
+<nav role = "navigation" id="siteNavBar">
+    <button type="button" class="siteNavButton">
+        <a href = "index.htm">Home</a></button>
+    <button type = "button" class = "siteNavButton">
+        <a href = "createEvent.htm">Create New Event</a></button>
+    <nav class="dropdown">
+        <button type="button" class = "dropbtn">My Account</button>
+            <div class="dropdown-content">
+            <a href="myFavourites.htm">My Favourites</a>
+            <a href="manageMyEvents.htm">Manage My Events</a>
+            <a href="displayAllUsers.htm">Verify Admin</a>  
+            <a href="approveEvents.htm">Event Approval</a>  
+            <a href="resetPassword.htm">Reset Password</a>  
+            <a href="index.htm">Logout</a>
+            </div>
+    </nav>
+    <button type="button" class="siteNavButton">
+        <a href="help.htm" id="linkToHelpPage">Help</a></button>  
+</nav>
+</div>
+    
+<div id="searchBar">
+<button type = "button" id="searchButton">Search</button>
+<input type="text" name="search" placeholder="Search.." id="searchField">
+</div>
+
+<div id = "expandedSearch">
+
+<div id = "subjectFilters">
+
+<form action="" id = "filterText">
+
+<input class = "checkbox" type = "checkbox" name = "subjectFilter" value = "Social Science">Social Science<br>
+
+<input class = "checkbox" type="checkbox" name = "subjectFilter" value="epidemeology">
+Epidemeology <br>
+
+<input class = "checkbox" type = "checkbox" name = "subjectFilter" value = "Cognitive Science">Cognitive Science<br>
+
+<input class = "checkbox" type = "checkbox" name = "subjectFilter" value = "History of Science">History of Science<br>
+
+<input class = "checkbox" type = "checkbox" name = "subjectFilter" value = "Behavioural Science">Behavioural Science<br>
+
+</form>
+
+</div>
+
+
+<div id = "dateFromFilters">
+
+        <h5>From</h5>
+<select class = "day">
+    <option value = "1">1</option>
+    <option value = "2">2</option>
+    <option value = "3">3</option>
+    <option value = "4">4</option>
+    <option value = "5">5</option>
+    <option value = "6">6</option>
+    <option value = "7">7</option>
+    <option value = "8">8</option>
+    <option value = "9">9</option>
+    <option value = "10">10</option>
+    <option value = "11">11</option>
+    <option value = "12">12</option>
+    <option value = "13">13</option>
+    <option value = "14">14</option>
+    <option value = "15">15</option>
+    <option value = "16">16</option>
+    <option value = "17">17</option>
+    <option value = "18">18</option>
+    <option value = "19">19</option>
+    <option value = "20">20</option>
+    <option value = "21">21</option>
+    <option value = "22">22</option>
+    <option value = "23">23</option>
+    <option value = "24">24</option>
+    <option value = "25">25</option>
+    <option value = "26">26</option>
+    <option value = "27">27</option>
+    <option value = "28">28</option>
+    <option value = "29">29</option>
+    <option value = "30">30</option>
+    <option value = "31">31</option>
+</select>
+
+<select class = "month">
+    <option value = "January">January</option>
+    <option value = "February">February</option>
+    <option value = "March">March</option>
+    <option value = "April">April</option>
+    <option value = "May">May</option>
+    <option value = "June">June</option>
+    <option value = "July">July</option>
+    <option value = "August">August</option>
+    <option value = "September">September</option>
+    <option value = "October">October</option>
+    <option value = "November">November</option>
+    <option value = "December">December</option>
+</select>
+
+<select class = "year">
+    <option value = "2016">2016</option>
+    <option value = "2017">2017</option>
+    <option value = "2018">2018</option>
+    <option value = "2019">2019</option>
+    <option value =  "2020">2020</option>
+</select>
+
+
+<h5>To:</h5>
+<select class = "day">
+    <option value = "1">1</option>
+    <option value = "2">2</option>
+    <option value = "3">3</option>
+    <option value = "4">4</option>
+    <option value = "5">5</option>
+    <option value = "6">6</option>
+    <option value = "7">7</option>
+    <option value = "8">8</option>
+    <option value = "9">9</option>
+    <option value = "10">10</option>
+    <option value = "11">11</option>
+    <option value = "12">12</option>
+    <option value = "13">13</option>
+    <option value = "14">14</option>
+    <option value = "15">15</option>
+    <option value = "16">16</option>
+    <option value = "17">17</option>
+    <option value = "18">18</option>
+    <option value = "19">19</option>
+    <option value = "20">20</option>
+    <option value = "21">21</option>
+    <option value = "22">22</option>
+    <option value = "23">23</option>
+    <option value = "24">24</option>
+    <option value = "25">25</option>
+    <option value = "26">26</option>
+    <option value = "27">27</option>
+    <option value = "28">28</option>
+    <option value = "29">29</option>
+    <option value = "30">30</option>
+    <option value = "31">31</option>
+</select>
+
+<select class = "month">
+    <option value = "January">January</option>
+    <option value = "February">February</option>
+    <option value = "March">March</option>
+    <option value = "April">April</option>
+    <option value = "May">May</option>
+    <option value = "June">June</option>
+    <option value = "July">July</option>
+    <option value = "August">August</option>
+    <option value = "September">September</option>
+    <option value = "October">October</option>
+    <option value = "November">November</option>
+    <option value = "December">December</option>
+</select>
+
+<select class = "year">
+    <option value = "2016">2016</option>
+    <option value = "2017">2017</option>
+    <option value = "2018">2018</option>
+    <option value = "2019">2019</option>
+    <option value =  "2020">2020</option>
+</select>
+
+</div>
+
+</div>  
+
+</header>
+    
+
+<main role = "main">
+
+<!-- MANAGE ADMIN USERS CONTENT -->
+
+<section id="favourites">
+
+<br>
+<table style = "width: 100%" class = "eventTableText">
+    
+    <!-- tr is the row -->
+    <!-- table cell is td -->
+    <!-- th is the header -->
+    <tr class = "eventTableHeader">
+        <th> Event Title</th>
+        <th> Date </th>
+        <th> Event Time </th>
+        <th> Status</th>
+        <th> Approval </th>  
+    </tr>
+    <tr>
+        <td>On Muggle Teapots</td>
+        <td>Monday 28th November 2016</td>
+        <td>17:00</td>
+        <td>Approved</td>
+        <td><button class="approveBtn">Approve</button> <button class="disapproveBtn">Disapprove</button></td> 
+    <tr>
+        <td>The Employment Conditions of House Elves</td>
+        <td>Tuesday 29th November 2016</td>
+        <td>18:00</td>
+        <td>Not Approved</td>
+        <td><button class="approveBtn">Approve</button> <button class="disapproveBtn">Disapprove</button></td> 
+    </tr>
+    <tr>
+        <td>The Use of the Patronus</td>
+        <td>Wednesday 30th November 2016</td>
+        <td>19:00</td>
+        <td>Approved</td>
+        <td><button class="approveBtn">Approve</button> <button class="disapproveBtn">Disapprove</button></td> 
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><button class="approveBtn">Approve</button> <button class="disapproveBtn">Disapprove</button></td> 
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><button class="approveBtn">Approve</button> <button class="disapproveBtn">Disapprove</button></td> 
+    </tr>
+  
+</table>
+
+</section>
+
+
+</main>
+
+<footer id="pageFooter">
+    <p>
+        <a href="tandc.htm">Terms and Conditions</a> 
+        <a href ="contact.htm">Contact</a> 
+        <a href= "copy.htm">Copyright</a> 
+    </p>
+</footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src = "_scripts/myFavouritesScript.js"></script>
+
+</body>
+</html>
