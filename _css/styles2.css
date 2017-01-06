@@ -110,158 +110,104 @@ ul {
 }
 
 /* NAVIGATION BAR STYLING */
-/* MABEL - change positioning of this so it sits in the same line at h2 (where h2 is e.g. 'Home') */
 
-/* Section for the navigation buttons, including Home, Create New Event */
-/*
-#siteNavBar{
-    position: absolute;
-    top: 0em;
-    right: 0;*/
-    /*background: #ffab41;*/
-    /*background: #7887ab; */ /* light blue */
-    /*background: #061539; /*dark blue */
-    /*border-radius: 10px;
-   /* height: 100%;
-    /*height: 100%;*/
-/*
-    float: right;
-    position: relative;
-    top: -20px;
-    }*/
-    
-#siteNavBar {
+ul#navBar {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background: #061539; /*dark blue */
+    /*background-color: #333;*/
+    background-color: #061539;
     width: 100%;
-    }
+}
+
+li.navLink {
+    float: left;
+    border-right: 0.2em solid #061539;
+    border-top-left-radius: 10px;
     
-/* Puts the navigation to top right */
-/*
-#siteNavList {
-    position: absolute;
-    top: 0em;
-    right: 0;
-    height: 100%;
-    width: 60%;
-}*/
+}
 
+/* Spacing for each link */
+#homeLink{
+    width: 22%;
+    text-align: center;
+}
 
-/* Buttons for site navigation */
+#createEventLink{
+    width: 30%;
+    text-align: center;
+}
 
-/*
-.siteNavButton a {
-    text-decoration: none;
-    padding-left: 1em;
-    padding-right: 1em;
-    color: white;
-    width: 50%;
-    height: 100%;
-    }*/
-    
+#myAccountLink{
+    width: 25%;
+    text-align: center;
+    border-right: 0;
+}
 
-
-
-
-/* Applies only to the links that are within the tag #siteNavBar */
-/*
-#siteNavBar a {
-    text-decoration: none;
-    color: white;
-    /*font-size: 2em;
-    }*/
-    
-/* For the drop down list z-index from My account */ 
-#iefix {
-    position: relative;
-    /*z-index: 100000;*/
+#helpLink {
+    width: 20%;
+    text-align: center;
 }
 
 
-.siteNavButton {
-    background: #061539; /*dark blue */
- }
-
-/* styling for site navigation links */
-.siteNavButton a, .dropbtn {
+li.navLink a, .dropbtn {
     display: inline-block;
     color: white;
     text-align: center;
     /*padding: 14px 16px;*/
-    text-decoration: none;
-    font-size: 0.9em;
-    
-    background: #061539; /*dark blue */
-    border-radius: 0;
-    
-    padding-left: 1em;
-    padding-right: 1em;
-    padding-bottom: 0.2em;
+   /* padding: 0.2em 2em;*/
     padding-top: 0.2em;
-    border-right: 1px solid white;
+    padding-bottom: 0.2em;
+    text-decoration: none;
+    width: 100%;
+    font-size: 0.9em;
+    background-color: dimgray;
     
-    cursor: pointer;  
-    float: left;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    
+    
 }
 
-/* Action for hovering over link */
-.siteNavButton a:hover, .dropdown:hover .dropbtn {
-    color: azure;
+li a:hover, .dropdown:hover .dropbtn {
+    background-color: lightgrey;
 }
 
-/* Drop down position - My account */ 
-.siteNavButton.dropdown {
-    /*position: relative;*/
+li.dropdown {
     display: inline-block;
-    /*border-style: none none none solid;*/
-    /*color: white;*/
-    /*font-size: 0.9em;*/
-    /*margin: 0;*/
-    /*height: 100%;*/
-    /*top: 0px;*/
-    z-index: 3; /*This fixed the dropdown menun issue */
-    
+    border-right: 0.2em solid #061539;
 }
 
-/* Dropdown list background */
+/*
+li#homeLink {
+    width: 10%;
+}*/
+
 .dropdown-content {
     display: none;
     position: absolute;
-    /*z-index: = 2000;*/
-    background-color: #bcbcbc;
+    background-color: #f9f9f9;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    /*min-width: 8px;
-    box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.2);*/
-    /*overflow:hidden;*/
+    z-index: 3;
 }
 
-/* Dropdown list text */
-.dropdown-content a {
-    color: white;
+.dropdown-content a{
+    color: black;
     padding: 12px 16px;
-    /*padding: 2px 4px;*/
     text-decoration: none;
     display: block;
     text-align: left;
-    /*font-size: 0.55em;*/
 }
 
-/* Dropdown list's colour when hover is on top */
-.dropdown-content a:hover {
-    background-color: #e6e6e6
+.dropdown-content a:hover{
+    background-color: #f1f1f1
 }
 
-/* Dropdown list when hover on top */
 .dropdown:hover .dropdown-content {
     display: block;
 }
-
-/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
-.show {display:block;}
 
 /* STYLING FOR SEARCH SECTION */
 
@@ -284,7 +230,7 @@ ul {
     text-align: left;
     background-color: white;
     position: absolute;
-    height: inherit;
+    height: 26px;
     left: 0.1em;
     
     /*REMOVED:
@@ -303,13 +249,12 @@ ul {
     position: absolute;
     right: 0.1em;
     cursor: pointer;
-    height: inherit;
     background-color: white;
     color: #061539;
     font-weight: bold;
-    border-style: solid;
     border-radius: 0;
-    border-width: 1px;
+    border-left: 1px solid;
+    height: 26px;
     
 /* REMOVED AS SEARCH BUTTON WAS MOVING
     position: relative;
@@ -430,14 +375,15 @@ h4 {
     color: Black;
     /*position: static;*/
    /* align-items: */
-    background-color: #e3e3e3;
+   /* background-color: #e3e3e3;*/
+   background-color: lightgray;
 }
 
 /* Background colour for seminar button */
 .active {
     /*background-color: #FFE4C4;*/
    /* background-color: #7887ab;*/
-     background-color: gray;
+     background-color: lightsteelblue;
 } 
 
 /*This is the individual button setting*/
@@ -609,6 +555,7 @@ h3 {
     padding-left: 7em;
     padding-bottom: 1em;
     color: gray;
+    background: white;
  }
     
 /* the further details of the event that are displayed when it has been expanded */
