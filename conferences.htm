@@ -2,38 +2,43 @@
 <html lang="en">
 <head>
 <meta charset = "utf-8">
-<title>My Favourites</title>
-<!-- 1. Include style -->
+<title>RIN Homepage</title>
+
 <link href="_css/atc-style-button-icon.css" rel="stylesheet" type="text/css">
 <link href="_css/atc-style-menu-wb.css" rel="stylesheet" type="text/css">
+
+
 <link rel="stylesheet" type="text/css" href="_css/styles.css">
 
-<!--TO ALTER LATER - the addition of this overriding spreadsheet is likely not the best way to do this. To find a better way -->
-<link rel="stylesheet" type="text/css" href="_css/favouriteStyles.css">
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+
+
+
 </head>
 <body>
 
-    <!-- 2. Include script -->
-     <script type="text/javascript">(function () {
+<!--script for calendar function-->
+<script type="text/javascript">(function () {
             if (window.addtocalendar)if(typeof window.addtocalendar.start == "function")return;
             if (window.ifaddtocalendar == undefined) { window.ifaddtocalendar = 1;
                 var d = document, s = d.createElement('script'), g = 'getElementsByTagName';
                 s.type = 'text/javascript';s.charset = 'UTF-8';s.async = true;
                 s.src = ('https:' == window.location.protocol ? 'https' : 'http')+'://addtocalendar.com/atc/1.5/atc.min.js';
                 var h = d[g]('body')[0];h.appendChild(s); }})();
-    </script>
+</script>
 
-<!--Banner-->
 <header role = "banner">
-<div id="banner">
+
+<!--Banner -->
+<div id = "banner">
 <a href = "index.htm">
- <div id="linkToHome">
+<div id="linkToHome">
     <h1>RIN</h1>
-    <h2>My Favourites</h2>
-    </div>
+    <h2>Homepage</h2>
+     
+</div>
 </a>
 
 <!--Site navigation for smaller screens-->
@@ -269,9 +274,9 @@
 <!--Event navigation-->
 <nav role = "navigation">
 <div id = "eventNavList">
-    <li class="eventTypeNavButton active" id="seminarsNav"><div class="seminarsButton">Seminars</div></li>
-    <li class="eventTypeNavButton" id = "coursesNav"><div class = "coursesButton"><div class="seminarsButton">Courses</div></div></li>
-    <li class="eventTypeNavButton" id = "conferencesNav"><div class="seminarsButton">Conferences</div></li>
+    <a href="index.htm"><li class="eventTypeNavButton active" id="seminarsNav"><div class="seminarsButton">Seminars</div></li></a>
+    <a href="courses.htm"><li class="eventTypeNavButton" id = "coursesNav"><div class = "coursesButton"><div class="seminarsButton">Courses</div></div></li></a>
+    <a href="conferences.htm"><li class="eventTypeNavButton" id = "conferencesNav"><div class="seminarsButton">Conferences</div></li></a>
 </div>
 </nav>
 
@@ -282,22 +287,24 @@
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB9YAjl-Zpvqyr6RqQFW9_18HKnelIFXXA&callback=initMap">
 </script>
 
-<main role = "main">
+<main>
 
-<!-- FAVOURITES CONTENT -->
+<!--Event details-->
 
-<section id="favourites">
+<!--CONFERENCES TAB CONTENT-->
+<section id = "conferences">
 
-<!--start of favourites accordion-->
+<!--Start of conferences accordion-->
 <div class = "accordion">
 
-<!-- Favourite 1 -->
-<!--favourite 1 accordion header -->
+<!--conference 1 accordion header-->
 <section class = "eventSummarySection">
 
-<h3>On Muggle Teapots</h3>
+<h3>The Elder Wand: The Most Significant of the Deathly Hallows?</h3>
 
-<img src="_images/teapot.jpg" alt = "Img1" class= "eventImage">  
+<img src="_images/elderWand.jpg" alt = "Img1" class= "eventImage">
+
+<!--<i class="fa fa-calendar fa-2x"></i>-->
 
 <span class="addtocalendar atc-style-button-icon atc-style-menu-wb">
         <a class="atcb-link">
@@ -308,53 +315,51 @@
             <var class="atc_date_start">2016-11-28 17:00:00</var>
             <var class="atc_date_end">2016-11-28 18:00:00</var>
             <var class="atc_timezone">Europe/London</var>
-            <var class="atc_title">On Muggle Teapots</var>
+            <var class="atc_title">The Elder Wand: The Most Significant of the Deathly Hallows?</var>
             <var class="atc_description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Si quae forte-possumus. Re mihi non aeque satisfacit, et quidem locis pluribus. Si quidem, inquit, tollerem, sed relinquo. Hoc etsi multimodis reprehendi potest, tamen accipio, quod dant.</var>
             <var class="atc_location">Ministry of Magic</var>
-            <var class="atc_organizer">Arthur Weasley</var>
-            <var class="atc_organizer_email">a.weasley@ministryofmagic.org</var>
+            <var class="atc_organizer">Albus Dumbledore</var>
+            <var class="atc_organizer_email">a.dumbledore@hogwarts.ac.uk</var>
         </var>
-</span>
+    </span>
 
 <i class="fa fa-star fa-2x" aria-hidden="true"></i>
-
+    
     <ul class="eventSummaryDetails">
-        <li>Mr Weasley</li>
-        <li>Department of Muggle Relations, <div class="address">WC1E 6BT</div></li>
+        <li>Dumbledore</li>
+        <li>Department of Mysteries, <div class="address">EH8 9YL</div></li>
         <li>Ministry of Magic</li>
         <li>17:00</li>
         <li>Monday 28th November 2016</li>
     </ul>
-    
 </section>
 
-<!--seminar 1 accordion contents - e.g. what is visible when the section has been expanded-->
+<!--conference 1 accordion contents-->
+
 <div class="furtherDetails">
-
-
-<div class="textDetails">        
+        
 <p>Free</p>
         
 <p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Si quae forte-possumus. Re mihi non aeque satisfacit, et quidem locis pluribus. Si quidem, inquit, tollerem, sed relinquo. Hoc etsi multimodis reprehendi potest, tamen accipio, quod dant.</p>
+
+<p>Abstract deadline: 20th September 2016</p>
         
 <p>
-<a href = "index.htm" class="hashtag">#teapots</a> 
-<a href = "index.htm" class="hashtag">#arthurweasley</a>
-<a href = "index.htm" class="hashtag">#mugglestudies</a>
+<a href = "index.htm" class="hashtag">#dumbledore</a>
+
 </p>
         
 <p>
-<a href="https://www.ucl.ac.uk" class="linkToEventSite">http://www.ministryofmagic.com</a>
+<a href="https://www.ucl.ac.uk" class = "linkToEventSite">http://www.hogwarts/da.com</a>
 </p>
-</div>
 
 <div class="map"></div>
-
-</div>
-<!--end of favourite 1 contents-->
     
-<!--Favourite 2 -->
-<!--favourite 2 accordion header--> 
+</div>    
+    
+    
+<!--Conference 2-->
+<!--conference 2 accordion header-->
 <section class = "eventSummarySection">
 
 <h3>The Legacy of Albus Dumbledore</h3>
@@ -413,10 +418,10 @@
 <div class="map"></div>
     
 </div>
-<!--end of favourite 2 accordion contents -->
-    
-<!--Favourite 3-->
-<!--favourite 3 accordion header-->
+<!--end of course 1 accordion contents-->
+
+<!--Conference 3-->
+<!--conference 3 accordion header-->
 <section class = "eventSummarySection">
 <h3>An Evening with Nearly Headless Nick</h3>
 
@@ -473,13 +478,15 @@
 <div class="map"></div>
     
 </div>
-    
-</div>
-<!--end of favourites accordion-->
+<!--end of conference 3 accordion contents-->
+
+</div>  
+<!--end of accordion 3-->
+
 </section>
-
-
 </main>
+
+
 
 <!--Footer--> 
 <footer id = "pageFooter">
@@ -490,10 +497,13 @@
 </ul>
 </footer>
 
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-<script src = "_scripts/myFavouritesScript.js"></script>
+<script src = "_scripts/conferences.js"></script>
 <script src = "_scripts/script.js"></script>
+
+
 
 </body>
 </html>
