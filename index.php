@@ -31,82 +31,7 @@
 <header role = "banner">
 
 <!--Banner -->
-<div id = "banner">
-<a href = "index.htm">
-<div id="linkToHome">
-    <h1>RIN</h1>
-    <h2>Homepage</h2>
-     
-</div>
-</a>
-
-<!--Site navigation for smaller screens-->
-
-<div id = "smallScreenNav">
-
-<div class="dropdownNav">
-    <button class="dropbtnNav"><i class="fa fa-navicon"></i></button>
-        <div class="dropdown-contentNav">
-            <a href="index.htm">Home</a>
-            <a href="createEvent.htm">Create New Event</a> 
-            
-            <!--Display this with PHP if the user is not logged in-->
-            <a href="login.htm">Login</a>
-            <!--End of section to hide-->
-            
-            <!--Hide this with php if the user is logged in-->
-              <div class="dropdownIn">
-                <a href="javascript:void(0)" class="dropbtnIn">My Account</a>
-                <div class="dropdown-contentIn">
-                    <a href="myFavourites.htm">My Favourites</a>
-                    <a href="manageMyEvent.htm">Manage My Events</a>
-                    <a href="resetPassword.htm">Reset Password</a>
-                    <a href="index.htm">Logout</a>
-                </div>
-             </div>
-             <!--end of section to hide-->
-             
-            <a href="help.htm">Help</a>
-        </div>
-</div>
-
-</div>
-
-
-<!--Site navigation for larger screens-->
-
-<div id="siteNav">
-
-<ul id="navBar">
-    <li class="navLink" id="homeLink"><a href="index.htm" class="indexLink"><div class="linkText">HOME</div></a></li>
-    <li class="navLink" id="createEventLink"><a href="createEvent.htm"><div class="linkText">CREATE NEW EVENT</div></a></li>
-    
-    
-    <!--Hide this section with php if the user is not logged in; hide otherwise -->
-    
-    <li class = "dropdown" class="navLink" id="myAccountLink">
-        <a href="javascript:void(0)" class="dropbtn"><div class="linkText">MY ACCOUNT</div></a>
-        <div class="dropdown-content">
-            <a href="myFavourites.htm">My Favourites</a>
-            <a href="manageMyEvent.htm">Manage My Events</a>
-            <a href="resetPassword.htm">Reset Password</a>
-            <a href="index.htm">Logout</a>
-        </div>
-    </li>
-    <!--end of section-->
-    
-    <!--Show this section with php if the user is not logged in; hide if logged in-->
-    <!--
-    <li class="navLink" id="myAccountLink"><a href = "login.htm"><div class="linkText">LOGIN</div></a></li>
-    -->
-    <!--end of section-->
-    
-    <li class="navLink" id="helpLink"><a href="help.htm"><div class="linkText">HELP</div></a></li>
-</ul>
-
-</div>
-
-</div>
+<?php include('_php/banner.php'); ?>
 
 <!--Search bar-->
 <section id="searchBar">
@@ -120,27 +45,14 @@
 
 <div id = "subjectFilters">
 
-<form action="" id = "filterText">
+<form action="_php/applyFilters.php" method="post" id = "filterText">
 
 <!--Subject filters-->
 <ul class="checkbox-grid">
-    <li><input class = "checkbox" type = "checkbox" name = "subjectFilter" value = "Social Science"><label for="subjectFilter">Social Science</label></li>
-    <li><input class = "checkbox" type="checkbox" name = "subjectFilter" value="epidemeology"><label for="subjectFilter">Epidemeology</label></li>
-    <li><input class = "checkbox" type = "checkbox" name = "subjectFilter" value = "Cognitive Science"><label for="subjectFilter">Cognitive Science</label></li>
-    <li><input class = "checkbox" type = "checkbox" name = "subjectFilter" value = "History of Science"><label for="subjectFilter">History of Science</label></li>
-    <li><input class = "checkbox" type = "checkbox" name = "subjectFilter" value = "Behavioural Science"><label for="subjectFilter">Behavioural Science</label></li>
-    <li><input class = "checkbox" type = "checkbox" name = "subjectFilter" value = "Social Medicine"><label for="subjectFilter">Social Medicine</label></li>
-    <li><input class = "checkbox" type = "checkbox" name = "subjectFilter" value = "Computer Science"><label for="subjectFilter">Computer Science</label></li>
-    <li><input class = "checkbox" type = "checkbox" name = "subjectFilter" value = "Medical Ethics"><label for="subjectFilter">Medical Ethics</label></li>
-    <li><input class = "checkbox" type = "checkbox" name = "subjectFilter" value = "Statistics"><label for="subjectFilter">Statistics</label></li>
-    <li><input class = "checkbox" type = "checkbox" name = "subjectFilter" value = "Public Health"><label for="subjectFilter">Public Health</label></li>
-    <li><input class = "checkbox" type = "checkbox" name = "subjectFilter" value = "Nutrition"><label for="subjectFilter">Nutrition</label></li>
-    <li><input class = "checkbox" type = "checkbox" name = "subjectFilter" value = "Child Health"><label for="subjectFilter">Child Health</label></li>
-    <li><input class = "checkbox" type = "checkbox" name = "subjectFilter" value = "Obesity"><label for="subjectFilter">Obesity</label></li>
-    <li><input class = "checkbox" type = "checkbox" name = "subjectFilter" value = "Machine Learning"><label for="subjectFilter">Machine Learning</label></li>
-    <li><input class = "checkbox" type = "checkbox" name = "subjectFilter" value = "AI"><label for="subjectFilter">AI</label></li>
-    <li><input class = "checkbox" type = "checkbox" name = "subjectFilter" value = "Structural Analysis"><label for="subjectFilter">Structural Analysis</label></li>
+    <?php include("_php/showTags.php"); ?>
 </ul>
+
+<input type="submit" value="Apply"><br>
 
 </form>
 
