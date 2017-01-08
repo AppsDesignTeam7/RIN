@@ -88,7 +88,6 @@ h5 {
 }
 
 button {
-    height: 20%;
     border: none;
     border-radius: 25px;
     text-align: center;
@@ -1011,8 +1010,8 @@ li.footerLink a {
     font-style: normal;
     text-decoration: none;
     text-align: center;
-    color: black;
-    background-color: #FFE4C4;
+    color: white;
+    background-color: black;
 }
 
 
@@ -1026,11 +1025,12 @@ table, th, td {
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    background-color: #FFE4C4;
+    background-color: lightgrey;
     border: none;
     text-align: center;
-    font-size: 0.7em;
-    margin: 0.5em 0.5em;     
+    font-size: 0.7em; 
+    margin: 0.5em; 
+    width:8em;
 }
 
 .disapproveBtn {
@@ -1038,11 +1038,12 @@ table, th, td {
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    background-color: #FFE4C4;
+    background-color: lightgrey;
     border: none;
     text-align: center;
     font-size: 0.7em;
-    margin: 0.5em 0.5em; 
+    margin: 0.5em;
+    width:8em;
 }
 
 /* ALL ADMIN USERS PAGE STYLING */
@@ -1059,8 +1060,8 @@ table, th, td {
     font-style: normal;
     text-decoration: none;
     text-align: center;
-    color: black;
-    background-color: #FFE4C4;
+    color: white;
+    background-color: black;
 }
 
 table, th, td {
@@ -1073,7 +1074,7 @@ table, th, td {
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    background-color: #FFE4C4;
+    background-color: lightgrey;
     border: none;
     text-align: center;
     font-size: 0.7em;
@@ -1085,7 +1086,7 @@ table, th, td {
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    background-color: #FFE4C4;
+    background-color: lightgrey;
     border: none;
     text-align: center;
     font-size: 0.7em;
