@@ -88,6 +88,7 @@ h5 {
 }
 
 button {
+    height: 20%;
     border: none;
     border-radius: 25px;
     text-align: center;
@@ -608,8 +609,8 @@ li.dropdown {
     margin: 0px;
     padding: 1em 1em;
     color: gray;
-    /*min-height: 120px;*/
-    min-height: 80px;
+    min-height: 120px;
+    /*min-height: 80px;*/
     }
     
     
@@ -627,6 +628,7 @@ li.dropdown {
     padding-left: 1.6em;
     padding-top: 0;
     padding-bottom: 0em;
+    min-height: 10px;
     }
 
 /* styling for hashtags */
@@ -928,17 +930,19 @@ li.footerLink a {
 /* MANAGE MY EVENTS PAGE STYLING */
 
 .eventApprovalStatus {
-    position: absolute;
+    /*position: absolute;
     right: 5%;
-    top: 2em;
+    top: 2em;*/
     display: inline-block;
-    color: red;
     size: 1em;
+    float: right;
+    margin-right: 1em;
 }
 
 .eventApprovalStatusText {
     font-size: 0.7em;
     display: inline-block;
+    color: #061539;
 }
 
 .editEventButton {

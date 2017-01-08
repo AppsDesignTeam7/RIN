@@ -3,9 +3,9 @@
 }
 
 .eventTypeNavButton#conferencesNav {
-    background-color: lightsteelblue;
+    background-color: lightgray;
 }
 
 .eventTypeNavButton#coursesNav {
-    background-color: lightgray;
+    background-color: lightsteelblue;
 }
