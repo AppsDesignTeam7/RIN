@@ -8,17 +8,22 @@ var searchField = document.getElementById("searchField");
 var calendarButton = document.getElementsByClassName("calendarButton");
 var favouriteStar = document.getElementsByClassName("fa.fa-star");
 var dropdown = document.getElementById("dropdown");
+//var currentAddress;
 
 
 // FUNCTIONS
 window.onload = function () {
 
+
 // sets accordion to be unexpanded at start (rather than default of having one section expanded at start)
 $(".accordion").accordion({
 active: false,
 collapsible: true,
-heightStyle: "content"
+heightStyle: "content", 
 });
+
+
+ 
 
 
 // when the favourite star is clicked, the normal expansion function of the accordion is stoppped (this is to allow the star area of the accordion to be clickable)
@@ -48,25 +53,17 @@ $(".accordion .atc-style-menu-wb").click(function(event) {
 
 });
 
-/* CODE USED FOR TESTING - NOT TO BE USED IN FINAL VERSION
- // Enables the testLink to function as expected when on the header of the accordion
-  $(".testLink").click(function () {
-  event.stopPropagation();
- event.preventDefault();
- $(this).css("color","Gold");
-// window.location.href="https://www.ucl.ac.uk/";
- window.open($(this).attr('href'));
- console.log($(this).attr('href'));
- });*/
+$(".eventSummarySection").click(function() {
+    initMap();
+});
 
-seminars.style.display = "block";
-courses.style.display = "none";
+/*seminars.style.display = "block";*/
+/*courses.style.display = "none";
 conferences.style.display = "none";
-expandedSearch.style.display = "none";
+expandedSearch.style.display = "none";*/
 };
 
-
-
+/*
 document.getElementById("seminarsNav").onclick = function() {
 
 seminars.style.display = "block";
@@ -105,6 +102,7 @@ coursesNav.style.backgroundColor = "#e3e3e3";
 conferences.style.display = "block";
 conferencesNav.style.backgroundColor = "lightsteelblue";
 };
+*/
 
 document.getElementById("searchField").onfocus = function () {
 
@@ -130,3 +128,45 @@ document.getElementsByClassName("dropbtn").onfocus = function () {
 
 dropdown.style.display = "block";
 };
+
+
+// FOR THE MAPS 
+ function initMap() {
+     
+     var active = $(".accordion").accordion('option', 'active');
+     console.log(active);
+ 
+    var map = new google.maps.Map(document.getElementsByClassName("map")[active], {
+            zoom: 14,
+            center: {lat: -34.397, lng: 150.644}
+    });
+        
+        var geocoder = new google.maps.Geocoder();
+
+        geocodeAddress(geocoder, map);
+}
+
+function geocodeAddress(geocoder, resultsMap) {
+        //var address = //document.getElementById('address').value;
+        
+    $(".accordion").accordion({
+        activate: function(event, ui) {
+            var address = ui.newHeader.find(".address").html();
+        
+            geocoder.geocode({'address': address}, function(results, status) {
+        
+                if (status === 'OK') {
+                    resultsMap.setCenter(results[0].geometry.location);
+                    var marker = new google.maps.Marker({
+                          map: resultsMap,
+                          position: results[0].geometry.location
+                    });
+                } else {
+                    //alert('Geocode was not successful for the following reason: ' + status);
+                }
+            });
+        }
+    })
+}
+
+
