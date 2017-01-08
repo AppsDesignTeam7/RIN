@@ -9,6 +9,7 @@ html {
     font-weight: normal;
 	font-style: normal;
     color: black;
+    height: 100%;
     /*font-size: 1em;*/
 }
 
@@ -19,6 +20,7 @@ body {
 	font: 100% "Trebuchet MS", Helvetica, sans-serif;
     background: white;
     margin: auto;
+    height: 100%;
     
     /* REMOVED: */
     /*padding: 1em 50px;*/
@@ -28,10 +30,9 @@ body {
 
 /* style for the header section  */
 header {
-        /*background: #FFE4C4;*/
-        background: #061539; /*dark blue */
+        background: #061539;
         position: relative;
-    }
+}
 
 .notBlueLink{
     color:black;
@@ -40,7 +41,7 @@ header {
 /*h1 is the page title RIN*/
 h1 {
 	font-family: "Trebuchet MS", Helvetica, sans-serif;
-	font-size: 3em;
+	font-size: 2em;
 	font-weight: bold;
 	font-style: normal;
 	margin: 0em 0em 0em 0em;
@@ -54,17 +55,23 @@ h1 {
 /*h2 is the subtitle (e.g. Manage My Events)*/
 h2 {
     font-family: "Trebuchet MS", Helvetica, sans-serif;
-	font-size: 1em;
+	font-size: 0.8em;
 	font-weight: normal;
 	font-style: normal;
-	/*margin: 0 0 0;*/
     margin: 0em 0em 0em 0em;
 	padding: 0px 0px;
     padding-left: 0.4em;
-    /*color: black;*/
-    
     color: white;
     display: inline;
+    }
+    
+/*h4 is the small at the top of individual pages, e.g. "Register"*/
+h4 {
+    font-size: 1em;
+    font-weight: bold;
+    font-style: normal;
+    color: gray;
+    text-align: center;
     }
 
 /* NOTE: Saw a video on lynda.com that said not to use h5 unless referrring to headings so we can maybe make a new class for the text in the event descriptions instead of using h5 for it? Like <p class = "moreDetails">? */
@@ -75,15 +82,14 @@ h5 {
 	font-weight: normal;
 	font-style: normal;
 	margin: 0 0 0;
-	padding: 0px 0px;
     color: grey;
     text-align: left;
+    padding: 0.5em 0;
 }
 
 button {
     height: 20%;
     border: none;
-    /*word-wrap:break-word;*/
     border-radius: 25px;
     text-align: center;
     }
@@ -102,166 +108,262 @@ ul {
     
 /* BANNER STYLING */
 #banner{
-    padding-bottom: 0.2em;
-    padding-left: 0em;
+    padding-left: 1em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    padding-right: 0.5em;
     margin-top: 0em;
     position: relative;
-    /*height: 50%;*/
+    height: 100%;
 }
 
-/* NAVIGATION BAR STYLING */
-/* MABEL - change positioning of this so it sits in the same line at h2 (where h2 is e.g. 'Home') */
 
-/* Section for the navigation buttons, including Home, Create New Event */
-/*
-#siteNavBar{
+/* STYLING FOR SMALL-SCREEN NAVIGATION */
+
+/* Controls whether to use small-screen or normal navigation */
+@media screen and (min-width: 730px) {
+    #smallScreenNav {
+    display: none;
+    }
+}
+
+@media screen and (max-width: 730px) {
+    #siteNav {
+        display: none;
+    }
+}
+
+.fa.fa-navicon {
+    color: white;
+}
+
+/* NAVIGATION FOR SMALL SCREEN*/
+
+/* positions the navigation icon to the top right of the banner */
+#smallScreenNav {
     position: absolute;
-    top: 0em;
-    right: 0;*/
-    /*background: #ffab41;*/
-    /*background: #7887ab; */ /* light blue */
-    /*background: #061539; /*dark blue */
-    /*border-radius: 10px;
-   /* height: 100%;
-    /*height: 100%;*/
-/*
-    float: right;
+    top: 0;
+    right: 0;
+    z-index: 999;
+}
+
+/* styles the drop-down navigation menu */
+.dropbtnNav {
+    background-color: inherit;
+    color: white;
+    /*padding: 16px;*/
+    /*font-size: h1;*/
+    height: 100%;
+    border: none;
+    cursor: pointer;
+    border-radius: 0;
+    font-size: 24px;
+    padding: 0.5em;
+}
+
+/* positions the dropdown navigation section */
+.dropdownNav {
     position: relative;
-    top: -20px;
-    }*/
-    
-#siteNavBar {
+    display: inline-block;
+}
+
+/* styling for the content of the drop down navigation */
+.dropdown-contentNav {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 10;
+}
+
+/* styling for the links in the drop-down navigation */
+.dropdown-contentNav a{
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 0.7em;
+    border-bottom: solid 0.5px whitesmoke;
+}
+
+/* styling for hovering over the links in the drop-down navigation menu */
+.dropdown-contentNav a:hover{
+    background-color: #f1f1f1;
+}
+
+/* styling for hovering over the drop-down navigation section and for the navigation list itself */
+.dropdownNav:hover .dropdown-contentNav{
+    display: block;
+}
+
+/* styling for hovering over the drop-down navigation section and for the drop-down navigation button */
+.dropdownNav:hover .dropbtnNav {
+    background-color: lightgray;
+}
+
+/* ---Styling for the 'My Account' link within the navigation drop-down--- */
+
+/* styling for the drop-down section on hover and the drop down button */
+.dropdownIn:hover .dropbtnIn{
+    /*background-color: red;*/
+}
+
+/* styling for the drop-down section */
+.dropdownIn {
+    display: inline-block;
+    width: 100%;
+}
+
+/* styling for the content of the drop-down*/
+.dropdown-contentIn {
+    display: none;
+    position: absolute;
+    left: -75%;
+    top: 50%;
+    background-color: #f9f9f9;
+    /*min-width: 160px;*/
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+/* styling for the links in the drop-down */
+.dropdown-contentIn a{
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+/* styling for the content of the drop-down on hover */
+.dropdown-contentIn a:hover {
+    background-color: #f1f1f1;
+}
+
+/* styling for the drop-down section on hover and for the drop-down content */
+.dropdownIn:hover .dropdown-contentIn {
+    display: block;
+}
+
+/* SITE NAVIGATION STYLING - for normal-sized screen */
+
+/* centers the navigation links vertically */
+.linkText {
+    position: relative;
+    top: 40%;
+    transform: translateY(-40%);
+}
+
+/* Styling for site navigation section */
+/* - defines that the site navigation should occupy 50% of the width of its parent container (the banner),
+- should be position at the top right of the banner
+- occupies the entire height of the banner */
+#siteNav {
+    width: 50%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+}
+
+/* Styling for the unordered list containining the navigation links */
+ul#navBar {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background: #061539; /*dark blue */
-    width: 100%;
-    }
-    
-/* Puts the navigation to top right */
-/*
-#siteNavList {
-    position: absolute;
-    top: 0em;
-    right: 0;
+    background-color: #061539;
     height: 100%;
-    width: 60%;
-}*/
-
-
-/* Buttons for site navigation */
-
-/*
-.siteNavButton a {
-    text-decoration: none;
-    padding-left: 1em;
-    padding-right: 1em;
-    color: white;
-    width: 50%;
-    height: 100%;
-    }*/
-    
-
-
-
-
-/* Applies only to the links that are within the tag #siteNavBar */
-/*
-#siteNavBar a {
-    text-decoration: none;
-    color: white;
-    /*font-size: 2em;
-    }*/
-    
-/* For the drop down list z-index from My account */ 
-#iefix {
-    position: relative;
-    /*z-index: 100000;*/
 }
 
-
-.siteNavButton {
-    background: #061539; /*dark blue */
- }
-
-/* styling for site navigation links */
-.siteNavButton a, .dropbtn {
-    display: inline-block;
-    color: white;
-    text-align: center;
-    /*padding: 14px 16px;*/
-    text-decoration: none;
-    font-size: 0.9em;
-    
-    background: #061539; /*dark blue */
-    border-radius: 0;
-    
-    padding-left: 1em;
-    padding-right: 1em;
-    padding-bottom: 0.2em;
-    padding-top: 0.2em;
-    border-right: 1px solid white;
-    
-    cursor: pointer;  
+/* Styling for the navigation links and the dropdown nagivation link */
+li.navLink, li.dropdown {
     float: left;
+    /*border-right: 1px solid gray;*/
+    height: 100%;
 }
 
-/* Action for hovering over link */
-.siteNavButton a:hover, .dropdown:hover .dropbtn {
-    color: azure;
+/* Defines the relative widths of each of the navigation buttons : */
+
+/* defines the width of the 'Home' navigation link relative to the width of the navigation section */
+#homeLink{
+    width: 22%;
+    text-align: center;
+    border-left: 1px solid gray;
 }
 
-/* Drop down position - My account */ 
-.siteNavButton.dropdown {
-    /*position: relative;*/
+/* defines the relative width of the 'Create Event' link */
+#createEventLink{
+    width: 30%;
+    text-align: center;
+}
+
+/* defines the relative width of the 'My Account' link */
+#myAccountLink{
+    width: 25%;
+    text-align: center;
+}
+
+/* defines the relative width of the 'Help' link */
+#helpLink {
+    width: 20%;
+    text-align: center;
+    border-right: 0;
+}
+
+/* Drop-down for the 'My Account' button */
+
+/* Styling for navigation links and drop-down button */
+li.navLink a, .dropbtn {
     display: inline-block;
-    /*border-style: none none none solid;*/
-    /*color: white;*/
-    /*font-size: 0.9em;*/
-    /*margin: 0;*/
-    /*height: 100%;*/
-    /*top: 0px;*/
-    z-index: 3; /*This fixed the dropdown menun issue */
-    
+    color: white;
+    text-align: center;  
+    text-decoration: none;
+    width: 100%;
+    font-size: 0.7em;
+    background-color: #061539;
+    height: 90%;
 }
 
-/* Dropdown list background */
+/* Styling for hovering over links, the drop-down section, or the drop button */
+li a:hover, .dropdown:hover .dropbtn {
+    background-color: lightgray;
+}
+
+/* Styling for the dropdown section */
+li.dropdown {
+    display: inline-block;
+}
+
+/* Styling for the drop-down content */
 .dropdown-content {
     display: none;
     position: absolute;
-    /*z-index: = 2000;*/
-    background-color: #bcbcbc;
-    min-width: 160px;
+    background-color: #f9f9f9;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    /*min-width: 8px;
-    box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.2);*/
-    /*overflow:hidden;*/
+    z-index: 1000;
 }
 
-/* Dropdown list text */
-.dropdown-content a {
-    color: white;
+/* Styling for the links in the drop-down content */
+.dropdown-content a{
+    color: black;
     padding: 12px 16px;
-    /*padding: 2px 4px;*/
     text-decoration: none;
     display: block;
     text-align: left;
-    /*font-size: 0.55em;*/
+    font-size: 0.7em;
 }
 
-/* Dropdown list's colour when hover is on top */
-.dropdown-content a:hover {
-    background-color: #e6e6e6
+/* Styling for hovering over drop-down content */
+.dropdown-content a:hover{
+    background-color: #f1f1f1;
 }
 
-/* Dropdown list when hover on top */
+/* Styling for hovering over the dropdown section and for the drop-down content */
 .dropdown:hover .dropdown-content {
     display: block;
 }
-
-/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
-.show {display:block;}
 
 /* STYLING FOR SEARCH SECTION */
 
@@ -269,72 +371,72 @@ ul {
 #searchBar {
     position: relative;
     background: #061539;
-    height: 26px;
-    /*height: 26px;*/
     padding-top: 0;
     padding-bottom: 0em;
-    }
-    
+    height: 26px;
+}
+
 /* user types search terms here */
 #searchField {
-    width: 75%;
+    width: 80%;
     border: 0px;
-    border-radius: 3px;
+    border-radius: 0px;
     font-size: 12px;
     text-align: left;
     background-color: white;
-    position: absolute;
-    height: inherit;
-    left: 0.1em;
-    
-    /*REMOVED:
-     /*position: relative;
-    top:-18px;
-    right: -2px;*/
+    display: inline-block;
+    height: 24px;
+    border-left: 0.5px solid lightgray;
+    border-bottom: 0.5px solid lightgray;
+    padding-left: 1.6em;
 }
 
 /* for search button */
 #searchButton {
     color: white;
-    width: 24%;
-    /*min-width: 50px;*/
+    width: 20%;
+    height: 26px;
     min-width: 1em;
-    background-color: #ffab41;
     position: absolute;
     right: 0.1em;
     cursor: pointer;
-    height: inherit;
     background-color: white;
     color: #061539;
     font-weight: bold;
-    border-style: solid;
     border-radius: 0;
-    border-width: 1px;
-    
-/* REMOVED AS SEARCH BUTTON WAS MOVING
-    position: relative;
-    right: -220px;
-    bottom: -5px;
-    float:right;*/
+    border-left: 1px solid;
+    border-bottom: 1px solid;
+    border-right: 0px;
     }
+    
+/* ---The search filter section--- */
 
-/*h4 is the small at the top of individual pages, e.g. "Register"*/
-h4 {
-    font-size: 1em;
-    font-weight: bold;
-    font-style: normal;
-    color: gray;
-    text-align: center;
-    }
-    
-/*The search filter section */
+/* the expanded search section */
 #expandedSearch{
-    width: 100%;
-    height: 8.5em;
-   /* float: left;*/ /*THIS WAS THE REASON FOR THE PROBLEM ON THE FAVOURITES PAGE */
     position: relative;
+    height: 160px;
     background-color: #e3e3e3;
-    }
+    border: solid 0.5px lightgray;
+    padding-bottom: 0.5em;
+}
+
+/* styling for the subject and date filters section */   
+#subjectFilters, #dateFromFilters {
+    /*display: inline-block;*/
+    background-color: #F5F5F5;
+    padding-top: 0.5em;
+}
+
+/* styling for the subject filters section */
+#subjectFilters {
+    width: 80%;
+    /*padding: 1em 5%;*/
+    height: 160px;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
 
 /* style for the form holding the checkboxes for the filter terms */
 #filterText {
@@ -342,40 +444,79 @@ h4 {
     font-style: normal;
     color: gray;
     text-align: left;
-    width: 50%;
-    height: 12.5em;
-    float: left;
-    position: relative;
-    right: -10px;
-    background-color: #F5F5F5;
-    top:3px;
 }
 
-/* Class for the style of checkbox, in order to overwrite the style of "input" */
+/* for the style of checkbox, in order to overwrite the style of "input" */
 .checkbox {
     text-align: center;
-    width: 3em;
-    position: relative;
-    top: 2px;
+    width: 2em;
     }
+    
+/* styling for the grid holding the subject filter checkboxes and their labels */
+.checkbox-grid {
+    height: 140px;
+    overflow: scroll;
+}
+    
+/* styling for the subject filter checkbox-label pair */
+.checkbox-grid li {
+    display: block;
+    float: left;
+}
 
-/* TO POSITION */
-/* contains all date filters */
+/* Styling for the subject filter checkbox-label pair at different screen sizes */
+@media screen and (max-width: 450px) {
+    .checkbox-grid li{
+    width: 100%;
+    }
+}
+
+@media screen and (min-width: 450px) and (max-width: 560px) {
+    .checkbox-grid li{
+    width: 50%;
+    }
+}
+
+@media screen and (min-width: 560px) and (max-width: 740px) {
+    .checkbox-grid li{
+    width: 33%;
+    }
+}
+
+@media screen and (min-width: 740px) and (max-width: 920px) {
+    .checkbox-grid li{
+    width: 25%;
+    }
+}
+
+@media screen and (min-width: 920px) and (max-width: 980px) {
+    .checkbox-grid li{
+    width: 20%;
+    }
+}
+
+
+/* styling for date filter section */
 #dateFromFilters {
     font-size:1em;
     font-style: normal;
-    float: left;
-    position: relative;
-    right: -22px;
-    width: 45%;
-    top:3px;
+    position: absolute;
+    right: 0em;
+    top: 0em;
+    width: auto;
     background-color: #F5F5F5;
-    height: 7.5em;
+    border-left: solid 10px #e3e3e3;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-bottom: 1em;
+    height: 144px;
+    overflow: hidden;
 }
+
 
 /* For expanded search's day selection */
 .day {
-     font-size: 0.6em;
+    font-size: 0.6em;
     font-style: normal;
     color: gray;
     text-align: left;
@@ -400,26 +541,19 @@ h4 {
     width: 120px;
 }
 
-
-
 /* STYLING FOR THE TABS (COURSES, CONFERENCES, ETC) */
 
-/* Encompasses the seminars, courses, and conferences tabs */
-/* Background section for the list containing the tabs seminars etc. */
-/* this is a ul */
+/* Styling for the unordered list <ul> that encompasses the seminars, courses, and conferences tabs */
 #eventNavList {
     list-style-type: none;
     overflow: hidden; 
-    background: #e3e3e3;
     width: 100%;
-    /*position: relative;*/
     margin: 0;
     padding: 0;
     cursor: pointer;
-    }
-
-
-/* for list item containing the courses, seminars, conferences buttons */
+    background: white;
+    position: relative;
+}
 
 /* this is the background section for courses, seminars, conferences buttons */
 .eventTypeNavButton {
@@ -428,40 +562,37 @@ h4 {
     overflow:hidden;
     float:left;
     color: Black;
-    /*position: static;*/
-   /* align-items: */
-    background-color: #e3e3e3;
+    background-color: lightgray;
+    /*border-top-left-radius: 10px;
+    border-top-right-radius: 10px;*/
 }
 
-/* Background colour for seminar button */
+.eventTypeNavButton a {
+    text-decoration: none;
+    color: black;
+}
+
+/* Background colour for an active event tab */
 .active {
-    /*background-color: #FFE4C4;*/
-   /* background-color: #7887ab;*/
-     background-color: gray;
+     /*background-color: lightsteelblue;*/
 } 
 
-/*This is the individual button setting*/
-
+/* styling for the event tabs, all of which have been assigned this class, not just the seminars */
 .seminarsButton {
-    
     padding: 0.3em; 0;
     height: 15%;
     color: Black;
     font-style: bold;
     display: inline-block;
-    /*text-align: center;*/
     font-family: "Trebuchet MS", Helvetica, sans-serif;
+    font-size: 1em;
     cursor: pointer;
-    
-    /* REMOVED */
-    /*width: 33.3%;*/
-    /*padding: 2px 33.3%; */
     }
     
+/* styling for the 'Courses' event tab*/
 .coursesButton {
-    border-style: none solid;
-    border-color: white;
-    border-width: 0.1em;
+    border-left: solid white 1px;
+    border-right: solid white 1px;
     }
 
 /* END OF EVENT NAVIGATION LIST */
@@ -479,7 +610,7 @@ h4 {
     padding: 1em 1em;
     color: gray;
     /*min-height: 120px;*/
-    min-height: 120px;
+    min-height: 80px;
     }
     
     
@@ -561,7 +692,7 @@ h4 {
 
 /* for event title */
 h3 {
-	font-size: 1em;
+	font-size: 0.75em;
 	font-weight: bold;
 	font-style: normal;
     color: gray;
@@ -572,12 +703,12 @@ h3 {
 /* for the user-uploaded image for the event */
 .eventImage {
     width: 4.2em;
-    height: 4.2em;
+    height: 3.7em;
     float: left;
     padding: 0em;
     padding-top: 0.9em;
     margin: 0em;
-    }
+}
     
 /*styling for icons */
 
@@ -586,40 +717,69 @@ h3 {
     color: lightgray;
 }
 
-/* styling for calender icon */
-/*
-.fa.fa-calendar {
-    color: lightgray;
-    position: absolute;
-    right: 1em;
-    top: 1.1em;
-    display: inline;
-}*/
+/* styling for star and calendar icons when screen width is widest */
+@media screen and (min-width: 600px) {
+    .fa.fa-star {
+        position: absolute;
+        right: 2.7em;
+        top: 1.1em;
+        display: inline;
+    }
+
+    .addtocalendar {
+        position: absolute;
+        right: 2.1em;
+        top: 2em;
+        display: inline;
+    }
+    
+    .eventSummaryDetails {
+ }
+}
+
+/* styling for star and calendar icons when screen width is narrower */
+@media screen and (max-width: 600px) {
+        
+    .fa.fa-star {
+        /*position: absolute;
+        left: 3em;
+        bottom: 0.3em;*/
+        display: block;
+        float: right;
+        /*padding-bottom: 1em;*/
+        padding-top: 0.6em;
+    }
+        
+    .addtocalendar {
+        float: right;
+        padding-left: 0.5em;
+       /* left: 9em;*/
+        /*top: 7.3em;*/
+        display: block;
+        /*clear: left;*/
+        padding-bottom: 1.1em;
+        padding-top: 1em;
+    }
+}
 
 /* for the container with un-expanded event summary (including images and icons) */
 .eventSummarySection {
     position: relative;
-    }
+}
     
 /* for summary of the event; the details of the event visible before it is expanded (not including images and icons) */
 .eventSummaryDetails {
     list-style-type: none;
-    font-size: 0.7em;
-    padding-top: 1em;
-    padding-left: 7em;
+    font-size: 0.6em;
+    padding-top: 1.4em;
+    padding-left: 8em;
     padding-bottom: 1em;
     color: gray;
+    background: white;
  }
     
 /* the further details of the event that are displayed when it has been expanded */
 .furtherDetails p {
-/*
-    color: darkgray;
-    font-size: 0.7em;
-    padding-bottom: 0em;
-    margin-bottom: 0em;
-    color: gray;
-    */
     font-family: "Trebuchet MS", Helvetica, sans-serif;
 	font-size: 0.6em;
 	font-weight: normal;
@@ -630,6 +790,10 @@ h3 {
     text-align: left;
  }
  
+ .furtherDetails p:first-child {
+    margin-top: 0;
+}
+ 
  p.firstDetailsLine {
      margin-top: 0;
      padding-top: 0;
@@ -638,24 +802,57 @@ h3 {
 .furtherDetails {
 margin-top: 0;
 padding-top: 0;
+overflow: hidden;
+min-height: 180px;
+position: relative;
 }
- 
- 
- /* NOTE: Saw a video on lynda.com that said not to use h5 unless referrring to headings so we can maybe make a new class for the text in the event descriptions instead of using h5 for it? Like <p class = "moreDetails">? */
- /*
-  font-family: "Trebuchet MS", Helvetica, sans-serif;
-	font-size: 0.6em;
-	font-weight: normal;
-	font-style: normal;
-	margin: 0 0 0;
-	padding: 0px 0px;
-    color: grey;
-    text-align: left;
-    
-    */
+
+
+/* Style for map */
+
+.furtherDetails div {
+    display: inline;
+    float: left;
+}
+
+.textDetails {
+}
+
+
+.map {
+    width: 180px;
+    height: 180px;
+    background-color: grey;
+}
+
+/*
+@media screen and (max-width: 430px) {
+    .textDetails {
+        width: 100%;
+        display: block;
+    }
+    .map {
+        margin-left: 0em;
+        display: block;
+    }
+}
+
+@media screen and (min-width: 430px) {
+    .textDetails {
+        width: 80%;
+    }
+    .map {
+        position: absolute;
+        right: 2em;
+        margin-left: 2em;
+    }
+}*/
+
+.address {
+    display: inline;
+}
 
 /* END OF EVENTS AND SUMMARY AND INFORMATION SECTION */
-
 
 /*For anchor tags*/
 a {
@@ -669,41 +866,56 @@ a {
 form{
     text-align: center;
     width: inherit;
-    }
+}
 
 /* Input format for form */
 input {
     text-align: center;
     width: 20em;
-    }
+}
 
 /* Styling for select element for drop-down forms */
 select {
     display: block;
     margin: 0 auto;
     width: 20.7em;
-    }
+}
 
 /* Additional styling for form submission button */
 .formSubmissionButton {
     display: block;
     margin: 0 auto;
-    }
+}
     
 /* STYLING FOR PAGE FOOTER */
 
-#pageFooter {
-    background: #FFE4C4; 
-    }
-    
-#pageFooter a {
+/* styling for unordered list <ul> containing the footer links */
+ul#footerNav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: lightsteelblue; 
+    margin-top: 0.2em;
+}
+
+/* styling for footer list item */
+li.footerLink {
+    float: left;
+}
+
+/* styling for the footer links */
+li.footerLink a {
+    display: block;
     color: black;
+    text-align: center;
     text-decoration: none;
     font-size: 0.7em;
     font-weight: normal;
 	font-style: normal;
     font-family: "Trebuchet MS", Helvetica, sans-serif;
-    }
+    padding: 0.2em 1em;
+}
 
 /* HELP PAGE STYLING */
 
@@ -785,77 +997,99 @@ select {
     color:white;
 }
 
-/* styling for star icon when screen width is widest */
-@media screen and (min-width: 600px) {
-    .fa.fa-star {
-        position: absolute;
-        right: 2.7em;
-        top: 1.1em;
-        display: inline;
-    }
+/* EVENT APPROVAL PAGE STYLING */
 
-    .addtocalendar {
-        position: absolute;
-        right: 2.1em;
-        top: 2em;
-        display: inline;
-    }
-    
-    .eventSummaryDetails {
- }
+.eventTableText {
+    font-size: 0.8em;
+    font-style: normal;
+    text-decoration: none;
+    text-align: center;
 }
 
-/* Position for elements when screen is at medium width
-@media screen and (max-width: 600px) and (min-width: 400px) {
-    .fa.fa-star{
-        position: absolute;
-        right: 1.1em;
-        /*top: 1.8em;
-        display: block;
-        bottom: 1.8em;
-        /*padding-top: 0.4em;
-    }
-    
-    .addtocalendar {
-        position: absolute;
-        right: 2.1em;
-        bottom: 1.2em;
-        display: inline;
-    }
-    
-    .eventSummaryDetails {
-        width: 55%;
- }
-}
-*/
-
-/* Positioning for elements when screen is narrower */
-@media screen and (max-width: 600px) {
-    .accordion .ui-accordion-header {
-        /*min-height: 160px;*/
-        }
-        
-    .fa.fa-star {
-        /*position: absolute;
-        left: 3em;
-        bottom: 0.3em;*/
-        display: block;
-        float: right;
-        /*padding-bottom: 1em;*/
-        padding-top: 0.6em;
-    }
-        
-    .addtocalendar {
-        float: right;
-        padding-left: 0.5em;
-       /* left: 9em;*/
-        /*top: 7.3em;*/
-        display: block;
-        /*clear: left;*/
-        padding-bottom: 1.1em;
-        padding-top: 1em;
-}
+.eventTableHeader {
+    font-size: 1.2em;
+    font-style: normal;
+    text-decoration: none;
+    text-align: center;
+    color: black;
+    background-color: #FFE4C4;
 }
 
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+.approveBtn {
+    padding: 3% 10%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    background-color: #FFE4C4;
+    border: none;
+    text-align: center;
+    font-size: 0.7em;
+    margin: 0.5em 0.5em;     
+}
+
+.disapproveBtn {
+    padding: 3% 10%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    background-color: #FFE4C4;
+    border: none;
+    text-align: center;
+    font-size: 0.7em;
+    margin: 0.5em 0.5em; 
+}
+
+/* ALL ADMIN USERS PAGE STYLING */
+
+.adminTableText {
+    font-size: 0.8em;
+    font-style: normal;
+    text-decoration: none;
+    text-align: center;
+}
+
+.adminTableHeader {
+    font-size: 1.2em;
+    font-style: normal;
+    text-decoration: none;
+    text-align: center;
+    color: black;
+    background-color: #FFE4C4;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+.noBtn {
+    padding: 3% 10%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    background-color: #FFE4C4;
+    border: none;
+    text-align: center;
+    font-size: 0.7em;
+    margin: 0.5em 0.5em;     
+}
+
+.yesBtn {
+    padding: 3% 10%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    background-color: #FFE4C4;
+    border: none;
+    text-align: center;
+    font-size: 0.7em;
+    margin: 0.5em 0.5em; 
+}
 
  
