@@ -97,5 +97,3 @@
 </div>
 
 </div>
-
-<?php print_r($_SESSION); ?>
