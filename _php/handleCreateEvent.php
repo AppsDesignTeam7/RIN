@@ -13,6 +13,7 @@ require_once('config.php');
 session_start();
 
 print_r($_POST);
+echo "<br>";
 
 unset($_SESSION['eventCreationError']);
 
@@ -221,10 +222,13 @@ $event_speaker . "', '" .
 $event_link . "', 
 $event_fees, 
 $event_organiser)";
-echo '<br>' . $sql_add_event;
+echo '<br>' . $sql_add_event . "<br>";
 
-if ($connection->query($sql_add_event) === TRUE) {
+if ($connection->query($sql_add_event)) {
+	echo "<br>Great success<br>";
 	$event_id = $connection->insert_id;
+} else {
+	echo "<br>oh for fuck's sake<br>";
 }
 
 // Add the abstract deadline to db if necessary
