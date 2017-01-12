@@ -45,52 +45,9 @@ $(".eventSummarySection").click(function() {
     initMap();
 });
 
-/*seminars.style.display = "block";
-courses.style.display = "none";
-conferences.style.display = "none";*/
 expandedSearch.style.display = "none";
 };
 
-/*
-document.getElementById("seminarsNav").onclick = function() {
-
-seminars.style.display = "block";
-seminarsNav.style.backgroundColor = "lightsteelblue";
-
-courses.style.display = "none";
-coursesNav.style.backgroundColor = "#e3e3e3";
-
-conferences.style.display = "none";
-conferencesNav.style.backgroundColor = "#e3e3e3"
-};
-
-
-document.getElementById("coursesNav").onclick = function() {
-
-seminars.style.display = "none";
-seminarsNav.style.backgroundColor = "#e3e3e3";
-
-courses.style.display = "block";
-coursesNav.style.backgroundColor = "lightsteelblue";
-
-conferences.style.display = "none";
-conferencesNav.style.backgroundColor = "#e3e3e3";
-
-
-};
-
-document.getElementById("conferencesNav").onclick = function() {
-
-seminars.style.display = "none";
-seminarsNav.style.backgroundColor = "#e3e3e3";
-
-courses.style.display = "none";
-coursesNav.style.backgroundColor = "#e3e3e3";
-
-conferences.style.display = "block";
-conferencesNav.style.backgroundColor = "lightsteelblue";
-};
-*/
 
 document.getElementById("searchField").onfocus = function () {
 
@@ -156,5 +113,3 @@ function geocodeAddress(geocoder, resultsMap) {
         }
     })
 }
-
-
