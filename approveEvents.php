@@ -1,3 +1,4 @@
+
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
@@ -14,13 +15,17 @@
 <body>
 
 <header role = "banner">
-<div id="banner">
-<a href = "index.htm">
- <div id="linkToHome">
+
+<div id = "banner">
+<a href = "index.php">
+<div id="linkToHome">
     <h1>RIN</h1>
-    <h2>Event Approval</h2>
+    <h2>
+        Event Approval    </h2>
+     
 </div>
 </a>
+
 
 <!--Site navigation for smaller screens-->
 
@@ -29,25 +34,21 @@
 <div class="dropdownNav">
     <button class="dropbtnNav"><i class="fa fa-navicon"></i></button>
         <div class="dropdown-contentNav">
-            <a href="index.htm">Home</a>
-            <a href="createEvent.htm">Create New Event</a> 
+            <a href="index.php">Home</a>
+            <a href="createEvent.php">Create New Event</a> 
             
-            <!--Display this with PHP if the user is not logged in-->
-            <a href="login.htm">Login</a>
-            <!--End of section to hide-->
             
-            <!--Hide this with php if the user is logged in-->
-              <div class="dropdownIn">
-                <a href="javascript:void(0)" class="dropbtnIn">My Account</a>
-                <div class="dropdown-contentIn">
-                    <a href="myFavourites.htm">My Favourites</a>
-                    <a href="manageMyEvent.htm">Manage My Events</a>
-                    <a href="resetPassword.htm">Reset Password</a>
-                    <a href="index.htm">Logout</a>
-                </div>
-             </div>
-             <!--end of section to hide-->
-             
+                <div class="dropdownIn">
+                    <a href="javascript:void(0)" class="dropbtnIn">My Account</a>
+                    <div class="dropdown-contentIn">
+                        <a href="myFavourites.htm">My Favourites</a>
+                        <a href="manageMyEvent.htm">Manage My Events</a>
+                        <a href="resetPassword.htm">Reset Password</a>
+                        <a href="approveEvents.htm">Approve Events</a>
+                        <a href="displayAllUsers.htm">Manage Users</a>
+                        <a href="_php/logout.php">Logout</a>
+                    </div>
+                 </div>             
             <a href="help.htm">Help</a>
         </div>
 </div>
@@ -60,36 +61,27 @@
 <div id="siteNav">
 
 <ul id="navBar">
-    <li class="navLink" id="homeLink"><a href="index.htm" class="indexLink"><div class="linkText">HOME</div></a></li>
-    <li class="navLink" id="createEventLink"><a href="createEvent.htm"><div class="linkText">CREATE NEW EVENT</div></a></li>
+    <li class="navLink" id="homeLink"><a href="index.php" class="indexLink"><div class="linkText">HOME</div></a></li>
+    <li class="navLink" id="createEventLink"><a href="createEvent.php"><div class="linkText">CREATE NEW EVENT</div></a></li>
     
     
-    <!--Hide this section with php if the user is not logged in; hide otherwise -->
-    
-    <li class = "dropdown" class="navLink" id="myAccountLink">
-        <a href="javascript:void(0)" class="dropbtn"><div class="linkText">MY ACCOUNT</div></a>
-        <div class="dropdown-content">
-            <a href="myFavourites.htm">My Favourites</a>
-            <a href="manageMyEvent.htm">Manage My Events</a>
-            <a href="resetPassword.htm">Reset Password</a>
-            <a href="index.htm">Logout</a>
-        </div>
-    </li>
-    <!--end of section-->
-    
-    <!--Show this section with php if the user is not logged in; hide if logged in-->
-    <!--
-    <li class="navLink" id="myAccountLink"><a href = "login.htm"><div class="linkText">LOGIN</div></a></li>
-    -->
-    <!--end of section-->
-    
+        <li class = "dropdown" class="navLink" id="myAccountLink">
+            <a href="javascript:void(0)" class="dropbtn"><div class="linkText">MY ACCOUNT</div></a>
+            <div class="dropdown-content">
+                <a href="myFavourites.htm">My Favourites</a>
+                <a href="manageMyEvent.htm">Manage My Events</a>
+                <a href="resetPassword.htm">Reset Password</a>
+                <a href="approveEvents.htm">Approve Events</a>
+                <a href="displayAllUsers.htm">Manage Users</a>
+                <a href="_php/logout.php">Logout</a>
+            </div>
+        </li>    
     <li class="navLink" id="helpLink"><a href="help.htm"><div class="linkText">HELP</div></a></li>
 </ul>
 
 </div>
 
 </div>
-
 <!--Search bar-->
 <section id="searchBar">
 <input type="text" name="search" placeholder="Search.." id="searchField">
@@ -106,23 +98,7 @@
 
 <!--Subject filters-->
 <ul class="checkbox-grid">
-    <li><input class = "checkbox" type = "checkbox" name = "subjectFilter" value = "Social Science"><label for="subjectFilter">Social Science</label></li>
-    <li><input class = "checkbox" type="checkbox" name = "subjectFilter" value="epidemeology"><label for="subjectFilter">Epidemeology</label></li>
-    <li><input class = "checkbox" type = "checkbox" name = "subjectFilter" value = "Cognitive Science"><label for="subjectFilter">Cognitive Science</label></li>
-    <li><input class = "checkbox" type = "checkbox" name = "subjectFilter" value = "History of Science"><label for="subjectFilter">History of Science</label></li>
-    <li><input class = "checkbox" type = "checkbox" name = "subjectFilter" value = "Behavioural Science"><label for="subjectFilter">Behavioural Science</label></li>
-    <li><input class = "checkbox" type = "checkbox" name = "subjectFilter" value = "Social Medicine"><label for="subjectFilter">Social Medicine</label></li>
-    <li><input class = "checkbox" type = "checkbox" name = "subjectFilter" value = "Computer Science"><label for="subjectFilter">Computer Science</label></li>
-    <li><input class = "checkbox" type = "checkbox" name = "subjectFilter" value = "Medical Ethics"><label for="subjectFilter">Medical Ethics</label></li>
-    <li><input class = "checkbox" type = "checkbox" name = "subjectFilter" value = "Statistics"><label for="subjectFilter">Statistics</label></li>
-    <li><input class = "checkbox" type = "checkbox" name = "subjectFilter" value = "Public Health"><label for="subjectFilter">Public Health</label></li>
-    <li><input class = "checkbox" type = "checkbox" name = "subjectFilter" value = "Nutrition"><label for="subjectFilter">Nutrition</label></li>
-    <li><input class = "checkbox" type = "checkbox" name = "subjectFilter" value = "Child Health"><label for="subjectFilter">Child Health</label></li>
-    <li><input class = "checkbox" type = "checkbox" name = "subjectFilter" value = "Obesity"><label for="subjectFilter">Obesity</label></li>
-    <li><input class = "checkbox" type = "checkbox" name = "subjectFilter" value = "Machine Learning"><label for="subjectFilter">Machine Learning</label></li>
-    <li><input class = "checkbox" type = "checkbox" name = "subjectFilter" value = "AI"><label for="subjectFilter">AI</label></li>
-    <li><input class = "checkbox" type = "checkbox" name = "subjectFilter" value = "Structural Analysis"><label for="subjectFilter">Structural Analysis</label></li>
-</ul>
+    <li><input class="checkbox" type="checkbox" name="tagCheckbox[]" value="1"><label for="tagCheckbox[]">App Design</label></li><li><input class="checkbox" type="checkbox" name="tagCheckbox[]" value="19"><label for="tagCheckbox[]">Child Health</label></li><li><input class="checkbox" type="checkbox" name="tagCheckbox[]" value="11"><label for="tagCheckbox[]">Cognitive Science</label></li><li><input class="checkbox" type="checkbox" name="tagCheckbox[]" value="9"><label for="tagCheckbox[]">Epidemiology</label></li><li><input class="checkbox" type="checkbox" name="tagCheckbox[]" value="15"><label for="tagCheckbox[]">History of Science</label></li><li><input class="checkbox" type="checkbox" name="tagCheckbox[]" value="25"><label for="tagCheckbox[]">Infectious Diseases</label></li><li><input class="checkbox" type="checkbox" name="tagCheckbox[]" value="21"><label for="tagCheckbox[]">Law</label></li><li><input class="checkbox" type="checkbox" name="tagCheckbox[]" value="27"><label for="tagCheckbox[]">Mathematics</label></li><li><input class="checkbox" type="checkbox" name="tagCheckbox[]" value="29"><label for="tagCheckbox[]">Microbiology</label></li><li><input class="checkbox" type="checkbox" name="tagCheckbox[]" value="17"><label for="tagCheckbox[]">Nutrition</label></li><li><input class="checkbox" type="checkbox" name="tagCheckbox[]" value="23"><label for="tagCheckbox[]">Philosophy</label></li><li><input class="checkbox" type="checkbox" name="tagCheckbox[]" value="7"><label for="tagCheckbox[]">Public Health</label></li><li><input class="checkbox" type="checkbox" name="tagCheckbox[]" value="3"><label for="tagCheckbox[]">Social Science</label></li></ul>
 
 </form>
 
@@ -258,58 +234,32 @@
 
 <!-- MANAGE ADMIN USERS CONTENT -->
 
-<section id="favourites">
+<section id = "conferences">
 
-<br>
-<table style = "width: 100%" class = "eventTableText">
-    
-    <!-- tr is the row -->
-    <!-- table cell is td -->
-    <!-- th is the header -->
-    <tr class = "eventTableHeader">
-        <th> Event Title</th>
-        <th> Date </th>
-        <th> Event Time </th>
-        <th> Status</th>
-        <th> Approval </th>  
-    </tr>
-    <tr>
-        <td>On Muggle Teapots</td>
-        <td>Monday 28th November 2016</td>
-        <td>17:00</td>
-        <td>Approved</td>
-        <td><button class="approveBtn">Approve</button> <button class="disapproveBtn">Disapprove</button></td> 
-    <tr>
-        <td>The Employment Conditions of House Elves</td>
-        <td>Tuesday 29th November 2016</td>
-        <td>18:00</td>
-        <td>Not Approved</td>
-        <td><button class="approveBtn">Approve</button> <button class="disapproveBtn">Disapprove</button></td> 
-    </tr>
-    <tr>
-        <td>The Use of the Patronus</td>
-        <td>Wednesday 30th November 2016</td>
-        <td>19:00</td>
-        <td>Approved</td>
-        <td><button class="approveBtn">Approve</button> <button class="disapproveBtn">Disapprove</button></td> 
-    </tr>
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td><button class="approveBtn">Approve</button> <button class="disapproveBtn">Disapprove</button></td> 
-    </tr>
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td><button class="approveBtn">Approve</button> <button class="disapproveBtn">Disapprove</button></td> 
-    </tr>
-  
-</table>
-
+<div class = "accordion">
+<section class = "eventSummarySection">
+    <h3>Group Meeting</h3>
+    <img src=http://www.almanac.com/sites/default/files/users/Almanac%20Staff/hatching-raising-chicken-chicks_full_width.jpg alt = "Img1" class= "eventImage">
+    <!-- PLEASE PLACE THESE BUTTONS NICELY -->
+    <form action="_php/handleApproval.php" method="post">
+        <button class="formSubmissionButton" id="approveButton">Approve</button>
+        <button class="formSubmissionButton" id="dontApproveButton">Reject</button>
+    </form>
+ 
+    <ul class="eventSummaryDetails">    
+        <li>Laurence Tennant</li>
+        <li><div class="address">WC1E 6BT</div></li>
+        <li>12:00</li>    
+        <li>Tuesday 31st January 2017</li>
+    </ul></section><div class="furtherDetails">
+    <p>£100</p>
+    <p>No Description</p>
+    <p>
+        <a href=https://www.facebook.com/ class="linkToEventSite">More information</a>
+    </p>
+    <div class="map"></div>
+</div>
+</div>
 </section>
 
 
