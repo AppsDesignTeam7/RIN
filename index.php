@@ -43,18 +43,14 @@
 <!--Expanded Search section -->
 <div id = "expandedSearch">
 
-<div id = "subjectFilters">
-
 <form action="_php/applyFilters.php" method="post" id = "filterText">
 
+<div id="allFilters">
+<div id = "subjectFilters">
 <!--Subject filters-->
 <ul class="checkbox-grid">
     <?php include("_php/showTags.php"); ?>
 </ul>
-
-<input type="submit" value="Apply"><br>
-
-</form>
 
 </div>
 
@@ -180,6 +176,16 @@
 
 </div>
 
+</div>
+
+<div id="applyButtonSection">
+<button id="applyFiltersButton">Apply</button>
+</div>
+
+</form>
+
+
+
 </div>  
 
 <!--Event navigation-->
@@ -240,7 +246,34 @@
         </var>
 </span>
 
-<i class="fa fa-star fa-2x" aria-hidden="true"></i>
+<script>
+
+    var scriptString = 'THIS IS MY STRING';
+    $('#clickMe').click(function() {
+        $.ajax({
+                method: 'get',
+                url: 'index.php',
+                data: {
+                    'myString': scriptString,
+                    'ajax': true
+            },
+            success: function(data) {
+                $('#data').text(data);
+            }
+            });
+        });
+</script>
+
+<?php
+if ($_GET['ajax']) {
+   echo $_GET['myString'];
+   echo ((isset($_GET['myString'])) ? "It fucking worked, bitches." : "we're still fucked." ) . "<p>TESTING PHP</p>";
+} else {
+?> 
+<i class="fa fa-star fa-2x" aria-hidden="true" id="clickMe"></i>
+<pre id="data"></pre>
+<?php } ?>
+
 
     <ul class="eventSummaryDetails">
         <li>Mr Weasley</li>
@@ -256,7 +289,6 @@
 <div class="furtherDetails">
 
 
-<div class="textDetails">        
 <p>Free</p>
         
 <p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Si quae forte-possumus. Re mihi non aeque satisfacit, et quidem locis pluribus. Si quidem, inquit, tollerem, sed relinquo. Hoc etsi multimodis reprehendi potest, tamen accipio, quod dant.</p>
@@ -265,12 +297,14 @@
 <a href = "index.htm" class="hashtag">#teapots</a> 
 <a href = "index.htm" class="hashtag">#arthurweasley</a>
 <a href = "index.htm" class="hashtag">#mugglestudies</a>
+<a href = "index.htm" class="hashtag">#Philosophy</a>
+
 </p>
+
         
 <p>
 <a href="https://www.ucl.ac.uk" class="linkToEventSite">http://www.ministryofmagic.com</a>
 </p>
-</div>
 
 <div class="map"></div>
 
@@ -321,7 +355,7 @@
         
 <p>Free</p>
         
-<p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Si quae forte-possumus. Re mihi non aeque satisfacit, et quidem locis pluribus. Si quidem, inquit, tollerem, sed relinquo. Hoc etsi multimodis reprehendi potest, tamen accipio, quod dant.</p>
+<p></p>
         
 <p>
 <a href = "index.htm" class="hashtag">#houseelves</a>

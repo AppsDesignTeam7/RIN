@@ -40,13 +40,20 @@ if (isset($_SESSION['eventCreationError'])) {
     <br>
     <input type="a" name="eventTitle" placeholder="Event Title"><br>
     <br>
-    <input type="a" name="location" placeholder="Location"><br>
+    <!--Replaced with addressLine1, addressLine2, and postcode-->
+    <!--<input type="a" name="location" placeholder="Location"><br>
+    <br>-->
+    <input type="a" name = "addressLine1" placeholder = "Address Line 1"><br>
+    <br>
+    <input type ="a" name = "addressLine2" placeholder = "Address Line 2"><br>
+    <br>
+    <input type="a" name = "postcode" placeholder="Postcode"><br>
     <br>
     <input type="a" name="date" placeholder="Date (dd/mm/yyyy)"><br>
     <br>
     <input type="a" name="time" placeholder="Time (hh:mm, 24h)"><br>
     <br>
-    <input type="a" name="description" placeholder="Description"><br>
+    <input type="text" name="description" placeholder="Description" id="descriptionBox"><br>
     <br>
     <input type="a" name="duration" placeholder="Duration (hours)"><br>
     <br>
