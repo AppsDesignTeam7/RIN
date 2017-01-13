@@ -32,6 +32,8 @@ if (empty($_POST['emailAddressInput']) ||
 		FROM users
 		WHERE Username = '".$username."' AND Password = '".$password."'";
 
+	//echo $user_query . "<br>";
+
 	$result = $connection->query($user_query);
 
 	if ($result->connect_errno > 0) {
@@ -57,9 +59,9 @@ if (empty($_POST['emailAddressInput']) ||
 
 // Redirect to the appropriate page depending on whether login was successful
 if (isset($_SESSION['UserID'])) {
-	header('location: http://localhost:8887/index.php'); // May need to replace this with the js version
+	echo "<script type='text/javascript'> document.location = 'http://localhost:8887/index.php'; </script>";
 } else {
-	header('location: http://localhost:8887/login.php'); // May need to replace this with the js version
+	echo "<script type='text/javascript'> document.location = 'http://localhost:8887/login.php'; </script>";
 }
 die();
 

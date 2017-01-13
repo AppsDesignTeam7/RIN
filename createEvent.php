@@ -40,9 +40,6 @@ if (isset($_SESSION['eventCreationError'])) {
     <br>
     <input type="a" name="eventTitle" placeholder="Event Title"><br>
     <br>
-    <!--Replaced with addressLine1, addressLine2, and postcode-->
-    <!--<input type="a" name="location" placeholder="Location"><br>
-    <br>-->
     <input type="a" name = "addressLine1" placeholder = "Address Line 1"><br>
     <br>
     <input type ="a" name = "addressLine2" placeholder = "Address Line 2"><br>
@@ -85,3 +82,5 @@ if (isset($_SESSION['eventCreationError'])) {
 </body>
 
 </html>
+
+

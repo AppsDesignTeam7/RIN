@@ -2,7 +2,9 @@
 <a href = "index.php">
 <div id="linkToHome">
     <h1>RIN</h1>
-    <h2>Homepage</h2>
+    <h2>
+        <?php echo $subtitle ?>
+    </h2>
      
 </div>
 </a>

@@ -8,7 +8,7 @@
 <link href="_css/atc-style-menu-wb.css" rel="stylesheet" type="text/css">
 
 <link rel="stylesheet" type="text/css" href="_css/styles.css">
-<link rel="stylesheet" type="text/css" href="_css/index.css">
+<link rel="stylesheet" type="text/css" href="_css/courses.css">
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
@@ -29,11 +29,8 @@
 
 <header role = "banner">
 
-<!--Banner -->
-<?php 
-$subtitle = "Homepage";
-include('_php/banner.php'); 
-?>
+<!-- banner -->
+<?php include('_php/banner.php'); ?>
 
 <!--Search bar-->
 <section id="searchBar">
@@ -45,15 +42,18 @@ include('_php/banner.php');
 <!--Expanded Search section -->
 <div id = "expandedSearch">
 
-<form action="_php/applyFilters.php" method="post" id = "filterText">
-
-<div id="allFilters">
 <div id = "subjectFilters">
+
+<form action="_php/applyFilters.php" method="post" id = "filterText">
 
 <!--Subject filters-->
 <ul class="checkbox-grid">
     <?php include("_php/showTags.php"); ?>
 </ul>
+
+<button class="formSubmissionButton" id="applyFiltersButton">Apply</button><br>
+
+</form>
 
 </div>
 
@@ -179,18 +179,13 @@ include('_php/banner.php');
 
 </div>
 
-</div>
-
-<div id="applyButtonSection">
-<button id="applyFiltersButton">Apply</button>
-</div>
-
-</form>
-
 </div>  
 
 <!--Event navigation-->
-<?php include('_php/navbar.php'); ?>
+<?php 
+$subtitle = "Courses";
+include('_php/navbar.php'); 
+?>
 
 </header>
 
@@ -207,17 +202,21 @@ include('_php/banner.php');
 <!--SEMINARS TAB CONTENT-->
 
 <main role = "main">
+    
+<!--COURSES TAB CONTENT-->
 
-<!--SEMINARS TAB CONTENT-->
+<section id = "courses">
 
-<section id="seminars">
+<!-- Show Courses -->
+<?php include("showCourses.php"); ?>
 
-<!--start of seminars accordion-->
-<?php include("showSeminars.php"); ?>
-
+<!--end of accordion for courses-->
 </section>
 
+
 </main>
+
+
 
 <!--Footer--> 
 <footer id = "pageFooter">
@@ -231,8 +230,9 @@ include('_php/banner.php');
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
 <script src = "_scripts/script.js"></script>
-<script src = "_scripts/home.js"></script>
+<script src = "_scripts/courses.js"></script>
 
 </body>
 </html>

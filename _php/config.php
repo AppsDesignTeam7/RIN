@@ -1,7 +1,7 @@
 <?php
-$servername=	'localhost';
-$username=		'root';
-$password=		'root';
-$database=		'rin';
+$servername=	'mysql-server.ucl.ac.uk';
+$username=		'rmjdw3u_user';
+$password=		'lovetheuser';
+$database=		'rmjdw3u';
 $connection=	New mysqli($servername,$username,$password,$database);
 ?>
