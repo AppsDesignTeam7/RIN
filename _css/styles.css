@@ -897,14 +897,19 @@ form{
 }
 
 /* Input format for form */
-input {
-    text-align: center;
+input, textarea {
+    text-align: center;    
     width: 20em;
+    border: solid 1px lightgray;
 }
 
-input#descriptionBox {
-    height: 100px;
+div.promptText {
+    font-size: 0.7em;
+    color: darkgray;
+    font-weight: bold;
+    display: inline-block;
 }
+
 
 /* Styling for select element for drop-down forms */
 select {
@@ -974,8 +979,6 @@ li.footerLink a {
     float: right;
     margin-right: 1em;
 }
-
-
 
 
 .editEventButton {
