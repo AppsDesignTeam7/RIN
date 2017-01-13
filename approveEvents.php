@@ -11,17 +11,28 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
 </head>
+
 <body>
 
+<!--Script for google map-->
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB9YAjl-Zpvqyr6RqQFW9_18HKnelIFXXA&callback=initMap">
+</script>
+
+
+<div id="container">
+
+<div id="header">
 <header role = "banner">
 
+<!--Banner-->
 <?php
 $subtitle = "Event Approval";
 include('_php/banner.php');
 ?>
 
-
-
+<!--Search Section-->
+<!--ZAK, PLEASE REPLACE WITH PHP CONTAINING HTML FROM INDEX.PHP-->
 <!--Search bar-->
 <section id="searchBar">
 <input type="text" name="search" placeholder="Search.." id="searchField">
@@ -165,14 +176,14 @@ include('_php/banner.php');
 </select>
 
 </div>
-
-</div>  
+</div> 
 
 </header>
+</div>
     
-<script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB9YAjl-Zpvqyr6RqQFW9_18HKnelIFXXA&callback=initMap">
-</script>
+
+
+<div id="body">
 
 <main role = "main">
 
@@ -184,21 +195,27 @@ include('_php/banner.php');
 
 </section>
 
-
 </main>
 
+</div>
+
+<div id="footer">
 <!--Footer--> 
 <footer id = "pageFooter">
 <ul id = "footerNav">
-    <li class="footerLink"><a href="tandc.htm">Terms and Conditions</a></li>
-    <li class="footerLink"><a href ="contact.htm">Contact</a></li>
-    <li class="footerLink"><a href= "copy.htm">Copyright</a></li>
+    <li class="footerLink"><a href="tandc.htm"><div class="linkText">Terms and Conditions</div></a></li>
+    <li class="footerLink"><a href ="contact.htm"><div class="linkText">Contact</div></a></li>
+    <li class="footerLink"><a href= "copy.htm"><div class="linkText">Copyright</div></a></li>
 </ul>
 </footer>
+<!--END OF FOOTER-->
+</div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 <script src = "_scripts/script.js"></script>
+
+</div>
 
 </body>
 </html>
