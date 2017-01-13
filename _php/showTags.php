@@ -1,13 +1,45 @@
 <?php
+
 require_once('config.php');
 session_start();
 
-$result = $connection->query("SELECT * FROM tags ORDER BY TagName ASC");
+// Show all currently selected tags:
+$selectedTags = implode(", ", $_SESSION['selectedTags']);
+$sql = "SELECT * FROM tags WHERE TagID IN ( $selectedTags ) ORDER BY TagName ASC";
+
+$selected = $connection->query($sql);
+
+//echo ((mysqli_ping($connection)) ? "Connected" : "Not connected...") . "<br>";
+
+if($selected){
+	foreach ($selected as $row) {
+		echo '<li><input class="checkbox" type="checkbox" name="tagCheckbox[]" value="' . $row['TagID'] . '" checked="checked">';
+		echo '<label for="tagCheckbox[]">' . $row['TagName'] . '</label></li>';
+	}
+}
+
+// Show other tags
+
+// Get list of tags, depending on search terms
+if (isset($_GET['search'])) {
+	if (empty($_GET['search'])) {
+		// If search bar is empty, unset the search variable
+		unset($_GET['search']);
+	} 
+	// Search entered
+	$sql = "SELECT * FROM tags WHERE TagName LIKE '%" . $_GET['search'] . "%' ORDER BY TagName ASC";
+} else {
+	// No search entered
+	$sql = "SELECT * FROM tags ORDER BY TagName ASC";
+}
+
+$result = $connection->query($sql);
+
+//print_r($result);
+
 if($result->connect_errno > 0){
     die('Unable to connect to database [' . $result->connect_error . ']');
 }
-
-//echo ((mysqli_ping($connection)) ? "Connected" : "Not connected...") . "<br>";
 
 if(!$result){
     echo "no result<br>";
@@ -15,9 +47,10 @@ if(!$result){
     echo 'No tags found<br>';
 } else {
     foreach ($result as $row) {
-        echo '<li><input class="checkbox" type="checkbox" name="tagCheckbox[]" value="'.$row['TagID'].'"';
-        if (in_array($row['TagID'], $_SESSION['selectedTags'])) echo ' checked="checked"';
-        echo '><label for="tagCheckbox[]">'.$row['TagName'].'</label></li>';
+    	if (!in_array($row['TagID'], $_SESSION['selectedTags'])) {
+        	echo '<li><input class="checkbox" type="checkbox" name="tagCheckbox[]" value="'.$row['TagID'].'">';
+        	echo '<label for="tagCheckbox[]">'.$row['TagName'].'</label></li>';
+        }
     }
 }
 ?>
