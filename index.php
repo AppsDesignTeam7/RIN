@@ -4,7 +4,7 @@
 <meta charset = "utf-8">
 <title>RIN Homepage</title>
 
-<!--Importing relevant stylesheets -->
+<!-- Importing relevant stylesheets -->
 <link href="_css/atc-style-button-icon.css" rel="stylesheet" type="text/css">
 <link href="_css/atc-style-menu-wb.css" rel="stylesheet" type="text/css">
 
@@ -13,6 +13,7 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+
 
 </head>
 <body>
@@ -27,179 +28,24 @@
                 var h = d[g]('body')[0];h.appendChild(s); }})();
 </script>
 
-<!--Script for Google map -->
 <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB9YAjl-Zpvqyr6RqQFW9_18HKnelIFXXA&callback=initMap">
 </script>
 
-
 <div id="container">
 
 <div id="header">
+
 <header role = "banner">
 
-<!--Banner -->
+<!-- Banner -->
 <?php 
 $subtitle = "Homepage";
 include('_php/banner.php'); 
 ?>
 
-<!--ZAK - PLEASE ADD THE SEARCH SECTION ON EVERY PAGE WITH PHP - SEE FURTHER ON IN CODE FOR WHEN THE SEARCH SECTION ENDS -->
-<!--Search section-->
-<!--Search bar-->
-<section id="searchBar">
-<input type="text" name="search" placeholder="Search.." id="searchField">
-<button type = "button" id="searchButton">Search</button>
-
-</section>
-
-<!--Expanded Search section -->
-<div id = "expandedSearch">
-
-<form action="_php/applyFilters.php" method="post" id = "filterText">
-
-<div id="allFilters">
-<div id = "subjectFilters">
-
-<!--Subject filters-->
-<ul class="checkbox-grid">
-    <?php include("_php/showTags.php"); ?>
-</ul>
-
-</div>
-
-<!--Date filters-->
-<div id = "dateFromFilters">
-
-<h5>From:</h5>
-<select class = "day">
-    <option value = "1">1</option>
-    <option value = "2">2</option>
-    <option value = "3">3</option>
-    <option value = "4">4</option>
-    <option value = "5">5</option>
-    <option value = "6">6</option>
-    <option value = "7">7</option>
-    <option value = "8">8</option>
-    <option value = "9">9</option>
-    <option value = "10">10</option>
-    <option value = "11">11</option>
-    <option value = "12">12</option>
-    <option value = "13">13</option>
-    <option value = "14">14</option>
-    <option value = "15">15</option>
-    <option value = "16">16</option>
-    <option value = "17">17</option>
-    <option value = "18">18</option>
-    <option value = "19">19</option>
-    <option value = "20">20</option>
-    <option value = "21">21</option>
-    <option value = "22">22</option>
-    <option value = "23">23</option>
-    <option value = "24">24</option>
-    <option value = "25">25</option>
-    <option value = "26">26</option>
-    <option value = "27">27</option>
-    <option value = "28">28</option>
-    <option value = "29">29</option>
-    <option value = "30">30</option>
-    <option value = "31">31</option>
-</select>
-
-<select class = "month">
-    <option value = "January">January</option>
-    <option value = "February">February</option>
-    <option value = "March">March</option>
-    <option value = "April">April</option>
-    <option value = "May">May</option>
-    <option value = "June">June</option>
-    <option value = "July">July</option>
-    <option value = "August">August</option>
-    <option value = "September">September</option>
-    <option value = "October">October</option>
-    <option value = "November">November</option>
-    <option value = "December">December</option>
-</select>
-
-<select class = "year">
-    <option value = "2016">2016</option>
-    <option value = "2017">2017</option>
-    <option value = "2018">2018</option>
-    <option value = "2019">2019</option>
-    <option value =  "2020">2020</option>
-</select>
-
-
-<h5>To:</h5>
-<select class = "day">
-    <option value = "1">1</option>
-    <option value = "2">2</option>
-    <option value = "3">3</option>
-    <option value = "4">4</option>
-    <option value = "5">5</option>
-    <option value = "6">6</option>
-    <option value = "7">7</option>
-    <option value = "8">8</option>
-    <option value = "9">9</option>
-    <option value = "10">10</option>
-    <option value = "11">11</option>
-    <option value = "12">12</option>
-    <option value = "13">13</option>
-    <option value = "14">14</option>
-    <option value = "15">15</option>
-    <option value = "16">16</option>
-    <option value = "17">17</option>
-    <option value = "18">18</option>
-    <option value = "19">19</option>
-    <option value = "20">20</option>
-    <option value = "21">21</option>
-    <option value = "22">22</option>
-    <option value = "23">23</option>
-    <option value = "24">24</option>
-    <option value = "25">25</option>
-    <option value = "26">26</option>
-    <option value = "27">27</option>
-    <option value = "28">28</option>
-    <option value = "29">29</option>
-    <option value = "30">30</option>
-    <option value = "31">31</option>
-</select>
-
-<select class = "month">
-    <option value = "January">January</option>
-    <option value = "February">February</option>
-    <option value = "March">March</option>
-    <option value = "April">April</option>
-    <option value = "May">May</option>
-    <option value = "June">June</option>
-    <option value = "July">July</option>
-    <option value = "August">August</option>
-    <option value = "September">September</option>
-    <option value = "October">October</option>
-    <option value = "November">November</option>
-    <option value = "December">December</option>
-</select>
-
-<select class = "year">
-    <option value = "2016">2016</option>
-    <option value = "2017">2017</option>
-    <option value = "2018">2018</option>
-    <option value = "2019">2019</option>
-    <option value =  "2020">2020</option>
-</select>
-
-</div>
-
-</div>
-
-<div id="applyButtonSection">
-<button id="applyFiltersButton">Apply</button>
-</div>
-
-</form>
-
-</div>  
-<!--END OF SEARCH SECTION-->
+<!-- Search bar -->
+<?php include("_php/showSearch.php"); ?>
 
 <!--Event navigation-->
 <?php include('_php/navbar.php'); ?>
@@ -210,18 +56,25 @@ include('_php/banner.php');
 
 <div id="body">
 
-<!--Event Details Accordion-->
+<!--Event details-->
+
 <main role = "main">
+
+<!--SEMINARS TAB CONTENT-->
+
+<section id="seminars">
 
 <!--start of seminars accordion-->
 <?php include("showSeminars.php"); ?>
+
+</section>
 
 </main>
 
 </div>
 
 <div id="footer">
-<!--ZAK - PLEASE PUT THIS FOOTER ON EACH PAGE USING PHP -->
+
 <!--Footer--> 
 <footer id = "pageFooter">
 <ul id = "footerNav">
@@ -230,16 +83,14 @@ include('_php/banner.php');
     <li class="footerLink"><a href= "copy.htm"><div class="linkText">Copyright</div></a></li>
 </ul>
 </footer>
-<!--END OF FOOTER-->
+
 </div>
 
-<!--JavaScript imports -->
+<!-- Javascript imports -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 <script src = "_scripts/script.js"></script>
 <script src = "_scripts/home.js"></script>
-
-</div>
 
 </body>
 </html>
