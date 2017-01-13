@@ -970,14 +970,31 @@ li.footerLink a {
 
 /* MANAGE MY EVENTS PAGE STYLING */
 
-.eventApprovalStatus {
+/*.eventApprovalStatus {
     /*position: absolute;
     right: 5%;
-    top: 2em;*/
+    top: 2em;
     display: inline-block;
     size: 1em;
     float: right;
     margin-right: 1em;
+}*/
+
+.eventApprovalStatus{
+    padding-bottom: 0.2em;
+    size: 1em;
+    padding-top: 0.5em;
+}
+
+.approvalDetails{
+    display: inline-block;
+    size: 1em;
+    float: right;
+    margin-right: 1em;
+}
+
+.infoForOrganiser{
+     font-size: 0.5em;
 }
 
 
