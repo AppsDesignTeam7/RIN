@@ -4,6 +4,7 @@
 <meta charset = "utf-8">
 <title>RIN Homepage</title>
 
+<!--Importing relevant stylesheets -->
 <link href="_css/atc-style-button-icon.css" rel="stylesheet" type="text/css">
 <link href="_css/atc-style-menu-wb.css" rel="stylesheet" type="text/css">
 
@@ -12,7 +13,6 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
-
 
 </head>
 <body>
@@ -27,6 +27,15 @@
                 var h = d[g]('body')[0];h.appendChild(s); }})();
 </script>
 
+<!--Script for Google map -->
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB9YAjl-Zpvqyr6RqQFW9_18HKnelIFXXA&callback=initMap">
+</script>
+
+
+<div id="container">
+
+<div id="header">
 <header role = "banner">
 
 <!--Banner -->
@@ -35,6 +44,7 @@ $subtitle = "Homepage";
 include('_php/banner.php'); 
 ?>
 
+<!--ZAK - PLEASE ADD THE SEARCH SECTION ON EVERY PAGE WITH PHP - SEE FURTHER ON IN CODE FOR WHEN THE SEARCH SECTION ENDS -->
 <!--Search bar-->
 <section id="searchBar">
 <input type="text" name="search" placeholder="Search.." id="searchField">
@@ -188,51 +198,47 @@ include('_php/banner.php');
 </form>
 
 </div>  
+<!--END OF SEARCH SECTION-->
 
 <!--Event navigation-->
 <?php include('_php/navbar.php'); ?>
 
 </header>
 
+</div>
 
-<script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB9YAjl-Zpvqyr6RqQFW9_18HKnelIFXXA&callback=initMap">
-</script>
+<div id="body">
 
-
-<!--Event details-->
-
-<!--Beginining of accordion 1-->
-
-<!--SEMINARS TAB CONTENT-->
-
+<!--Event Details Accordion-->
 <main role = "main">
-
-<!--SEMINARS TAB CONTENT-->
-
-<section id="seminars">
 
 <!--start of seminars accordion-->
 <?php include("showSeminars.php"); ?>
 
-</section>
-
 </main>
 
+</div>
+
+<div id="footer">
+<!--ZAK - PLEASE PUT THIS FOOTER ON EACH PAGE USING PHP -->
 <!--Footer--> 
 <footer id = "pageFooter">
 <ul id = "footerNav">
-    <li class="footerLink"><a href="tandc.htm">Terms and Conditions</a></li>
-    <li class="footerLink"><a href ="contact.htm">Contact</a></li>
-    <li class="footerLink"><a href= "copy.htm">Copyright</a></li>
+    <li class="footerLink"><a href="tandc.htm"><div class="linkText">Terms and Conditions</div></a></li>
+    <li class="footerLink"><a href ="contact.htm"><div class="linkText">Contact</div></a></li>
+    <li class="footerLink"><a href= "copy.htm"><div class="linkText">Copyright</div></a></li>
 </ul>
 </footer>
+<!--END OF FOOTER-->
+</div>
 
-
+<!--JavaScript imports -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 <script src = "_scripts/script.js"></script>
 <script src = "_scripts/home.js"></script>
+
+</div>
 
 </body>
 </html>
