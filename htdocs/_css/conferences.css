@@ -1,0 +1,11 @@
+.eventTypeNavButton#seminarsNav {
+    background-color: lightgray;
+}
+
+.eventTypeNavButton#conferencesNav {
+    background-color: lightsteelblue;
+}
+
+.eventTypeNavButton#coursesNav {
+    background-color: lightgray;
+}

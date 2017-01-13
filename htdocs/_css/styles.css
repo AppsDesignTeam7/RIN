@@ -1,0 +1,1133 @@
+/* STYLING FOR HTML ELEMENT TAGS */
+
+/* style for the whole page */
+html {
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    color: black;
+    height: 100%;
+    /*font-size: 1em;*/
+}
+
+/* style for all non-header elements*/
+body {
+    
+    width: 97%;
+    font: 100% "Trebuchet MS", Helvetica, sans-serif;
+    background: white;
+    margin: auto;
+    height: 100%;
+    
+    /* REMOVED: */
+    /*padding: 1em 50px;*/
+    /*margin: 0 auto;*/
+    /*width: 90%;*/
+}
+
+/* style for the header section  */
+header {
+        background: #061539;
+        position: relative;
+}
+
+.notBlueLink{
+    color:black;
+}
+    
+/*h1 is the page title RIN*/
+h1 {
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    font-size: 2em;
+    font-weight: bold;
+    font-style: normal;
+    margin: 0em 0em 0em 0em;
+    padding: 0px 0px;
+    padding-left: 0.1em;
+   /* color: black;*/
+    color: white;
+    display: inline;
+}
+
+/*h2 is the subtitle (e.g. Manage My Events)*/
+h2 {
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    font-size: 0.8em;
+    font-weight: normal;
+    font-style: normal;
+    margin: 0em 0em 0em 0em;
+    padding: 0px 0px;
+    padding-left: 0.4em;
+    color: white;
+    display: inline;
+    }
+    
+/*h4 is the small at the top of individual pages, e.g. "Register"*/
+h4 {
+    font-size: 1em;
+    font-weight: bold;
+    font-style: normal;
+    color: gray;
+    text-align: center;
+    }
+
+/* NOTE: Saw a video on lynda.com that said not to use h5 unless referrring to headings so we can maybe make a new class for the text in the event descriptions instead of using h5 for it? Like <p class = "moreDetails">? */
+/* new font format for paragraph text */
+h5 {
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    font-size: 0.6em;
+    font-weight: normal;
+    font-style: normal;
+    margin: 0 0 0;
+    color: grey;
+    text-align: left;
+    padding: 0.5em 0;
+}
+
+button {
+    border: none;
+    border-radius: 25px;
+    text-align: center;
+    }
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    }
+
+
+/* applies to the sign in page - or anything we want it to be center */
+.centerText {
+    text-align: center;
+    }
+    
+/* BANNER STYLING */
+#banner{
+    padding-left: 1em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    padding-right: 0.5em;
+    margin-top: 0em;
+    position: relative;
+    height: 100%;
+}
+
+
+/* STYLING FOR SMALL-SCREEN NAVIGATION */
+
+/* Controls whether to use small-screen or normal navigation */
+@media screen and (min-width: 730px) {
+    #smallScreenNav {
+    display: none;
+    }
+}
+
+@media screen and (max-width: 730px) {
+    #siteNav {
+        display: none;
+    }
+}
+
+.fa.fa-navicon {
+    color: white;
+}
+
+/* NAVIGATION FOR SMALL SCREEN*/
+
+/* positions the navigation icon to the top right of the banner */
+#smallScreenNav {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 999;
+}
+
+/* styles the drop-down navigation menu */
+.dropbtnNav {
+    background-color: inherit;
+    color: white;
+    /*padding: 16px;*/
+    /*font-size: h1;*/
+    height: 100%;
+    border: none;
+    cursor: pointer;
+    border-radius: 0;
+    font-size: 24px;
+    padding: 0.5em;
+}
+
+/* positions the dropdown navigation section */
+.dropdownNav {
+    position: relative;
+    display: inline-block;
+}
+
+/* styling for the content of the drop down navigation */
+.dropdown-contentNav {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 10;
+}
+
+/* styling for the links in the drop-down navigation */
+.dropdown-contentNav a{
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 0.7em;
+    border-bottom: solid 0.5px whitesmoke;
+}
+
+/* styling for hovering over the links in the drop-down navigation menu */
+.dropdown-contentNav a:hover{
+    background-color: #f1f1f1;
+}
+
+/* styling for hovering over the drop-down navigation section and for the navigation list itself */
+.dropdownNav:hover .dropdown-contentNav{
+    display: block;
+}
+
+/* styling for hovering over the drop-down navigation section and for the drop-down navigation button */
+.dropdownNav:hover .dropbtnNav {
+    background-color: lightgray;
+}
+
+/* ---Styling for the 'My Account' link within the navigation drop-down--- */
+
+/* styling for the drop-down section on hover and the drop down button */
+.dropdownIn:hover .dropbtnIn{
+    /*background-color: red;*/
+}
+
+/* styling for the drop-down section */
+.dropdownIn {
+    display: inline-block;
+    width: 100%;
+}
+
+/* styling for the content of the drop-down*/
+.dropdown-contentIn {
+    display: none;
+    position: absolute;
+    left: -75%;
+    top: 50%;
+    background-color: #f9f9f9;
+    /*min-width: 160px;*/
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+/* styling for the links in the drop-down */
+.dropdown-contentIn a{
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+/* styling for the content of the drop-down on hover */
+.dropdown-contentIn a:hover {
+    background-color: #f1f1f1;
+}
+
+/* styling for the drop-down section on hover and for the drop-down content */
+.dropdownIn:hover .dropdown-contentIn {
+    display: block;
+}
+
+/* SITE NAVIGATION STYLING - for normal-sized screen */
+
+/* centers the navigation links vertically */
+.linkText {
+    position: relative;
+    top: 40%;
+    transform: translateY(-40%);
+}
+
+/* Styling for site navigation section */
+/* - defines that the site navigation should occupy 50% of the width of its parent container (the banner),
+- should be position at the top right of the banner
+- occupies the entire height of the banner */
+#siteNav {
+    width: 50%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+}
+
+/* Styling for the unordered list containining the navigation links */
+ul#navBar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #061539;
+    height: 100%;
+}
+
+/* Styling for the navigation links and the dropdown nagivation link */
+li.navLink, li.dropdown {
+    float: left;
+    /*border-right: 1px solid gray;*/
+    height: 100%;
+}
+
+/* Defines the relative widths of each of the navigation buttons : */
+
+/* defines the width of the 'Home' navigation link relative to the width of the navigation section */
+#homeLink{
+    width: 22%;
+    text-align: center;
+    border-left: 1px solid gray;
+}
+
+/* defines the relative width of the 'Create Event' link */
+#createEventLink{
+    width: 30%;
+    text-align: center;
+}
+
+/* defines the relative width of the 'My Account' link */
+#myAccountLink{
+    width: 25%;
+    text-align: center;
+}
+
+/* defines the relative width of the 'Help' link */
+#helpLink {
+    width: 20%;
+    text-align: center;
+    border-right: 0;
+}
+
+/* Drop-down for the 'My Account' button */
+
+/* Styling for navigation links and drop-down button */
+li.navLink a, .dropbtn {
+    display: inline-block;
+    color: white;
+    text-align: center;  
+    text-decoration: none;
+    width: 100%;
+    font-size: 0.7em;
+    background-color: #061539;
+    height: 90%;
+}
+
+/* Styling for hovering over links, the drop-down section, or the drop button */
+li a:hover, .dropdown:hover .dropbtn {
+    background-color: lightgray;
+}
+
+/* Styling for the dropdown section */
+li.dropdown {
+    display: inline-block;
+}
+
+/* Styling for the drop-down content */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1000;
+}
+
+/* Styling for the links in the drop-down content */
+.dropdown-content a{
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    font-size: 0.7em;
+}
+
+/* Styling for hovering over drop-down content */
+.dropdown-content a:hover{
+    background-color: #f1f1f1;
+}
+
+/* Styling for hovering over the dropdown section and for the drop-down content */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* STYLING FOR SEARCH SECTION */
+
+/* encompasses the search field and the search button */
+#searchBar {
+    position: relative;
+    background: #061539;
+    padding-top: 0;
+    padding-bottom: 0em;
+    height: 26px;
+}
+
+/* user types search terms here */
+#searchField {
+    width: 80%;
+    border: 0px;
+    border-radius: 0px;
+    font-size: 12px;
+    text-align: left;
+    background-color: white;
+    display: inline-block;
+    height: 24px;
+    border-left: 0.5px solid lightgray;
+    border-bottom: 0.5px solid lightgray;
+    padding-left: 1.6em;
+}
+
+/* for search button */
+#searchButton {
+    color: white;
+    width: 20%;
+    height: 26px;
+    min-width: 1em;
+    position: absolute;
+    right: 0.1em;
+    cursor: pointer;
+    background-color: white;
+    color: #061539;
+    font-weight: bold;
+    border-radius: 0;
+    border-left: 1px solid;
+    border-bottom: 1px solid;
+    border-right: 0px;
+    }
+    
+
+/* ---The search filter section--- */
+
+/* the expanded search section */
+#expandedSearch{
+    position: relative;
+    /*height: 200px;*/
+    /*background-color: #e3e3e3;*/
+    border: solid 0.5px lightgray;
+    padding-bottom: 0.5em;
+    /*width: 100%;*/
+    background-color: #F5F5F5;
+    height: 180px;
+    width: 100%;
+}
+
+
+/* styling for the subject and date filters section */   
+#subjectFilters, #dateFromFilters {
+    /*display: inline-block;*/
+    background-color: #F5F5F5;
+    padding-top: 0.5em;
+    /*display: inline-block;
+    float: right;*/
+    height: 130px;
+}
+
+/* styling for the subject filters section */
+#subjectFilters {
+    /*width: 80%;*/
+    /*padding: 1em 5%;*/
+
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    width: 80%;
+    overflow: scroll;
+}
+
+/* style for the form holding the checkboxes for the filter terms */
+#filterText {
+    font-size: 0.6em;
+    font-style: normal;
+    color: gray;
+    text-align: left;
+    /*width: 100%;*/
+}
+
+/* styling for date filter section */
+#dateFromFilters {
+    font-size:1em;
+    font-style: normal;
+    position: absolute;
+    right: 0em;
+    top: 0em;
+    /*width: auto;*/
+    background-color: #F5F5F5;
+    border-left: solid 2px #e3e3e3;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-bottom: 1em;
+    /*height: 144px;*/
+    overflow: hidden;
+}
+
+
+
+ #applyButtonSection {
+    display: block;
+   /* position: absolute;
+    right: 1em;*/
+    padding-top: 0.5em;
+    bottom: 1em;
+    text-align: center;
+}
+
+#applyFiltersButton {
+
+    background-color: white;
+    border: solid 1px #061539;
+    color: black;
+    min-width: auto;
+    width: 120px;
+    /*display: block;*/
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+/* for the style of checkbox, in order to overwrite the style of "input" */
+.checkbox {
+    text-align: center;
+    width: 2em;
+}
+    
+/* styling for the grid holding the subject filter checkboxes and their labels */
+.checkbox-grid {
+   /* height: 120px;*/
+    overflow: scroll;
+}
+    
+/* styling for the subject filter checkbox-label pair */
+.checkbox-grid li {
+    display: block;
+    float: left;
+}
+
+/* Styling for the subject filter checkbox-label pair at different screen sizes */
+@media screen and (max-width: 450px) {
+    .checkbox-grid li{
+    width: 100%;
+    }
+}
+
+@media screen and (min-width: 450px) and (max-width: 560px) {
+    .checkbox-grid li{
+    width: 50%;
+    }
+}
+
+@media screen and (min-width: 560px) and (max-width: 740px) {
+    .checkbox-grid li{
+    width: 33%;
+    }
+}
+
+@media screen and (min-width: 740px) and (max-width: 920px) {
+    .checkbox-grid li{
+    width: 25%;
+    }
+}
+
+@media screen and (min-width: 920px) and (max-width: 980px) {
+    .checkbox-grid li{
+    width: 20%;
+    }
+}
+
+
+
+
+
+/* For expanded search's day selection */
+.day {
+    font-size: 0.6em;
+    font-style: normal;
+    color: gray;
+    text-align: left;
+    width: 120px ;
+}
+
+/* For expanded search's month selection */
+.month {
+    font-size: 0.6em;
+    font-style: normal;
+    color: gray;
+    text-align: left;
+    width: 120px ;
+}
+
+/* For expanded search's year selection */
+.year {
+    font-size: 0.6em;
+    font-style: normal;
+    color: gray;
+    text-align: left;
+    width: 120px;
+}
+
+/* STYLING FOR THE TABS (COURSES, CONFERENCES, ETC) */
+
+/* Styling for the unordered list <ul> that encompasses the seminars, courses, and conferences tabs */
+#eventNavList {
+    list-style-type: none;
+    overflow: hidden; 
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    background: white;
+    position: relative;
+}
+
+/* this is the background section for courses, seminars, conferences buttons */
+.eventTypeNavButton {
+    text-align: center;
+    width: 33.3%;
+    overflow:hidden;
+    float:left;
+    color: Black;
+    background-color: lightgray;
+    /*border-top-left-radius: 10px;
+    border-top-right-radius: 10px;*/
+}
+
+.eventTypeNavButton a {
+    text-decoration: none;
+    color: black;
+}
+
+/* Background colour for an active event tab */
+.active {
+     /*background-color: lightsteelblue;*/
+} 
+
+/* styling for the event tabs, all of which have been assigned this class, not just the seminars */
+.seminarsButton {
+    padding: 0.3em 0;
+    height: 15%;
+    color: Black;
+    font-style: bold;
+    display: inline-block;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    font-size: 1em;
+    cursor: pointer;
+    }
+    
+/* styling for the 'Courses' event tab*/
+.coursesButton {
+    border-left: solid white 1px;
+    border-right: solid white 1px;
+    }
+
+/* END OF EVENT NAVIGATION LIST */
+
+/* ACCORDION STYLING */
+/* removes the arrow from the side of the accordion panels */
+.accordion .ui-icon {
+    display: none;
+}
+
+/* styles the accordion header - that is, what is visible when the accordion is unexpanded */
+.accordion .ui-accordion-header {
+    background: white;
+    margin: 0px;
+    padding: 1em 1em;
+    color: gray;
+    min-height: 120px;
+    /*min-height: 80px;*/
+    }
+    
+    
+/* for active accordion header */
+.accordion .ui-accordion-header-active {
+    border-bottom: none;
+    padding-bottom: 0em;
+}
+    
+/* styles the accordion content - that is, what becomes visible when the accordion is expanded */
+.accordion .ui-accordion-content {
+    background: white;
+    color: gray;
+    margin: 0;
+    padding-left: 1.6em;
+    padding-top: 0;
+    padding-bottom: 0em;
+    min-height: 10px;
+    }
+
+/* styling for hashtags */
+.accordion .ui-accordion-content .hashtag{ 
+    color: #ffab41;
+}
+
+/* styling for link to events site */
+.accordion .ui-accordion-content .linkToEventSite{ 
+    color: darkblue;
+}
+
+/* STYLING FOR ADD TO CALENDAR BUTTON */
+
+/* styling for whole add to calendar section (including both calendar button icon and menu) */
+.addtocalendar {
+    color: lightgray;
+    /*position: absolute;*/
+    /*right: 2.1em;*/
+    /*top: 2em;*/
+    /*display: inline;*/
+}
+
+/* styling for calendar menu list */
+.atc-style-menu-wb .atcb-list {
+    width: auto; 
+    border: 1px solid rgb(186,186,186);
+    border-radius: 2px;
+    box-shadow: 0 0 5px #AAA;
+}
+
+/* styling for the calendar menu */ 
+.atcb-list {
+    position: absolute;
+    /*right: 200%;*/
+    left: -100%;
+    /*width: auto;*/
+
+}
+
+/* styling for calendar menu items */
+.atc-style-menu-wb .atcb-item-link,
+.atc-style-menu-wb .atcb-item-link:hover,
+.atc-style-menu-wb .atcb-item-link:active,
+.atc-style-menu-wb .atcb-item-link:focus
+{
+    color: #000;
+    font-family: "Verdana";
+    font-size: 0.5em;
+    text-decoration: none;
+    outline: none;
+    padding: 5px 15px;
+}
+
+.fa.fa-calendar {
+    color: lightgray;
+}
+
+/* END OF STYLING FOR ADD TO CALENDAR BUTTON */
+    
+/* EVENT DETAILS STYLING */
+
+/* for event title */
+h3 {
+    font-size: 0.75em;
+    font-weight: bold;
+    font-style: normal;
+    color: gray;
+    padding: 0em;
+    margin: 0em;
+}
+    
+/* for the user-uploaded image for the event */
+.eventImage {
+    width: 4.2em;
+    height: 3.7em;
+    float: left;
+    padding: 0em;
+    padding-top: 0.9em;
+    margin: 0em;
+}
+    
+/*styling for icons */
+
+/* Styling for star icon */
+.fa.fa-star {
+    color: lightgray;
+}
+
+/* styling for star and calendar icons when screen width is widest */
+@media screen and (min-width: 600px) {
+    .fa.fa-star {
+        position: absolute;
+        right: 2.7em;
+        top: 1.1em;
+        display: inline;
+    }
+
+    .addtocalendar {
+        position: absolute;
+        right: 2.1em;
+        top: 2em;
+        display: inline;
+    }
+    
+    .eventSummaryDetails {
+ }
+}
+
+/* styling for star and calendar icons when screen width is narrower */
+@media screen and (max-width: 600px) {
+        
+    .fa.fa-star {
+        /*position: absolute;
+        left: 3em;
+        bottom: 0.3em;*/
+        display: block;
+        float: right;
+        /*padding-bottom: 1em;*/
+        padding-top: 0.6em;
+    }
+        
+    .addtocalendar {
+        float: right;
+        padding-left: 0.5em;
+       /* left: 9em;*/
+        /*top: 7.3em;*/
+        display: block;
+        /*clear: left;*/
+        padding-bottom: 1.1em;
+        padding-top: 1em;
+    }
+}
+
+/* for the container with un-expanded event summary (including images and icons) */
+.eventSummarySection {
+    position: relative;
+}
+    
+/* for summary of the event; the details of the event visible before it is expanded (not including images and icons) */
+.eventSummaryDetails {
+    list-style-type: none;
+    font-size: 0.6em;
+    padding-top: 1.4em;
+    padding-left: 8em;
+    padding-bottom: 1em;
+    color: gray;
+    background: white;
+ }
+    
+/* the further details of the event that are displayed when it has been expanded */
+.furtherDetails p {
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    font-size: 0.6em;
+    font-weight: normal;
+    font-style: normal;
+    margin: 1em 0; /* 1em for top and bottom margins, which is default for <p> */
+    padding: 0px 0px;
+    color: grey;
+    text-align: left;
+ }
+ 
+ .furtherDetails p:first-child {
+    margin-top: 0;
+}
+ 
+ p.firstDetailsLine {
+     margin-top: 0;
+     padding-top: 0;
+}
+
+.furtherDetails {
+margin-top: 0;
+padding-top: 0;
+overflow: hidden;
+min-height: 180px;
+position: relative;
+}
+
+
+/* Style for map */
+
+.furtherDetails div {
+    display: inline;
+    float: left;
+}
+
+
+
+.map {
+    width: 180px;
+    height: 180px;
+    background-color: grey;
+}
+
+
+.address {
+    display: inline;
+}
+
+/* END OF EVENTS AND SUMMARY AND INFORMATION SECTION */
+
+/*For anchor tags*/
+a {
+    color: blue;
+    text-decoration: none;
+    }
+    
+/* STYLING FOR THE FORM PAGES (REGISTRATION, LOGIN) */
+
+/* Applies to all forms forms */
+form{
+    text-align: center;
+    width: inherit;
+}
+
+/* Input format for form */
+input {
+    text-align: center;
+    width: 20em;
+}
+
+input#descriptionBox {
+    height: 100px;
+}
+
+/* Styling for select element for drop-down forms */
+select {
+    display: block;
+    margin: 0 auto;
+    width: 20.7em;
+}
+
+/* Additional styling for form submission button */
+.formSubmissionButton {
+    display: block;
+    margin: 0 auto;
+}
+    
+/* STYLING FOR PAGE FOOTER */
+
+/* styling for unordered list <ul> containing the footer links */
+ul#footerNav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: lightsteelblue; 
+    margin-top: 0.2em;
+}
+
+/* styling for footer list item */
+li.footerLink {
+    float: left;
+}
+
+/* styling for the footer links */
+li.footerLink a {
+    display: block;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    font-size: 0.7em;
+    font-weight: normal;
+    font-style: normal;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    padding: 0.2em 1em;
+}
+
+/* HELP PAGE STYLING */
+
+.helpPageText {
+    font-size: 0.8em;
+    font-style: normal;
+    text-decoration: none;
+    text-align: left;
+}
+
+/* MANAGE MY EVENTS PAGE STYLING */
+
+.eventApprovalStatus {
+    /*position: absolute;
+    right: 5%;
+    top: 2em;*/
+    display: inline-block;
+    size: 1em;
+    float: right;
+    margin-right: 1em;
+}
+
+
+
+
+.editEventButton {
+    /*float: right;*/
+    position: absolute;
+    bottom: 20%;
+    right: 5%;
+    height: 15%;
+    width: 14%;
+    background: lightgray;
+    color: gray;
+    display: inline;
+    padding: 0px;
+}
+
+.eventAttendanceDetails {
+    position: absolute;
+    top: 2em;
+    right: 1em;
+    display: block;
+    height: 1em;
+    font-size: 0.5em;
+}
+
+.editEventText{
+    font-size: 0.7em;
+    display: inline-block;
+}
+
+
+/* Account Page Settings */
+
+/* Style for the button's text */
+.AccountSettingText {
+    position: relative;
+    height: 15%;
+    width: 14%;
+    display: inline;
+    padding: 0px;
+    font-size: 1em;
+}
+
+/* Style and size for the button */
+.resetPasswordButton{
+    font-size: 0.7em;
+    display: inline-block;
+    background: #ffab41;
+    color: white;
+    border-radius: 25px;
+    float:left;
+}
+
+/* Style for the link to be white*/
+.AccountSettingLink{
+    color:white;
+}
+
+/* EVENT APPROVAL PAGE STYLING */
+
+.approvalButtons {
+    display: inline-block;
+    float: right;
+}
+
+button.eventApprovalButton div {
+    font-size: 0.8em;
+    width: 100px;
+}
+
+button.eventApprovalButton {
+    cursor: pointer;
+}
+
+/* FROM PREVIOUS VERSION OF EVENT APPROVAL PAGE */
+/*
+.eventTableText {
+    font-size: 0.8em;
+    font-style: normal;
+    text-decoration: none;
+    text-align: center;
+}
+
+.eventTableHeader {
+    font-size: 1.2em;
+    font-style: normal;
+    text-decoration: none;
+    text-align: center;
+    color: white;
+    background-color: black;
+}
+
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+.approveBtn {
+    padding: 3% 10%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    background-color: lightgrey;
+    border: none;
+    text-align: center;
+    font-size: 0.7em; 
+    margin: 0.5em; 
+    width:8em;
+}
+
+.disapproveBtn {
+    padding: 3% 10%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    background-color: lightgrey;
+    border: none;
+    text-align: center;
+    font-size: 0.7em;
+    margin: 0.5em;
+    width:8em;
+}*/
+
+
+
+/* ALL ADMIN USERS PAGE STYLING */
+
+.adminTableText {
+    font-size: 0.8em;
+    font-style: normal;
+    text-decoration: none;
+    text-align: center;
+}
+
+.adminTableHeader {
+    font-size: 1.2em;
+    font-style: normal;
+    text-decoration: none;
+    text-align: center;
+    color: white;
+    background-color: black;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+.noBtn {
+    padding: 3% 10%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    background-color: lightgrey;
+    border: none;
+    text-align: center;
+    font-size: 0.7em;
+    margin: 0.5em 0.5em;     
+}
+
+.yesBtn {
+    padding: 3% 10%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    background-color: lightgrey;
+    border: none;
+    text-align: center;
+    font-size: 0.7em;
+    margin: 0.5em 0.5em; 
+}
+
+ 
