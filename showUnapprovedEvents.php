@@ -45,7 +45,7 @@ if($result->connect_errno > 0){
 if(!$result){
     echo "no result";
 } else if(mysqli_num_rows($result) == 0) {
-    echo '<h4>No Events Found</h4>';
+    echo '<h4>No Events Pending Approval</h4>';
 } else {
 
     echo '<div class = "accordion">';
@@ -69,9 +69,10 @@ if(!$result){
 
 
         // Add the approve button here to replace favourites
-        echo    '<form action="_php/handleApproval.php" method="post">';
-        echo    '   <button class="formSubmissionButton" id="approveButton">Approve</button>';
-        echo    '   <button class="formSubmissionButton" id="dontApproveButton">Reject</button>';
+        echo    '<form id="approveForm" action="_php/handleApprove.php" method="post" class="approvalButtons">';
+        echo    '   <input name="EventID" type="hidden" value="' . $row['EventID'] . '"></input>';
+        echo    '   <button name="approvalBtn" type="submit" form="approveForm" value="approve" class="eventApprovalButton"><div class = "approvalButtonText">Approve</div></button>';
+        echo    '   <button name="approvalBtn" type="submit" form="approveForm" value="reject" class="eventApprovalButton"><div class = "approvalButtonText">Reject</div></button>';
         echo    '</form>';
 
 

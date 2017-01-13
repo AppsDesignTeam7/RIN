@@ -103,6 +103,13 @@ $(".accordion .atc-style-menu-wb").click(function(event) {
         }, 250);
 });
 
+$(".eventApprovalButton").click(function (event) {
+    $(".accordion").accordion("disable");
+    setTimeout(function() {
+        $(".accordion").accordion("enable");
+        }, 250);
+});
+
 // stops the normal expansion function of the accordion when when the  calendar button is clicked.
 $(".accordion .fa.fa-calendar").click(function (event) {
     event.stopPropagation();
@@ -110,11 +117,11 @@ $(".accordion .fa.fa-calendar").click(function (event) {
     $(this).css("color","DarkBlue"); /* changes the colour of the calendar to DarkBlue on click*/
 });
 
-
+/*
 $(".eventApprovalButton").click(function (event) {
     event.stopPropagation();
     event.preventDefault();
-});
+});*/
     
 
 document.getElementById("searchField").onfocus = function () {
@@ -199,7 +206,6 @@ function swapContent(cv) {
         $("#myDiv").html(data).show();
     });
 }*/
-
 
 
 

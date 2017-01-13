@@ -25,7 +25,7 @@ if (isset($_SESSION['selectedTags'])) {
         WHERE events.Type = 1
         AND event_tags.TagID IN ( $selectedTags )
         AND events.Approved = 1
-        AND events.Start > $now
+        AND events.Start > '" . $now . "'
         ORDER BY Start ASC";
 } else {
     // Query for all events

@@ -34,7 +34,7 @@
                 if ($_SESSION['isAdmin']) {
                     // If user is an admin, show admin options
                     echo '
-                        <a href="approveEvents.htm">Approve Events</a>
+                        <a href="approveEvents.php">Approve Events</a>
                         <a href="displayAllUsers.htm">Manage Users</a>';
                 }
                 echo '
@@ -80,7 +80,7 @@
         if ($_SESSION['isAdmin']) {
             // If user is an admin, show admin options
             echo '
-                <a href="approveEvents.htm">Approve Events</a>
+                <a href="approveEvents.php">Approve Events</a>
                 <a href="displayAllUsers.htm">Manage Users</a>';
         }
         echo '

@@ -30,7 +30,10 @@
 <header role = "banner">
 
 <!-- banner -->
-<?php include('_php/banner.php'); ?>
+<?php 
+$subtitle = "Courses";
+include('_php/banner.php'); 
+?>
 
 <!--Search bar-->
 <section id="searchBar">
@@ -182,10 +185,7 @@
 </div>  
 
 <!--Event navigation-->
-<?php 
-$subtitle = "Courses";
-include('_php/navbar.php'); 
-?>
+<?php include('_php/navbar.php'); ?>
 
 </header>
 
@@ -236,3 +236,7 @@ include('_php/navbar.php');
 
 </body>
 </html>
+
+
+
+
