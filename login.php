@@ -46,7 +46,7 @@ if (isset($_SESSION['loginError'])) {
 <br>
     
 <h5 class = "centerText">
-No account? <a href="register.htm">Create one!</a>
+No account? <a href="register.php">Create one!</a>
 </h5>
 
 <br>

@@ -2,12 +2,12 @@
 
 /* style for the whole page */
 html {
-	margin: 0;
-	padding: 0;
+    margin: 0;
+    padding: 0;
     background-color: white;
     font-family: "Trebuchet MS", Helvetica, sans-serif;
     font-weight: normal;
-	font-style: normal;
+    font-style: normal;
     color: black;
     height: 100%;
     /*font-size: 1em;*/
@@ -15,9 +15,9 @@ html {
 
 /* style for all non-header elements*/
 body {
-	
+    
     width: 97%;
-	font: 100% "Trebuchet MS", Helvetica, sans-serif;
+    font: 100% "Trebuchet MS", Helvetica, sans-serif;
     background: white;
     margin: auto;
     height: 100%;
@@ -40,12 +40,12 @@ header {
     
 /*h1 is the page title RIN*/
 h1 {
-	font-family: "Trebuchet MS", Helvetica, sans-serif;
-	font-size: 2em;
-	font-weight: bold;
-	font-style: normal;
-	margin: 0em 0em 0em 0em;
-	padding: 0px 0px;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    font-size: 2em;
+    font-weight: bold;
+    font-style: normal;
+    margin: 0em 0em 0em 0em;
+    padding: 0px 0px;
     padding-left: 0.1em;
    /* color: black;*/
     color: white;
@@ -55,11 +55,11 @@ h1 {
 /*h2 is the subtitle (e.g. Manage My Events)*/
 h2 {
     font-family: "Trebuchet MS", Helvetica, sans-serif;
-	font-size: 0.8em;
-	font-weight: normal;
-	font-style: normal;
+    font-size: 0.8em;
+    font-weight: normal;
+    font-style: normal;
     margin: 0em 0em 0em 0em;
-	padding: 0px 0px;
+    padding: 0px 0px;
     padding-left: 0.4em;
     color: white;
     display: inline;
@@ -78,10 +78,10 @@ h4 {
 /* new font format for paragraph text */
 h5 {
     font-family: "Trebuchet MS", Helvetica, sans-serif;
-	font-size: 0.6em;
-	font-weight: normal;
-	font-style: normal;
-	margin: 0 0 0;
+    font-size: 0.6em;
+    font-weight: normal;
+    font-style: normal;
+    margin: 0 0 0;
     color: grey;
     text-align: left;
     padding: 0.5em 0;
@@ -731,9 +731,9 @@ li.dropdown {
 
 /* for event title */
 h3 {
-	font-size: 0.75em;
-	font-weight: bold;
-	font-style: normal;
+    font-size: 0.75em;
+    font-weight: bold;
+    font-style: normal;
     color: gray;
     padding: 0em;
     margin: 0em;
@@ -820,11 +820,11 @@ h3 {
 /* the further details of the event that are displayed when it has been expanded */
 .furtherDetails p {
     font-family: "Trebuchet MS", Helvetica, sans-serif;
-	font-size: 0.6em;
-	font-weight: normal;
-	font-style: normal;
-	margin: 1em 0; /* 1em for top and bottom margins, which is default for <p> */
-	padding: 0px 0px;
+    font-size: 0.6em;
+    font-weight: normal;
+    font-style: normal;
+    margin: 1em 0; /* 1em for top and bottom margins, which is default for <p> */
+    padding: 0px 0px;
     color: grey;
     text-align: left;
  }
@@ -931,7 +931,7 @@ li.footerLink a {
     text-decoration: none;
     font-size: 0.7em;
     font-weight: normal;
-	font-style: normal;
+    font-style: normal;
     font-family: "Trebuchet MS", Helvetica, sans-serif;
     padding: 0.2em 1em;
 }

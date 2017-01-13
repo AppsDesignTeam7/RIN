@@ -50,7 +50,7 @@ if (isset($_SESSION['eventCreationError'])) {
     <br>
     <input type="a" name="time" placeholder="Time (hh:mm, 24h)"><br>
     <br>
-    <input type="text" name="description" placeholder="Description" id="descriptionBox"><br>
+    <textarea rows="4" name="description" placeholder="Description"></textarea><br>
     <br>
     <input type="a" name="duration" placeholder="Duration (hours)"><br>
     <br>

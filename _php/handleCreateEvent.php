@@ -9,6 +9,32 @@ If input is valid, the event is added to the db.
 Process tags, and write query that adds them to the db.
 */
 
+/* 
+Postcode validation functiion.
+Ref: https://www.townscountiespostcodes.co.uk/postcodes/tools/php-postcode-validation-script.php
+*/
+
+//UK postcode validation check
+function isPostcodeValid($postcode)
+{
+    //remove all whitespace
+    $postcode = preg_replace('/\s/', '', $postcode);
+ 
+    //make uppercase
+    $postcode = strtoupper($postcode);
+ 
+    if(preg_match("/^[A-Z]{1,2}[0-9]{2,3}[A-Z]{2}$/",$postcode)
+        || preg_match("/^[A-Z]{1,2}[0-9]{1}[A-Z]{1}[0-9]{1}[A-Z]{2}$/",$postcode)
+        || preg_match("/^GIR0[A-Z]{2}$/",$postcode))
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+
 require_once('config.php');
 session_start();
 
@@ -39,10 +65,17 @@ if (!empty($_POST['eventTitle'])) {
 }
 
 // Location
-if (!empty($_POST['location'])) {
-	$event_location = $_POST['location'];
+$event_address = "";
+if (!empty($_POST['addressLine1'])) {
+	$event_address = $address . $_POST['addressLine1'] . "<br>";
+}
+if (!empty($_POST['addressLine2'])) {
+	$event_address = $address . $_POST['addressLine2'] . "<br>";
+}
+if (!empty($_POST['postcode']) && isPostcodeValid($_POST['postcode'])) {
+	$event_postcode = $_POST['postcode'];
 } else {
-	$_SESSION['eventCreationError'] = "Please enter a location";
+	$_SESSION['eventCreationError'] = "Please enter a valid postcode";
 	echo "<script type='text/javascript'> document.location = 'http://localhost:8887/createEvent.php'; </script>";
 	die();
 }
