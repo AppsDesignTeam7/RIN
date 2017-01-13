@@ -764,14 +764,46 @@ h3 {
     
 /*styling for icons */
 
+
 /* Styling for star icon */
 .fa.fa-star {
     color: lightgray;
+    cursor: pointer;
 }
 
+
+.favButton, .calButton {
+    background-color: white;
+}
+    
+    
+    
+.favsForm {
+        /*position: absolute;
+        left: 3em;
+        bottom: 0.3em;*/
+        display: block;
+        float: right;
+        /*padding-bottom: 1em;*/
+        padding-top: 0.9em;
+}   
+        
+.addtocalendar {
+        float: right;
+        padding-left: 0.1em;
+       /* left: 9em;*/
+        /*top: 7.3em;*/
+        display: block;
+        /*clear: left;*/
+        padding-bottom: 1.1em;
+        padding-top: 0.8em;
+        padding-right: 1em;
+    }
+
 /* styling for star and calendar icons when screen width is widest */
+/*
 @media screen and (min-width: 600px) {
-    .fa.fa-star {
+    .favsForm {
         position: absolute;
         right: 2.7em;
         top: 1.1em;
@@ -787,32 +819,33 @@ h3 {
     
     .eventSummaryDetails {
  }
-}
+}*/
 
 /* styling for star and calendar icons when screen width is narrower */
+/*
 @media screen and (max-width: 600px) {
         
-    .fa.fa-star {
+    .favsForm {
         /*position: absolute;
         left: 3em;
-        bottom: 0.3em;*/
+        bottom: 0.3em;
         display: block;
         float: right;
-        /*padding-bottom: 1em;*/
+        /*padding-bottom: 1em;
         padding-top: 0.6em;
     }
         
     .addtocalendar {
         float: right;
         padding-left: 0.5em;
-       /* left: 9em;*/
-        /*top: 7.3em;*/
+       /* left: 9em;
+        /*top: 7.3em;
         display: block;
-        /*clear: left;*/
+        /*clear: left;
         padding-bottom: 1.1em;
         padding-top: 1em;
     }
-}
+}*/
 
 /* for the container with un-expanded event summary (including images and icons) */
 .eventSummarySection {
