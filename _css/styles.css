@@ -617,7 +617,7 @@ li.dropdown {
 
 /* styling for the event tabs, all of which have been assigned this class, not just the seminars */
 .seminarsButton {
-    padding: 0.3em; 0;
+    padding: 0.3em 0;
     height: 15%;
     color: Black;
     font-style: bold;
@@ -957,11 +957,8 @@ li.footerLink a {
     margin-right: 1em;
 }
 
-.eventApprovalStatusText {
-    font-size: 0.7em;
-    display: inline-block;
-    color: #061539;
-}
+
+
 
 .editEventButton {
     /*float: right;*/
@@ -1020,6 +1017,22 @@ li.footerLink a {
 
 /* EVENT APPROVAL PAGE STYLING */
 
+.approvalButtons {
+    display: inline-block;
+    float: right;
+}
+
+button.eventApprovalButton div {
+    font-size: 0.8em;
+    width: 100px;
+}
+
+button.eventApprovalButton {
+    cursor: pointer;
+}
+
+/* FROM PREVIOUS VERSION OF EVENT APPROVAL PAGE */
+/*
 .eventTableText {
     font-size: 0.8em;
     font-style: normal;
@@ -1066,7 +1079,9 @@ table, th, td {
     font-size: 0.7em;
     margin: 0.5em;
     width:8em;
-}
+}*/
+
+
 
 /* ALL ADMIN USERS PAGE STYLING */
 
