@@ -12,11 +12,17 @@
 
 <body>
 
+<div id="container">
+
+<div id="header">
 <header>
     
 <?php include('_php/banner.php'); ?>
  
 </header>
+</div>
+
+<div id="body">
 
 <main>
 
@@ -54,6 +60,23 @@ No account? <a href="register.php">Create one!</a>
 <h5 class = "centerText"><a href="resetPassword.htm"> Forgot my password </a></h5>
 
 </main>
+
+</div>
+
+<div id="footer">
+<!--ZAK - PLEASE PUT THIS FOOTER ON EACH PAGE USING PHP -->
+<!--Footer--> 
+<footer id = "pageFooter">
+<ul id = "footerNav">
+    <li class="footerLink"><a href="tandc.htm"><div class="linkText">Terms and Conditions</div></a></li>
+    <li class="footerLink"><a href ="contact.htm"><div class="linkText">Contact</div></a></li>
+    <li class="footerLink"><a href= "copy.htm"><div class="linkText">Copyright</div></a></li>
+</ul>
+</footer>
+<!--END OF FOOTER-->
+</div>
+
+</div>
 
 </body>
 

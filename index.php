@@ -45,6 +45,7 @@ include('_php/banner.php');
 ?>
 
 <!--ZAK - PLEASE ADD THE SEARCH SECTION ON EVERY PAGE WITH PHP - SEE FURTHER ON IN CODE FOR WHEN THE SEARCH SECTION ENDS -->
+<!--Search section-->
 <!--Search bar-->
 <section id="searchBar">
 <input type="text" name="search" placeholder="Search.." id="searchField">

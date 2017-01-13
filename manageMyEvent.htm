@@ -22,6 +22,14 @@
                 var h = d[g]('body')[0];h.appendChild(s); }})();
 </script>
 
+<!--Script for Google map -->
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB9YAjl-Zpvqyr6RqQFW9_18HKnelIFXXA&callback=initMap">
+</script>
+
+<div id="container">
+
+<div id="header">
 <header role = "banner">
 
 <!--Banner -->
@@ -265,7 +273,9 @@
 </div>  
 
 </header>
+</div>
 
+<div id="body">
 <main role = "main">
 
 <!--Beginning of accordion for Manage My Events-->
@@ -294,9 +304,27 @@
 
 <!--event 1 accordion contents-->
 <div class="furtherDetails">
-           
-<p>Event created: 2 Dec 2016</p>
-    
+
+
+<p>Free</p>
+        
+<p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Si quae forte-possumus. Re mihi non aeque satisfacit, et quidem locis pluribus. Si quidem, inquit, tollerem, sed relinquo. Hoc etsi multimodis reprehendi potest, tamen accipio, quod dant.</p>
+        
+<p>
+<a href = "index.htm" class="hashtag">#teapots</a> 
+<a href = "index.htm" class="hashtag">#arthurweasley</a>
+<a href = "index.htm" class="hashtag">#mugglestudies</a>
+<a href = "index.htm" class="hashtag">#Philosophy</a>
+
+</p>
+
+        
+<p>
+<a href="https://www.ucl.ac.uk" class="linkToEventSite">http://www.ministryofmagic.com</a>
+</p>
+
+<div class="map"></div>
+
 </div>
 <!--end of event 1 accordion contents-->
     
@@ -307,7 +335,7 @@
 <h3>The Lesser Known Behaviours of the Hippogriff</h3>
 
 <img src="_images/hippogriff.jpg" alt = "Img2" class= "eventImage">
-    
+ 
 <p class="eventApprovalStatus eventApprovalStatusText">Pending Approval</p>
     
     <ul class="eventSummaryDetails">
@@ -361,20 +389,27 @@
 <!--end of accordion-->
         
 </main>
+</div>
     
+<div id="footer">
+<!--ZAK - PLEASE PUT THIS FOOTER ON EACH PAGE USING PHP -->
 <!--Footer--> 
 <footer id = "pageFooter">
 <ul id = "footerNav">
-    <li class="footerLink"><a href="tandc.htm">Terms and Conditions</a></li>
-    <li class="footerLink"><a href ="contact.htm">Contact</a></li>
-    <li class="footerLink"><a href= "copy.htm">Copyright</a></li>
+    <li class="footerLink"><a href="tandc.htm"><div class="linkText">Terms and Conditions</div></a></li>
+    <li class="footerLink"><a href ="contact.htm"><div class="linkText">Contact</div></a></li>
+    <li class="footerLink"><a href= "copy.htm"><div class="linkText">Copyright</div></a></li>
 </ul>
 </footer>
+<!--END OF FOOTER-->
+</div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 <script src = "_scripts/manageMyEventsScript.js"></script>
 <script src = "_scripts/script.js"></script>
+
+</div>
 
 </body>
 </html>
