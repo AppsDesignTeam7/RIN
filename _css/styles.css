@@ -2,36 +2,55 @@
 
 /* style for the whole page */
 html {
-    margin: 0;
-    padding: 0;
+	margin: 0;
+	padding: 0;
     background-color: white;
     font-family: "Trebuchet MS", Helvetica, sans-serif;
     font-weight: normal;
-    font-style: normal;
+	font-style: normal;
     color: black;
     height: 100%;
     /*font-size: 1em;*/
 }
 
-/* style for all non-header elements*/
-body {
-    
-    width: 97%;
-    font: 100% "Trebuchet MS", Helvetica, sans-serif;
-    background: white;
-    margin: auto;
-    height: 100%;
-    
-    /* REMOVED: */
-    /*padding: 1em 50px;*/
-    /*margin: 0 auto;*/
-    /*width: 90%;*/
-}
+
 
 /* style for the header section  */
 header {
         background: #061539;
-        position: relative;
+        /*position: relative;*/
+}
+
+/* style for all non-header elements*/
+body {
+    width: 97%;
+	font: 100% "Trebuchet MS", Helvetica, sans-serif;
+    background: white;
+    margin: auto;
+    height: 100%;
+}
+
+#container {
+    min-height: 100%;
+    position: relative;
+}
+
+#header {
+    /*background: #ff0;
+    padding: 10px;*/
+}
+
+#body {
+    /*padding: 10px;*/
+    padding-bottom: 20px; /*Height of the footer */
+}
+
+/* styling for unordered list <ul> containing the footer links */
+#footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 20px; /* Height of the footer */
 }
 
 .notBlueLink{
@@ -40,12 +59,12 @@ header {
     
 /*h1 is the page title RIN*/
 h1 {
-    font-family: "Trebuchet MS", Helvetica, sans-serif;
-    font-size: 2em;
-    font-weight: bold;
-    font-style: normal;
-    margin: 0em 0em 0em 0em;
-    padding: 0px 0px;
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+	font-size: 2em;
+	font-weight: bold;
+	font-style: normal;
+	margin: 0em 0em 0em 0em;
+	padding: 0px 0px;
     padding-left: 0.1em;
    /* color: black;*/
     color: white;
@@ -55,11 +74,11 @@ h1 {
 /*h2 is the subtitle (e.g. Manage My Events)*/
 h2 {
     font-family: "Trebuchet MS", Helvetica, sans-serif;
-    font-size: 0.8em;
-    font-weight: normal;
-    font-style: normal;
+	font-size: 0.8em;
+	font-weight: normal;
+	font-style: normal;
     margin: 0em 0em 0em 0em;
-    padding: 0px 0px;
+	padding: 0px 0px;
     padding-left: 0.4em;
     color: white;
     display: inline;
@@ -74,14 +93,13 @@ h4 {
     text-align: center;
     }
 
-/* NOTE: Saw a video on lynda.com that said not to use h5 unless referrring to headings so we can maybe make a new class for the text in the event descriptions instead of using h5 for it? Like <p class = "moreDetails">? */
-/* new font format for paragraph text */
+/* Heading 5 */
 h5 {
     font-family: "Trebuchet MS", Helvetica, sans-serif;
-    font-size: 0.6em;
-    font-weight: normal;
-    font-style: normal;
-    margin: 0 0 0;
+	font-size: 0.6em;
+	font-weight: normal;
+	font-style: normal;
+	margin: 0 0 0;
     color: grey;
     text-align: left;
     padding: 0.5em 0;
@@ -475,7 +493,6 @@ li.dropdown {
 }
 
 
-
  #applyButtonSection {
     display: block;
    /* position: absolute;
@@ -547,10 +564,6 @@ li.dropdown {
     width: 20%;
     }
 }
-
-
-
-
 
 /* For expanded search's day selection */
 .day {
@@ -731,9 +744,9 @@ li.dropdown {
 
 /* for event title */
 h3 {
-    font-size: 0.75em;
-    font-weight: bold;
-    font-style: normal;
+	font-size: 0.75em;
+	font-weight: bold;
+	font-style: normal;
     color: gray;
     padding: 0em;
     margin: 0em;
@@ -820,11 +833,11 @@ h3 {
 /* the further details of the event that are displayed when it has been expanded */
 .furtherDetails p {
     font-family: "Trebuchet MS", Helvetica, sans-serif;
-    font-size: 0.6em;
-    font-weight: normal;
-    font-style: normal;
-    margin: 1em 0; /* 1em for top and bottom margins, which is default for <p> */
-    padding: 0px 0px;
+	font-size: 0.6em;
+	font-weight: normal;
+	font-style: normal;
+	margin: 1em 0; /* 1em for top and bottom margins, which is default for <p> */
+	padding: 0px 0px;
     color: grey;
     text-align: left;
  }
@@ -908,14 +921,16 @@ select {
     
 /* STYLING FOR PAGE FOOTER */
 
-/* styling for unordered list <ul> containing the footer links */
+
+
+
 ul#footerNav {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
     background-color: lightsteelblue; 
-    margin-top: 0.2em;
+   /* margin-top: 0.2em;*/
 }
 
 /* styling for footer list item */
@@ -931,9 +946,12 @@ li.footerLink a {
     text-decoration: none;
     font-size: 0.7em;
     font-weight: normal;
-    font-style: normal;
+	font-style: normal;
     font-family: "Trebuchet MS", Helvetica, sans-serif;
-    padding: 0.2em 1em;
+    /*padding: 0.2em 1em;*/
+    padding-left: 1em;
+    padding-right: 1em;
+    height: 20px;
 }
 
 /* HELP PAGE STYLING */
@@ -1031,56 +1049,13 @@ button.eventApprovalButton {
     cursor: pointer;
 }
 
-/* FROM PREVIOUS VERSION OF EVENT APPROVAL PAGE */
-/*
-.eventTableText {
-    font-size: 0.8em;
-    font-style: normal;
-    text-decoration: none;
-    text-align: center;
+button.eventApprovalButton:active {
+    color: black;
 }
 
-.eventTableHeader {
-    font-size: 1.2em;
-    font-style: normal;
-    text-decoration: none;
-    text-align: center;
-    color: white;
-    background-color: black;
+button.eventApprovalButton:hover {
+    background-color: lightgray;
 }
-
-
-table, th, td {
-    border: 1px solid black;
-    border-collapse: collapse;
-}
-
-.approveBtn {
-    padding: 3% 10%;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    background-color: lightgrey;
-    border: none;
-    text-align: center;
-    font-size: 0.7em; 
-    margin: 0.5em; 
-    width:8em;
-}
-
-.disapproveBtn {
-    padding: 3% 10%;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    background-color: lightgrey;
-    border: none;
-    text-align: center;
-    font-size: 0.7em;
-    margin: 0.5em;
-    width:8em;
-}*/
-
 
 
 /* ALL ADMIN USERS PAGE STYLING */
