@@ -13,8 +13,6 @@ html {
     /*font-size: 1em;*/
 }
 
-
-
 /* style for the header section  */
 header {
         background: #061539;
@@ -385,17 +383,23 @@ li.dropdown {
 /* STYLING FOR SEARCH SECTION */
 
 /* encompasses the search field and the search button */
+
 #searchBar {
     position: relative;
     background: #061539;
     padding-top: 0;
     padding-bottom: 0em;
+    padding-left: 0;
     height: 26px;
+}
+
+form#searchForm {
+    text-align: left;
 }
 
 /* user types search terms here */
 #searchField {
-    width: 80%;
+   width: 80%;
     border: 0px;
     border-radius: 0px;
     font-size: 12px;
@@ -426,6 +430,7 @@ li.dropdown {
     border-right: 0px;
     }
     
+
 
 /* ---The search filter section--- */
 
