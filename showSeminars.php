@@ -4,8 +4,23 @@ require_once('_php/config.php');
 
 session_start();
 
+$_SESSION['faveReturn'] = substr($_SERVER[REQUEST_URI], 1);
+
 // Used to make sure no events that have passed are displayed
-$now = date("Y-m-d H:i:s", time());
+if (isset($_SESSION['dateFrom'])) {
+    $dateFrom = $_SESSION['dateFrom'];
+} else {
+    $dateFrom = "2000-00-00 00:00:00";
+}
+
+if (isset($_SESSION['dateTo'])) {
+    $dateTo = $_SESSION['dateTo'];
+} else {
+    $dateTo = "2020-12-31 23:59:59";
+}
+
+//echo $dateFrom . "<br>";
+//echo $dateTo . "<br>";
 
 if (isset($_SESSION['selectedTags'])) {
     // Query for events with selected tags
@@ -25,7 +40,6 @@ if (isset($_SESSION['selectedTags'])) {
         WHERE events.Type = 0
         AND event_tags.TagID IN ( $selectedTags )
         AND events.Approved = 1
-        AND events.Start > '" . $now . "'
         ORDER BY Start ASC";
 } else {
     // Query for all events
@@ -34,7 +48,6 @@ if (isset($_SESSION['selectedTags'])) {
         FROM events
         WHERE Type = 0
         AND Approved = 1
-        AND Start > '" . $now . "'
         ORDER BY Start ASC";
 }
 
@@ -81,7 +94,7 @@ if(!$result){
         echo    '       <var class="atc_timezone">Europe/London</var>';
         echo    '       <var class="atc_title">' . $row['Name'] . '</var>';
         echo    '       <var class="atc_description">' . $row['Description'] . '</var>';
-        echo    '       <var class="atc_location">' . $row['Location'] . '</var>';
+        echo    '       <var class="atc_location">' . str_replace("<br>", ", ", $row['Location']) . ", " . $row['Postcode'] . '</var>';
         echo    '       <var class="atc_organizer">' . $row['Speaker'] . '</var>';
         echo    '       <var class="atc_organizer_email">a.weasley@ministryofmagic.org</var>';
         echo    '   </var>';
@@ -89,11 +102,29 @@ if(!$result){
 
         // Add to favourites button
         // Needs to call an add to favourites script
-        echo    '<i class="fa fa-star fa-2x" aria-hidden="true"></i>';
+        // echo    '<i class="fa fa-star fa-2x" aria-hidden="true"></i>';
+        // Get star colour
+        $user = $_SESSION['UserID'];
+        $event = $row['EventID'];
+        $checkFave = "SELECT * FROM favourites WHERE EventID = $event AND UserID = $user";
+        $faveResult = $connection->query($checkFave);
+        $starColour = (mysqli_num_rows($faveResult) == 1) ? '"color:gold"' : '""';
+        ?>
+
+        <form action="_php/handleStar.php" method="post" class="favsForm">
+        <input name="EventID" type="hidden" value=<?php echo $event ?>>
+        <input name="Faved" type="hidden" value=<?php echo (mysqli_num_rows($faveResult) == 1) ?>>
+        <button name="starBtn" type="submit" value="addToFavs" class="favButton">
+        <i class="fa fa-star fa-2x" aria-hidden="true" id="clickMe" style=<?php echo $starColour ?>></i>
+        </button>
+        </form>
+
+        <?php
         // Event summary details
         echo    '<ul class="eventSummaryDetails">';
         echo    '    <li>' . $row['Speaker'] . '</li>';
-        echo    '    <li><div class="address">' . $row['Location'] . '</div></li>';
+        echo    '    <li>' . $row['Location'] . '</li>';
+        echo    '    <li><div class="address">' . $row['Postcode'] . '</div></li>';
         echo    '    <li>' . $startTime . '</li>';
         echo    '    <li>' . $startDate . '</li>';
         echo    '</ul>';
@@ -123,68 +154,4 @@ if(!$result){
 
 }
 
-/*
-
-<!--seminar 1 accordion header - e.g. what is visible when the section is unexpanded --> 
-<section class = "eventSummarySection">
-
-<h3>On Muggle Teapots</h3>
-
-<img src="_images/teapot.jpg" alt = "Img1" class= "eventImage">  
-
-<span class="addtocalendar atc-style-button-icon atc-style-menu-wb">
-        <a class="atcb-link">
-        <i class="fa fa-calendar fa-2x" class="addToCalendar"></i>
-            <!--<img src="_images/icon.png" width="32">-->
-        </a>    
-        <var class="atc_event">
-            <var class="atc_date_start">2016-11-28 17:00:00</var>
-            <var class="atc_date_end">2016-11-28 18:00:00</var>
-            <var class="atc_timezone">Europe/London</var>
-            <var class="atc_title">On Muggle Teapots</var>
-            <var class="atc_description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Si quae forte-possumus. Re mihi non aeque satisfacit, et quidem locis pluribus. Si quidem, inquit, tollerem, sed relinquo. Hoc etsi multimodis reprehendi potest, tamen accipio, quod dant.</var>
-            <var class="atc_location">Ministry of Magic</var>
-            <var class="atc_organizer">Arthur Weasley</var>
-            <var class="atc_organizer_email">a.weasley@ministryofmagic.org</var>
-        </var>
-</span>
-
-<i class="fa fa-star fa-2x" aria-hidden="true"></i>
-
-    <ul class="eventSummaryDetails">
-        <li>Mr Weasley</li>
-        <li>Department of Muggle Relations, <div class="address">WC1E 6BT</div></li>
-        <li>Ministry of Magic</li>
-        <li>17:00</li>
-        <li>Monday 28th November 2016</li>
-    </ul>
-    
-</section>
-
-<!--seminar 1 accordion contents - e.g. what is visible when the section has been expanded-->
-<div class="furtherDetails">
-
-
-<div class="textDetails">        
-<p>Free</p>
-        
-<p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Si quae forte-possumus. Re mihi non aeque satisfacit, et quidem locis pluribus. Si quidem, inquit, tollerem, sed relinquo. Hoc etsi multimodis reprehendi potest, tamen accipio, quod dant.</p>
-        
-<p>
-<a href = "index.htm" class="hashtag">#teapots</a> 
-<a href = "index.htm" class="hashtag">#arthurweasley</a>
-<a href = "index.htm" class="hashtag">#mugglestudies</a>
-</p>
-        
-<p>
-<a href="https://www.ucl.ac.uk" class="linkToEventSite">http://www.ministryofmagic.com</a>
-</p>
-</div>
-
-<div class="map"></div>
-
-</div>
-<!--end of seminar 1 contents-->
-
-*/
 ?>
