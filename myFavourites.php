@@ -34,6 +34,7 @@
 <div id="header">
 <!--Banner-->
 <header role = "banner">
+  
 <?php
 $subtitle = "My Favourites";
 include('_php/banner.php');
@@ -41,6 +42,7 @@ include('_php/banner.php');
 
 <!--Search bar-->
 <?php include('_php/showSearch.php'); ?>
+
 
 </header>
 </div>
@@ -53,7 +55,7 @@ include('_php/banner.php');
 <section id="favourites">
 
 <!--start of favourites accordion-->
-
+  
 <?php
 include('showFavourites.php');
 ?>
@@ -87,4 +89,5 @@ include('showFavourites.php');
 </div>
 
 </body>
+
 </html>
