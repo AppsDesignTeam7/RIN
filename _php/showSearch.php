@@ -1,6 +1,12 @@
+<?php
+// Set return location
+session_start();
+$_SESSION['searchLocation'] = substr($_SERVER[REQUEST_URI], 1); // removes "/" from start of REQUEST_URI
+?>
+
 <!--Search bar-->
 <section id="searchBar">
-<form action="" method="get">
+<form action="" method="get" id="searchForm">
 	<input type="text" name="search" placeholder="Search..." id="searchField" <?php if(isset($_GET['search'])) echo 'value="' . $_GET['search'] . '"'; ?>>
 	<button type = "submit" id="searchButton">Search</button>
 </form>
@@ -147,7 +153,8 @@
 </div>
 
 <div id="applyButtonSection">
-<button id="applyFiltersButton">Apply</button>
+<button id="applyFiltersButton" name="submitBtn" value="apply">Apply</button>
+<button id="applyFiltersButton" name="submitBtn" value="clear">Clear</button>
 </div>
 
 </form>
