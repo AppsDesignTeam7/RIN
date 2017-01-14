@@ -1,3 +1,6 @@
+/* EVENT NAVIGATION BAR */
+/* Styles the navigation bar so that the seminars tab is highlighted while the other two tabs are the default colour */
+
 .eventTypeNavButton#seminarsNav {
     background-color: lightsteelblue;
 }
