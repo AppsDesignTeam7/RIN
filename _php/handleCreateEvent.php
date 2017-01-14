@@ -67,11 +67,13 @@ if (!empty($_POST['eventTitle'])) {
 // Location
 $event_address = "";
 if (!empty($_POST['addressLine1'])) {
-	$event_address = $address . $_POST['addressLine1'] . "<br>";
+	$event_address = $address . $_POST['addressLine1'];
 }
 if (!empty($_POST['addressLine2'])) {
-	$event_address = $address . $_POST['addressLine2'] . "<br>";
+	$event_address = $address . "<br>" . $_POST['addressLine2'];
 }
+// Replace quotes with escaped quotes
+$event_address = str_replace("'", "''", $event_address);
 if (!empty($_POST['postcode']) && isPostcodeValid($_POST['postcode'])) {
 	$event_postcode = $_POST['postcode'];
 } else {
@@ -144,6 +146,8 @@ if (!empty($_POST['description'])) {
 	echo "<script type='text/javascript'> document.location = 'http://localhost:8887/createEvent.php'; </script>";
 	die();
 }
+// Replace quotes with escaped quotes
+$event_description = str_replace("'", "''", $event_description);
 
 // Duration
 if (empty($_POST['duration'])) {
@@ -172,6 +176,8 @@ if (!empty($_POST['speaker'])) {
 	echo "<script type='text/javascript'> document.location = 'http://localhost:8887/createEvent.php'; </script>";
 	die();
 }
+// Replace quotes with escaped quotes
+$event_speaker = str_replace("'", "''", $event_speaker);
 
 // Fees
 // Needs validation
@@ -202,6 +208,25 @@ if (empty($_POST['linkToWebsite'])) {
 	if (filter_var($_POST['linkToWebsite'], FILTER_VALIDATE_URL)) {
 		// link is valid
 		$event_link = $_POST['linkToWebsite'];
+	} else {
+		// link is invalid
+		$_SESSION['eventCreationError'] = "Please enter a valid information link";
+		echo "<script type='text/javascript'> document.location = 'http://localhost:8887/createEvent.php'; </script>";
+		die();
+	}
+}
+
+// Image link
+// Needs validation
+if (empty($_POST['linkToImage'])) {
+	// No fee entered
+	$_SESSION['eventCreationError'] = "Please enter a link to an event image";
+	echo "<script type='text/javascript'> document.location = 'http://localhost:8887/createEvent.php'; </script>";
+	die();
+} else {
+	if (filter_var($_POST['linkToImage'], FILTER_VALIDATE_URL)) {
+		// link is valid
+		$event_image = $_POST['linkToImage'];
 	} else {
 		// link is invalid
 		$_SESSION['eventCreationError'] = "Please enter a valid information link";
@@ -244,28 +269,26 @@ if ($event_type == 2) {
 // Add to events db
 $event_organiser = $_SESSION['UserID'];
 $sql_add_event = "INSERT INTO events
-(Type, Name, Location, Start, Duration, Description, Speaker, InfoLink, Cost, OrganiserID) VALUES
+(Type, Name, Location, Postcode, Start, Duration, Description, Speaker, InfoLink, ImageLink, Cost, OrganiserID) VALUES
 ($event_type, '" . 
 $event_title . "', '" . 
-$event_location . "', '" . 
+$event_address . "', '" . 
+$event_postcode . "', '" .
 $event_date . " " . $event_time . "', 
 $event_duration, '" . 
 $event_description . "', '" . 
 $event_speaker . "', '" . 
-$event_link . "', 
+$event_link . "', '" . 
+$event_image . "', 
 $event_fees, 
 $event_organiser)";
 echo '<br>' . $sql_add_event . "<br>";
 
 if ($connection->query($sql_add_event)) {
-	echo "<br>Great success<br>";
 	$event_id = $connection->insert_id;
-} else {
-	echo "<br>oh for fuck's sake<br>";
-}
+} 
 
 // Add the abstract deadline to db if necessary
-echo '<br>' . $event_id;
 if ($event_type == 2) {
 	$sql_add_deadline = "INSERT INTO abstract_deadlines
 		(Deadline, EventID) VALUES ($event_deadline, $event_id)";

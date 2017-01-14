@@ -11,7 +11,7 @@ if ($approved) {
 	$sql = "UPDATE events SET Approved = 1 WHERE EventID = " . $eventID;
 } else {
 	// If the button was reject:
-	$sql = "DELETE FROM events WHERE EventID = " . $eventID;
+	$sql = "UPDATE events SET Approved = 0 WHERE EventID = " . $eventID;
 }
 
 echo $sql;
