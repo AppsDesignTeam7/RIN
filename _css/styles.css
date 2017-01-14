@@ -28,32 +28,6 @@ body {
     height: 100%;
 }
 
-#container {
-    min-height: 100%;
-    position: relative;
-}
-
-#header {
-    /*background: #ff0;
-    padding: 10px;*/
-}
-
-#body {
-    /*padding: 10px;*/
-    padding-bottom: 20px; /*Height of the footer */
-}
-
-/* styling for unordered list <ul> containing the footer links */
-#footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 20px; /* Height of the footer */
-}
-
-.notBlueLink{
-    color:black;
-}
     
 /*h1 is the page title RIN*/
 h1 {
@@ -82,7 +56,7 @@ h2 {
     display: inline;
     }
     
-/*h4 is the small at the top of individual pages, e.g. "Register"*/
+/*h4 is the smaller title at the top of individual pages, e.g. "Register"*/
 h4 {
     font-size: 1em;
     font-weight: bold;
@@ -91,7 +65,7 @@ h4 {
     text-align: center;
     }
 
-/* Heading 5 */
+/* h5 are the 'From' and 'To' headings in the search date filter */
 h5 {
     font-family: "Trebuchet MS", Helvetica, sans-serif;
 	font-size: 0.6em;
@@ -107,14 +81,25 @@ button {
     border: none;
     border-radius: 25px;
     text-align: center;
-    }
+}
 
 ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    }
+}
+    
+/*For anchor tags*/
+a {
+    color: blue;
+    text-decoration: none;
+}
 
+/* class to style links that are not to be the default blue */s
+.notBlueLink{
+    color:black;
+}
+    
 
 /* applies to the sign in page - or anything we want it to be center */
 .centerText {
@@ -132,10 +117,42 @@ ul {
     height: 100%;
 }
 
+/* FOR STICKY FOOTER */
+/* Code adapted from 
+http://matthewjamestaylor.com/blog/keeping-footers-at-the-bottom-of-the-page
+AND
+http://cssreset.com/how-to-keep-footer-at-bottom-of-page-with-css/      */
+
+/* Ensures footer stays at bottom of page */
+#container {
+    min-height: 100%;
+    position: relative;
+}
+
+#header {
+    /*background: #ff0;
+    padding: 10px;*/
+}
+
+#body {
+    /*padding: 10px;*/
+    padding-bottom: 20px; /*Height of the footer */
+}
+/**/
+
+/* styling for unordered list <ul> containing the footer links */
+#footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 20px; /* Height of the footer */
+}
+/**/
 
 /* STYLING FOR SMALL-SCREEN NAVIGATION */
 
-/* Controls whether to use small-screen or normal navigation */
+/* Code adapted from http://www.w3schools.com/cssref/css3_pr_mediaquery.asp */
+/* Controls the point at which navigation type is switched from normal screen to small screen */
 @media screen and (min-width: 730px) {
     #smallScreenNav {
     display: none;
@@ -153,6 +170,9 @@ ul {
 }
 
 /* NAVIGATION FOR SMALL SCREEN*/
+/* Code adapted from:
+http://www.w3schools.com/css/css_navbar.asp
+http://www.w3schools.com/css/css_dropdowns.asp */
 
 /* positions the navigation icon to the top right of the banner */
 #smallScreenNav {
@@ -262,7 +282,13 @@ ul {
 }
 
 /* SITE NAVIGATION STYLING - for normal-sized screen */
+/* Code adapated from
+http://www.w3schools.com/css/css_navbar.asp
+http://www.w3schools.com/css/css_dropdowns.asp
+*/
 
+/* Style adopted from
+http://zerosixthree.se/vertical-align-anything-with-just-3-lines-of-css/ */
 /* centers the navigation links vertically */
 .linkText {
     position: relative;
@@ -270,7 +296,6 @@ ul {
     transform: translateY(-40%);
 }
 
-/* Styling for site navigation section */
 /* - defines that the site navigation should occupy 50% of the width of its parent container (the banner),
 - should be position at the top right of the banner
 - occupies the entire height of the banner */
@@ -298,8 +323,6 @@ li.navLink, li.dropdown {
     /*border-right: 1px solid gray;*/
     height: 100%;
 }
-
-/* Defines the relative widths of each of the navigation buttons : */
 
 /* defines the width of the 'Home' navigation link relative to the width of the navigation section */
 #homeLink{
@@ -380,10 +403,9 @@ li.dropdown {
     display: block;
 }
 
-/* STYLING FOR SEARCH SECTION */
+/* STYLING FOR SEARCH BAR */
 
 /* encompasses the search field and the search button */
-
 #searchBar {
     position: relative;
     background: #061539;
@@ -393,6 +415,7 @@ li.dropdown {
     height: 26px;
 }
 
+/* searchForm specific styling */
 form#searchForm {
     text-align: left;
 }
@@ -428,41 +451,29 @@ form#searchForm {
     border-left: 1px solid;
     border-bottom: 1px solid;
     border-right: 0px;
-    }
+}
     
-
-
-/* ---The search filter section--- */
+/* SEARCH FILTER SECTION */
 
 /* the expanded search section */
 #expandedSearch{
     position: relative;
-    /*height: 200px;*/
-    /*background-color: #e3e3e3;*/
     border: solid 0.5px lightgray;
     padding-bottom: 0.5em;
-    /*width: 100%;*/
     background-color: #F5F5F5;
     height: 180px;
     width: 100%;
 }
 
-
 /* styling for the subject and date filters section */   
 #subjectFilters, #dateFromFilters {
-    /*display: inline-block;*/
     background-color: #F5F5F5;
     padding-top: 0.5em;
-    /*display: inline-block;
-    float: right;*/
     height: 130px;
 }
 
 /* styling for the subject filters section */
 #subjectFilters {
-    /*width: 80%;*/
-    /*padding: 1em 5%;*/
-
     padding-left: 1em;
     padding-right: 1em;
     padding-top: 1em;
@@ -477,7 +488,6 @@ form#searchForm {
     font-style: normal;
     color: gray;
     text-align: left;
-    /*width: 100%;*/
 }
 
 /* styling for date filter section */
@@ -487,40 +497,40 @@ form#searchForm {
     position: absolute;
     right: 0em;
     top: 0em;
-    /*width: auto;*/
     background-color: #F5F5F5;
     border-left: solid 2px #e3e3e3;
     padding-left: 1em;
     padding-right: 1em;
     padding-bottom: 1em;
-    /*height: 144px;*/
     overflow: hidden;
 }
 
-
+/* styling for the section with the apply button */
  #applyButtonSection {
     display: block;
-   /* position: absolute;
-    right: 1em;*/
     padding-top: 0.5em;
     bottom: 1em;
     text-align: center;
 }
 
+/* styling for the apply filters button */
 #applyFiltersButton {
-
     background-color: white;
     border: solid 1px #061539;
     color: black;
     min-width: auto;
     width: 120px;
-    /*display: block;*/
 }
 
+
+/* CHECKBOXES FOR SEARCH FILTERS */
+/* Code adapted from:  
+http://stackoverflow.com/questions/14690621/arrange-multiple-checkboxes-like-a-grid-without-tables */
+
+/* styling for the search filters scrollbar */
 ::-webkit-scrollbar {
     display: none;
 }
-
 /* for the style of checkbox, in order to overwrite the style of "input" */
 .checkbox {
     text-align: center;
@@ -529,7 +539,6 @@ form#searchForm {
     
 /* styling for the grid holding the subject filter checkboxes and their labels */
 .checkbox-grid {
-   /* height: 120px;*/
     overflow: scroll;
 }
     
@@ -540,6 +549,8 @@ form#searchForm {
 }
 
 /* Styling for the subject filter checkbox-label pair at different screen sizes */
+/* Code adapted from: 
+http://stackoverflow.com/questions/14690621/arrange-multiple-checkboxes-like-a-grid-without-tables */
 @media screen and (max-width: 450px) {
     .checkbox-grid li{
     width: 100%;
@@ -569,6 +580,9 @@ form#searchForm {
     width: 20%;
     }
 }
+/**/
+
+/* DATE AND TIME FILTERS */
 
 /* For expanded search's day selection */
 .day {
@@ -597,7 +611,11 @@ form#searchForm {
     width: 120px;
 }
 
-/* STYLING FOR THE TABS (COURSES, CONFERENCES, ETC) */
+/* EVENT NAVIGATION TABS (COURSES, CONFERENCES, ETC) */
+/* Code adapated from: 
+http://www.w3schools.com/css/css_navbar.asp
+http://www.w3schools.com/css/css_dropdowns.asp
+*/
 
 /* Styling for the unordered list <ul> that encompasses the seminars, courses, and conferences tabs */
 #eventNavList {
@@ -619,19 +637,13 @@ form#searchForm {
     float:left;
     color: Black;
     background-color: lightgray;
-    /*border-top-left-radius: 10px;
-    border-top-right-radius: 10px;*/
 }
 
+/* links in event navigation */
 .eventTypeNavButton a {
     text-decoration: none;
     color: black;
 }
-
-/* Background colour for an active event tab */
-.active {
-     /*background-color: lightsteelblue;*/
-} 
 
 /* styling for the event tabs, all of which have been assigned this class, not just the seminars */
 .seminarsButton {
@@ -651,9 +663,13 @@ form#searchForm {
     border-right: solid white 1px;
     }
 
-/* END OF EVENT NAVIGATION LIST */
+/**/
 
-/* ACCORDION STYLING */
+/* ACCORDION */
+/* Overrides styles in linked:
+https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js
+*/
+
 /* removes the arrow from the side of the accordion panels */
 .accordion .ui-icon {
     display: none;
@@ -666,8 +682,7 @@ form#searchForm {
     padding: 1em 1em;
     color: gray;
     min-height: 120px;
-    /*min-height: 80px;*/
-    }
+}
     
     
 /* for active accordion header */
@@ -685,7 +700,7 @@ form#searchForm {
     padding-top: 0;
     padding-bottom: 0em;
     min-height: 10px;
-    }
+}
 
 /* styling for hashtags */
 .accordion .ui-accordion-content .hashtag{ 
@@ -697,15 +712,15 @@ form#searchForm {
     color: darkblue;
 }
 
-/* STYLING FOR ADD TO CALENDAR BUTTON */
+/* ADD TO CALENDAR BUTTON */
+/* Adapted from 
+https://github.com/AddToCalendar/addtocalendar-styles/blob/master/atc-style-menu-wb/atc-style-menu-wb.css */
+/* Overrides some styles in
+'atc-style-menu.wb.css' */
 
 /* styling for whole add to calendar section (including both calendar button icon and menu) */
 .addtocalendar {
     color: lightgray;
-    /*position: absolute;*/
-    /*right: 2.1em;*/
-    /*top: 2em;*/
-    /*display: inline;*/
 }
 
 /* styling for calendar menu list */
@@ -719,10 +734,7 @@ form#searchForm {
 /* styling for the calendar menu */ 
 .atcb-list {
     position: absolute;
-    /*right: 200%;*/
     left: -100%;
-    /*width: auto;*/
-
 }
 
 /* styling for calendar menu items */
@@ -742,10 +754,9 @@ form#searchForm {
 .fa.fa-calendar {
     color: lightgray;
 }
-
-/* END OF STYLING FOR ADD TO CALENDAR BUTTON */
+/**/
     
-/* EVENT DETAILS STYLING */
+/* EVENT SUMMARY SECTION STYLING */
 
 /* for event title */
 h3 {
@@ -767,44 +778,36 @@ h3 {
     margin: 0em;
 }
     
-/*styling for icons */
-
-
 /* Styling for star icon */
 .fa.fa-star {
     color: lightgray;
     cursor: pointer;
 }
 
+/* styling for the addtocalendar section */
+.addtocalendar {
+    float: right;
+    padding-left: 0.1em;
+    display: block;
+    padding-bottom: 1.1em;
+    padding-top: 0.8em;
+    padding-right: 1em;
+}
 
+/* styling for the favourites and addToCalendar button */
 .favButton, .calButton {
     background-color: white;
 }
-    
-    
-    
+ 
+/* styling for the form containing the favourites button */
 .favsForm {
-        /*position: absolute;
-        left: 3em;
-        bottom: 0.3em;*/
         display: block;
         float: right;
-        /*padding-bottom: 1em;*/
         padding-top: 0.9em;
 }   
         
-.addtocalendar {
-        float: right;
-        padding-left: 0.1em;
-       /* left: 9em;*/
-        /*top: 7.3em;*/
-        display: block;
-        /*clear: left;*/
-        padding-bottom: 1.1em;
-        padding-top: 0.8em;
-        padding-right: 1em;
-    }
 
+/* PROBABLY TO BE REMOVED */
 /* styling for star and calendar icons when screen width is widest */
 /*
 @media screen and (min-width: 600px) {
@@ -852,6 +855,7 @@ h3 {
     }
 }*/
 
+
 /* for the container with un-expanded event summary (including images and icons) */
 .eventSummarySection {
     position: relative;
@@ -867,6 +871,13 @@ h3 {
     color: gray;
     background: white;
  }
+ 
+.address {
+    display: inline;
+}
+
+ 
+/* FURTHER DETAILS SECTION IN EXPANDED ACCORDION */
     
 /* the further details of the event that are displayed when it has been expanded */
 .furtherDetails p {
@@ -880,53 +891,39 @@ h3 {
     text-align: left;
  }
  
- .furtherDetails p:first-child {
+.furtherDetails p:first-child {
     margin-top: 0;
 }
  
- p.firstDetailsLine {
+p.firstDetailsLine {
      margin-top: 0;
      padding-top: 0;
 }
 
 .furtherDetails {
-margin-top: 0;
-padding-top: 0;
-overflow: hidden;
-min-height: 180px;
-position: relative;
+    margin-top: 0;
+    padding-top: 0;
+    overflow: hidden;
+    min-height: 180px;
+    position: relative;
 }
-
-
-/* Style for map */
 
 .furtherDetails div {
     display: inline;
     float: left;
 }
 
-
-
+/* MAP STYLE */
+/* Adapted from https://developers.google.com/maps/documentation/javascript/examples/geocoding-simple */
 .map {
     width: 180px;
     height: 180px;
     background-color: grey;
 }
+/**/
 
 
-.address {
-    display: inline;
-}
-
-/* END OF EVENTS AND SUMMARY AND INFORMATION SECTION */
-
-/*For anchor tags*/
-a {
-    color: blue;
-    text-decoration: none;
-    }
-    
-/* STYLING FOR THE FORM PAGES (REGISTRATION, LOGIN) */
+/* FORM PAGES STYLING (REGISTRATION, LOGIN, CREATE NEW EVENT PAGE) */
 
 /* Applies to all forms forms */
 form{
@@ -941,14 +938,6 @@ input, textarea {
     border: solid 1px lightgray;
 }
 
-div.promptText {
-    font-size: 0.7em;
-    color: darkgray;
-    font-weight: bold;
-    display: inline-block;
-}
-
-
 /* Styling for select element for drop-down forms */
 select {
     display: block;
@@ -961,27 +950,35 @@ select {
     display: block;
     margin: 0 auto;
 }
+
+/*CREATE NEW EVENT PAGE */
+div.promptText {
+    font-size: 0.7em;
+    color: darkgray;
+    font-weight: bold;
+    display: inline-block;
+}
     
 /* STYLING FOR PAGE FOOTER */
+/* Code adapted from:
+http://www.w3schools.com/css/css_navbar.asp
+http://www.w3schools.com/css/css_dropdowns.asp */
 
-
-
-
+/* for the unordered list containing the navigation items */
 ul#footerNav {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
     background-color: lightsteelblue; 
-   /* margin-top: 0.2em;*/
 }
 
-/* styling for footer list item */
+/* for footer list item */
 li.footerLink {
     float: left;
 }
 
-/* styling for the footer links */
+/* for the footer links */
 li.footerLink a {
     display: block;
     color: black;
@@ -999,6 +996,7 @@ li.footerLink a {
 
 /* HELP PAGE STYLING */
 
+/* styling for text on help page */
 .helpPageText {
     font-size: 0.8em;
     font-style: normal;
@@ -1008,12 +1006,7 @@ li.footerLink a {
 
 /* MANAGE MY EVENTS PAGE STYLING */
 
-.eventApprovalStatus{
-    padding-bottom: 0.2em;
-    size: 1em;
-    padding-top: 0.5em;
-}
-
+/* for section containing details about the event approval */
 .approvalDetails{
     display: inline-block;
     size: 1em;
@@ -1021,24 +1014,19 @@ li.footerLink a {
     margin-right: 1em;
 }
 
+/* for event approval status text */
+.eventApprovalStatus{
+    padding-bottom: 0.2em;
+    size: 1em;
+    padding-top: 0.5em;
+}
+
+/* for the text containining info the organiser (giving the number of people who have favourited the event and added the event to their calendar */
 .infoForOrganiser{
      font-size: 0.5em;
 }
 
-
-.editEventButton {
-    /*float: right;*/
-    position: absolute;
-    bottom: 20%;
-    right: 5%;
-    height: 15%;
-    width: 14%;
-    background: lightgray;
-    color: gray;
-    display: inline;
-    padding: 0px;
-}
-
+/* DON'T THINK THIS IS NEEDED
 .eventAttendanceDetails {
     position: absolute;
     top: 2em;
@@ -1046,43 +1034,10 @@ li.footerLink a {
     display: block;
     height: 1em;
     font-size: 0.5em;
-}
+}*/
 
-.editEventText{
-    font-size: 0.7em;
-    display: inline-block;
-}
-
-
-/* Account Page Settings */
-
-/* Style for the button's text */
-.AccountSettingText {
-    position: relative;
-    height: 15%;
-    width: 14%;
-    display: inline;
-    padding: 0px;
-    font-size: 1em;
-}
-
-/* Style and size for the button */
-.resetPasswordButton{
-    font-size: 0.7em;
-    display: inline-block;
-    background: #ffab41;
-    color: white;
-    border-radius: 25px;
-    float:left;
-}
-
-/* Style for the link to be white*/
-.AccountSettingLink{
-    color:white;
-}
-
+/* MABEL - PLEASE COMMENT AND/OR REFERENCE IF APPROPRIATE */
 /* EVENT APPROVAL PAGE STYLING */
-
 .approvalButtons {
     display: inline-block;
     float: right;
@@ -1106,6 +1061,7 @@ button.eventApprovalButton:hover {
 }
 
 
+/* MABEL - PLEASE COMMENT AND/OR REFERENCE IF APPROPRIATE */
 /* ALL ADMIN USERS PAGE STYLING */
 
 .adminTableText {
