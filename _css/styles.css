@@ -1026,16 +1026,6 @@ li.footerLink a {
      font-size: 0.5em;
 }
 
-/* DON'T THINK THIS IS NEEDED
-.eventAttendanceDetails {
-    position: absolute;
-    top: 2em;
-    right: 1em;
-    display: block;
-    height: 1em;
-    font-size: 0.5em;
-}*/
-
 /* MABEL - PLEASE COMMENT AND/OR REFERENCE IF APPROPRIATE */
 /* EVENT APPROVAL PAGE STYLING */
 .approvalButtons {
@@ -1110,3 +1100,12 @@ table, th, td {
 }
 
  
+/* DON'T THINK THIS IS NEEDED
+.eventAttendanceDetails {
+    position: absolute;
+    top: 2em;
+    right: 1em;
+    display: block;
+    height: 1em;
+    font-size: 0.5em;
+}*/
