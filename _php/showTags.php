@@ -4,15 +4,17 @@ require_once('config.php');
 session_start();
 
 // Show all currently selected tags:
-$selectedTags = implode(", ", $_SESSION['selectedTags']);
-$sql = "SELECT * FROM tags WHERE TagID IN ( $selectedTags ) ORDER BY TagName ASC";
+if (isset($_SESSION['selectedTags'])) {
+	$selectedTags = implode(", ", $_SESSION['selectedTags']);
+	$sql = "SELECT * FROM tags WHERE TagID IN ( $selectedTags ) ORDER BY TagName ASC";
 
-$selected = $connection->query($sql);
+	$selected = $connection->query($sql);
 
-if($selected){
-	foreach ($selected as $row) {
-		echo '<li><input class="checkbox" type="checkbox" name="tagCheckbox[]" value="' . $row['TagID'] . '" checked="checked">';
-		echo '<label for="tagCheckbox[]">' . $row['TagName'] . '</label></li>';
+	if($selected){
+		foreach ($selected as $row) {
+			echo '<li><input class="checkbox" type="checkbox" name="tagCheckbox[]" value="' . $row['TagID'] . '" checked="checked">';
+			echo '<label for="tagCheckbox[]">' . $row['TagName'] . '</label></li>';
+		}
 	}
 }
 
@@ -46,7 +48,7 @@ if(!$result){
     echo 'No tags found<br>';
 } else {
 	// Show a checkbox for each tag found
-    foreach ($result as $row) {
+    while ($row = $result->fetch_assoc()) {
     	if (!in_array($row['TagID'], $_SESSION['selectedTags'])) {
         	echo '<li><input class="checkbox" type="checkbox" name="tagCheckbox[]" value="'.$row['TagID'].'">';
         	echo '<label for="tagCheckbox[]">'.$row['TagName'].'</label></li>';
