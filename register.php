@@ -20,6 +20,10 @@ if (isset($_SESSION['UserID'])) {
 
 <body>
 
+<div id="container">
+
+<div id="header">
+
 <header role = "banner">
 
 <!--Banner-->
@@ -30,15 +34,18 @@ include('_php/banner.php');
 
 </header>
 
+</div>
 
-<main>
+<div id="body">
+
+<main role="main">
 
 <h4>Register</h4>
 
 <section id="registrationForm">
 
 <?php
-// If the user has tried to submit an invalid event, show the error message
+// If the user has tried to submit an invalid value, show the error message
 if (isset($_SESSION['RegistrationError'])) {
     echo '<h4 style="color:red">' . $_SESSION['RegistrationError'] . '<h4>';
 }
@@ -71,6 +78,7 @@ if (isset($_SESSION['RegistrationError'])) {
         <option value = "The Goblin Revolts">The Goblin Revolts</option>
     </select>
     <br>
+    <p> Warning: this is a test site. Passwords encryption is not yet implemented. Do not use a password you use elsewhere.</p>
     <input type="password" name="password" placeholder = "password"><br>
     <br>
     <input type = "password" name="confirmPass" placeholder = "confirm password"><br>
@@ -81,9 +89,22 @@ if (isset($_SESSION['RegistrationError'])) {
 </section>
 <br>
     
-
-
 </main>
+
+</div>
+
+<div id="footer">
+
+<!--Footer--> 
+<footer id = "pageFooter">
+<ul id = "footerNav">
+    <li class="footerLink"><a href="help.php"><div class="linkText">Terms and Conditions</div></a></li>
+    <li class="footerLink"><a href ="help.php"><div class="linkText">Contact</div></a></li>
+    <li class="footerLink"><a href= "help.php"><div class="linkText">Copyright</div></a></li>
+</ul>
+</footer>
+
+</div>
 
 </body>
 

@@ -1,3 +1,4 @@
+
 <div id = "banner">
 <a href = "index.php">
 <div id="linkToHome">

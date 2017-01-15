@@ -1,4 +1,7 @@
 <?php
+/*
+Called when an admin approves or rejects an event.
+*/
 
 require_once('config.php');
 
@@ -11,14 +14,10 @@ if ($approved) {
 	$sql = "UPDATE events SET Approved = 1 WHERE EventID = " . $eventID;
 } else {
 	// If the button was reject:
-	$sql = "DELETE FROM events WHERE EventID = " . $eventID;
+	$sql = "UPDATE events SET Approved = 0 WHERE EventID = " . $eventID;
 }
 
-echo $sql;
-
 $result = $connection->query($sql);
-// Could have a js alert here to indicate success or failure...
-// Would probably be annoying if you were approving loads of events though...
 
 // Redirect
 $destination = "approveEvents.php";

@@ -6,6 +6,12 @@ session_start();
 // Get email
 if (!empty($_POST['emailAddress'])){
 	$username = $_POST['emailAddress'];
+	if (strpos($username, "@ucl.ac.uk") == FALSE) {
+		// Email is not a UCL email
+		$_SESSION['RegistrationError'] = "You must register with a UCL email.";
+		$destination = 'register.php';
+		include('redirect.php');
+	}
 } else {
 	// No email entered
 	$_SESSION['RegistrationError'] = "Please enter a valid email address.";

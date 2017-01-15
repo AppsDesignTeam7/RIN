@@ -4,35 +4,36 @@ require_once('_php/config.php');
 
 session_start();
 
-// Used to make sure no events that have passed are displayed
-$now = date("Y-m-d H:i:s", time());
+$_SESSION['faveReturn'] = substr($_SERVER[REQUEST_URI], 1);
+
+if (isset($_SESSION['dateFrom'])) {
+    $dateFrom = $_SESSION['dateFrom'];
+} else {
+    $dateFrom = "2000-00-00 00:00:00";
+}
+
+if (isset($_SESSION['dateTo'])) {
+    $dateTo = $_SESSION['dateTo'];
+} else {
+    $dateTo = "2020-12-31 23:59:59";
+}
 
 if (isset($_SESSION['selectedTags'])) {
     // Query for events with selected tags
     $selectedTags = implode(',', $_SESSION['selectedTags']);
-    /*
-    Slightly concerned that this will return duplicates - if an event has two 
-    tags, and both of those tags are selected for the filter, then it may have
-    two rows with the same event: one for each tag.
-    
-    Potential solution:
-    Subquery to select distinct eventIDs from event_tags where tagID in (selectedTags)
-    */
     $event_query = "
         SELECT *
         FROM event_tags
         LEFT JOIN events ON events.EventID = event_tags.EventID
         AND event_tags.TagID IN ( $selectedTags )
-        AND events.Approved = 0
-        AND events.Start > '" . $now . "'
+        AND events.Approved IS NULL
         ORDER BY Start ASC";
 } else {
     // Query for all events
     $event_query = "
         SELECT *
         FROM events
-        WHERE Approved = 0
-        AND Start > '" . $now . "'
+        WHERE Approved IS NULL
         ORDER BY Start ASC";
 }
 
@@ -79,7 +80,8 @@ if(!$result){
         // Event summary details
         echo    '<ul class="eventSummaryDetails">';
         echo    '    <li>' . $row['Speaker'] . '</li>';
-        echo    '    <li><div class="address">' . $row['Location'] . '</div></li>';
+        echo    '    <li>' . $row['Location'] . '</li>';
+        echo    '    <li><div class="address">' . $row['Postcode'] . '</div></li>';
         echo    '    <li>' . $startTime . '</li>';
         echo    '    <li>' . $startDate . '</li>';
         echo    '</ul>';
@@ -93,8 +95,25 @@ if(!$result){
         // Price
         echo    '<p>' . $price . '</p>';
         echo    '<p>' . $row['Description'] . '</p>';
-        // Tags - need to figure out how this works...
-
+        
+        // Tags 
+        
+        $current_id = $row['EventID'];
+        $tag_query = "SELECT * FROM event_tags JOIN tags ON event_tags.TagID = tags.TagID
+                        WHERE event_tags.EventID = " . $current_id;
+        
+        $tag_result = $connection->query($tag_query);
+        $tag_names = array();
+        foreach ($tag_result as $res) {
+            array_push($tag_names, $res['TagName']);
+        }
+        if (!(sizeof($tag_names) == 0)) {
+            $tag_list = "Tags: " .  implode(", ", $tag_names);
+        } else {
+            $tag_list = "No tags";
+        }
+        
+        echo    '<p>' . $tag_list . '</p>';
         // Link
         echo    '<p>
                  <a href=' . $row['InfoLink'] . ' class="linkToEventSite">More information</a>

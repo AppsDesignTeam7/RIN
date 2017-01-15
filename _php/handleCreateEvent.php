@@ -4,11 +4,6 @@ Handles input validation/processing when user clicks "create event" on the creat
 If input is valid, the event is added to the db.
 */
 
-
-/* TODO:
-Process tags, and write query that adds them to the db.
-*/
-
 /* 
 Postcode validation functiion.
 Ref: https://www.townscountiespostcodes.co.uk/postcodes/tools/php-postcode-validation-script.php
@@ -38,9 +33,6 @@ function isPostcodeValid($postcode)
 require_once('config.php');
 session_start();
 
-print_r($_POST);
-echo "<br>";
-
 unset($_SESSION['eventCreationError']);
 
 // Check an event type has been selected
@@ -50,7 +42,8 @@ if ($_POST['type'] == 0 ||
 	$event_type = $_POST['type'];
 } else {
 	$_SESSION['eventCreationError'] = "Please select an event type";
-	echo "<script type='text/javascript'> document.location = 'http://localhost:8887/createEvent.php'; </script>";
+	$destination = "createEvent.php";
+	include('redirect.php');
 	die();
 }
 
@@ -60,23 +53,27 @@ if (!empty($_POST['eventTitle'])) {
 	$event_title = ucwords($_POST['eventTitle']);
 } else {
 	$_SESSION['eventCreationError'] = "Please enter an event title";
-	echo "<script type='text/javascript'> document.location = 'http://localhost:8887/createEvent.php'; </script>";
+	$destination = "createEvent.php";
+	include('redirect.php');
 	die();
 }
 
 // Location
 $event_address = "";
 if (!empty($_POST['addressLine1'])) {
-	$event_address = $address . $_POST['addressLine1'] . "<br>";
+	$event_address = $event_address . $_POST['addressLine1'];
 }
 if (!empty($_POST['addressLine2'])) {
-	$event_address = $address . $_POST['addressLine2'] . "<br>";
+	$event_address = $event_address . "<br>" . $_POST['addressLine2'];
 }
+// Replace quotes with escaped quotes
+$event_address = str_replace("'", "''", $event_address);
 if (!empty($_POST['postcode']) && isPostcodeValid($_POST['postcode'])) {
 	$event_postcode = $_POST['postcode'];
 } else {
 	$_SESSION['eventCreationError'] = "Please enter a valid postcode";
-	echo "<script type='text/javascript'> document.location = 'http://localhost:8887/createEvent.php'; </script>";
+	$destination = "createEvent.php";
+	include('redirect.php');
 	die();
 }
 
@@ -85,7 +82,8 @@ if (!empty($_POST['postcode']) && isPostcodeValid($_POST['postcode'])) {
 if (empty($_POST['date'])) {
 	// No date entered
 	$_SESSION['eventCreationError'] = "Please enter a date";
-	echo "<script type='text/javascript'> document.location = 'http://localhost:8887/createEvent.php'; </script>";
+	$destination = "createEvent.php";
+	include('redirect.php');
 	die();
 } else {
 	// Check if date is valid
@@ -97,7 +95,8 @@ if (empty($_POST['date'])) {
 	if (!$date_valid) {
 		// Date is invalid
 		$_SESSION['eventCreationError'] = "Please enter a date in dd/mm/yyyy format";
-		echo "<script type='text/javascript'> document.location = 'http://localhost:8887/createEvent.php'; </script>";
+		$destination = "createEvent.php";
+		include('redirect.php');
 		die();
 	} else {
 		// Store date in SQL friendly format
@@ -110,7 +109,8 @@ if (empty($_POST['date'])) {
 if (empty($_POST['time'])) {
 	// No time entered
 	$_SESSION['eventCreationError'] = "Please enter a time";
-	echo "<script type='text/javascript'> document.location = 'http://localhost:8887/createEvent.php'; </script>";
+	$destination = "createEvent.php";
+	include('redirect.php');
 	die();
 } else {
 	// Check if time is valid
@@ -119,7 +119,8 @@ if (empty($_POST['time'])) {
 	if (!$time_valid) {
 		// Time is invalid
 		$_SESSION['eventCreationError'] = "Please enter a 24h time in hh:mm format";
-		echo "<script type='text/javascript'> document.location = 'http://localhost:8887/createEvent.php'; </script>";
+		$destination = "createEvent.php";
+		include('redirect.php');
 		die();
 	} else {
 		// Store time in SQL friendly format
@@ -132,7 +133,8 @@ $event_start = strtotime($event_date . " " . $event_time);
 if ($event_start < time()) {
 	// Start is in the past
 	$_SESSION['eventCreationError'] = "Please enter a start time/date that is not in the past";
-	echo "<script type='text/javascript'> document.location = 'http://localhost:8887/createEvent.php'; </script>";
+	$destination = "createEvent.php";
+	include('redirect.php');
 	die();
 }
 
@@ -141,25 +143,30 @@ if (!empty($_POST['description'])) {
 	$event_description = $_POST['description'];
 } else {
 	$_SESSION['eventCreationError'] = "Please enter a description";
-	echo "<script type='text/javascript'> document.location = 'http://localhost:8887/createEvent.php'; </script>";
+	$destination = "createEvent.php";
+	include('redirect.php');
 	die();
 }
+// Replace quotes with escaped quotes
+$event_description = str_replace("'", "''", $event_description);
 
 // Duration
 if (empty($_POST['duration'])) {
 	// No duration entered
 	$_SESSION['eventCreationError'] = "Please enter a duration";
-	echo "<script type='text/javascript'> document.location = 'http://localhost:8887/createEvent.php'; </script>";
+	$destination = "createEvent.php";
+	include('redirect.php');
 	die();
 } else {
 	// Validate duration
-	if (intval($_POST[duration]) > 0) {
+	if (intval($_POST['duration']) > 0) {
 		// Store duration
-		$event_duration = intval($_POST[duration]);
+		$event_duration = intval($_POST['duration']);
 	} else {
 		// Invalid duration
 		$_SESSION['eventCreationError'] = "Please enter a valid duration in hours";
-		echo "<script type='text/javascript'> document.location = 'http://localhost:8887/createEvent.php'; </script>";
+		$destination = "createEvent.php";
+		include('redirect.php');
 		die();
 	}
 }
@@ -169,9 +176,12 @@ if (!empty($_POST['speaker'])) {
 	$event_speaker = ucwords($_POST['speaker']);
 } else {
 	$_SESSION['eventCreationError'] = "Please enter an event title";
-	echo "<script type='text/javascript'> document.location = 'http://localhost:8887/createEvent.php'; </script>";
+	$destination = "createEvent.php";
+	include('redirect.php');
 	die();
 }
+// Replace quotes with escaped quotes
+$event_speaker = str_replace("'", "''", $event_speaker);
 
 // Fees
 // Needs validation
@@ -186,7 +196,8 @@ if (empty($_POST['fees'])) {
 	} else {
 		// Price is invalid
 		$_SESSION['eventCreationError'] = "Please enter a valid price";
-		echo "<script type='text/javascript'> document.location = 'http://localhost:8887/createEvent.php'; </script>";
+		$destination = "createEvent.php";
+		include('redirect.php');
 		die();
 	}
 }
@@ -196,7 +207,8 @@ if (empty($_POST['fees'])) {
 if (empty($_POST['linkToWebsite'])) {
 	// No fee entered
 	$_SESSION['eventCreationError'] = "Please enter a link for further information";
-	echo "<script type='text/javascript'> document.location = 'http://localhost:8887/createEvent.php'; </script>";
+	$destination = "createEvent.php";
+	include('redirect.php');
 	die();
 } else {
 	if (filter_var($_POST['linkToWebsite'], FILTER_VALIDATE_URL)) {
@@ -205,7 +217,29 @@ if (empty($_POST['linkToWebsite'])) {
 	} else {
 		// link is invalid
 		$_SESSION['eventCreationError'] = "Please enter a valid information link";
-		echo "<script type='text/javascript'> document.location = 'http://localhost:8887/createEvent.php'; </script>";
+		$destination = "createEvent.php";
+		include('redirect.php');
+		die();
+	}
+}
+
+// Image link
+// Needs validation
+if (empty($_POST['linkToImage'])) {
+	// No fee entered
+	$_SESSION['eventCreationError'] = "Please enter a link to an event image";
+	$destination = "createEvent.php";
+	include('redirect.php');
+	die();
+} else {
+	if (filter_var($_POST['linkToImage'], FILTER_VALIDATE_URL)) {
+		// link is valid
+		$event_image = $_POST['linkToImage'];
+	} else {
+		// link is invalid
+		$_SESSION['eventCreationError'] = "Please enter a valid information link";
+		$destination = "createEvent.php";
+		include('redirect.php');
 		die();
 	}
 }
@@ -219,7 +253,8 @@ if ($event_type == 2) {
 	if (empty($_POST['deadline'])) {
 		// No deadline entered
 		$_SESSION['eventCreationError'] = "Please enter a deadline for abstract submissions";
-		echo "<script type='text/javascript'> document.location = 'http://localhost:8887/createEvent.php'; </script>";
+		$destination = "createEvent.php";
+		include('redirect.php');
 		die();
 	} else {
 		// Check if date is valid
@@ -231,7 +266,8 @@ if ($event_type == 2) {
 		if (!$date_valid) {
 			// Date is invalid
 			$_SESSION['eventCreationError'] = "Please enter a deadline in dd/mm/yyyy format";
-			echo "<script type='text/javascript'> document.location = 'http://localhost:8887/createEvent.php'; </script>";
+			$destination = "createEvent.php";
+			include('redirect.php');
 			die();
 		} else {
 			// Store date in SQL friendly format
@@ -244,38 +280,34 @@ if ($event_type == 2) {
 // Add to events db
 $event_organiser = $_SESSION['UserID'];
 $sql_add_event = "INSERT INTO events
-(Type, Name, Location, Start, Duration, Description, Speaker, InfoLink, Cost, OrganiserID) VALUES
+(Type, Name, Location, Postcode, Start, Duration, Description, Speaker, InfoLink, ImageLink, Cost, OrganiserID) VALUES
 ($event_type, '" . 
 $event_title . "', '" . 
-$event_location . "', '" . 
+$event_address . "', '" . 
+$event_postcode . "', '" .
 $event_date . " " . $event_time . "', 
 $event_duration, '" . 
 $event_description . "', '" . 
 $event_speaker . "', '" . 
-$event_link . "', 
+$event_link . "', '" . 
+$event_image . "', 
 $event_fees, 
 $event_organiser)";
 echo '<br>' . $sql_add_event . "<br>";
 
 if ($connection->query($sql_add_event)) {
-	echo "<br>Great success<br>";
 	$event_id = $connection->insert_id;
-} else {
-	echo "<br>oh for fuck's sake<br>";
-}
+} 
 
 // Add the abstract deadline to db if necessary
-echo '<br>' . $event_id;
 if ($event_type == 2) {
 	$sql_add_deadline = "INSERT INTO abstract_deadlines
-		(Deadline, EventID) VALUES ($event_deadline, $event_id)";
+		(Deadline, EventID) VALUES ('$event_deadline', $event_id)";
 	$connection->query($sql_add_deadline);
 }
 
 // Return to main page
-// ref: Kiel Labuca https://stackoverflow.com/questions/21226166/php-header-location-redirect-not-working
-// UPDATE THE ADDRESS USED HERE ONCE SITE IS LIVE
-echo "<script type='text/javascript'> document.location = 'http://localhost:8887/index.php'; </script>";
+include('redirect.php');
 die();
 
 ?>
