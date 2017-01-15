@@ -7,6 +7,14 @@ added it previously.
 require_once('config.php');
 session_start();
 
+if (!(isset($_SESSION['UserID']))) {
+	// If the user is not logged in, send them to the login page
+	$_SESSION['loginError'] = "You must be logged in to favourite an event.";
+	$destination = "login.php";
+	include('redirect.php');
+	die();
+}
+
 // Get relevant variables for query
 $fav_event = $_POST['EventID'];
 $fav_user = $_SESSION['UserID'];
@@ -21,11 +29,6 @@ if ($_POST['Faved']) {
 
 // Execute the query
 $success = $connection->query($favsql);
-if ($success) {
-	echo "success";
-} else {
-	echo "failed";
-}
 
 // Set the return destination for the redirect
 if (isset($_SESSION['faveReturn'])) {

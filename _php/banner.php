@@ -29,14 +29,14 @@
                 <div class="dropdownIn">
                     <a href="javascript:void(0)" class="dropbtnIn">My Account</a>
                     <div class="dropdown-contentIn">
-                        <a href="myFavourites.htm">My Favourites</a>
-                        <a href="manageMyEvent.htm">Manage My Events</a>
-                        <a href="resetPassword.htm">Reset Password</a>';
+                        <a href="myFavourites.php">My Favourites</a>
+                        <a href="manageMyEvent.php">Manage My Events</a>
+                        <a href="help.php">Reset Password</a>';
                 if ($_SESSION['isAdmin']) {
                     // If user is an admin, show admin options
                     echo '
                         <a href="approveEvents.php">Approve Events</a>
-                        <a href="displayAllUsers.htm">Manage Users</a>';
+                        <a href="displayAllUsers.php">Manage Users</a>';
                 }
                 echo '
                         <a href="_php/logout.php">Logout</a>
@@ -50,7 +50,7 @@
             }
             ?>
              
-            <a href="help.htm">Help</a>
+            <a href="help.php">Help</a>
         </div>
 </div>
 
@@ -75,14 +75,14 @@
         <li class = "dropdown" class="navLink" id="myAccountLink">
             <a href="javascript:void(0)" class="dropbtn"><div class="linkText">MY ACCOUNT</div></a>
             <div class="dropdown-content">
-                <a href="myFavourites.htm">My Favourites</a>
-                <a href="manageMyEvent.htm">Manage My Events</a>
-                <a href="resetPassword.htm">Reset Password</a>';
+                <a href="myFavourites.php">My Favourites</a>
+                <a href="manageMyEvent.php">Manage My Events</a>
+                <a href="help.php">Reset Password</a>';
         if ($_SESSION['isAdmin']) {
             // If user is an admin, show admin options
             echo '
                 <a href="approveEvents.php">Approve Events</a>
-                <a href="displayAllUsers.htm">Manage Users</a>';
+                <a href="displayAllUsers.php">Manage Users</a>';
         }
         echo '
                 <a href="_php/logout.php">Logout</a>
@@ -94,7 +94,7 @@
     }
     ?>
     
-    <li class="navLink" id="helpLink"><a href="help.htm"><div class="linkText">HELP</div></a></li>
+    <li class="navLink" id="helpLink"><a href="help.php"><div class="linkText">HELP</div></a></li>
 </ul>
 
 </div>
