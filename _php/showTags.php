@@ -9,8 +9,6 @@ $sql = "SELECT * FROM tags WHERE TagID IN ( $selectedTags ) ORDER BY TagName ASC
 
 $selected = $connection->query($sql);
 
-//echo ((mysqli_ping($connection)) ? "Connected" : "Not connected...") . "<br>";
-
 if($selected){
 	foreach ($selected as $row) {
 		echo '<li><input class="checkbox" type="checkbox" name="tagCheckbox[]" value="' . $row['TagID'] . '" checked="checked">';
@@ -35,17 +33,19 @@ if (isset($_GET['search'])) {
 
 $result = $connection->query($sql);
 
-//print_r($result);
-
 if($result->connect_errno > 0){
     die('Unable to connect to database [' . $result->connect_error . ']');
 }
 
+// Return HTML to display the tags that are found
 if(!$result){
+	// Connection to db failed
     echo "no result<br>";
 } else if(mysqli_num_rows($result) == 0) {
+	// No tags found
     echo 'No tags found<br>';
 } else {
+	// Show a checkbox for each tag found
     foreach ($result as $row) {
     	if (!in_array($row['TagID'], $_SESSION['selectedTags'])) {
         	echo '<li><input class="checkbox" type="checkbox" name="tagCheckbox[]" value="'.$row['TagID'].'">';

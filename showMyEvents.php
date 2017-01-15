@@ -33,22 +33,20 @@ if (isset($_SESSION['selectedTags'])) {
         SELECT *
         FROM event_tags
         LEFT JOIN events ON events.EventID = event_tags.EventID
-        WHERE events.Type = 0
+        WHERE events.OrganiserID = " . $_SESSION['UserID'] . "
         AND event_tags.TagID IN ( $selectedTags )
-        AND events.Approved = 1
         AND events.Start > '$dateFrom'
         AND events.Start < '$dateTo'
-        ORDER BY Start ASC";
+        ORDER BY Approved ASC, Start ASC";
 } else {
     // Query for all events
     $event_query = "
         SELECT *
         FROM events
-        WHERE Type = 0
-        AND Approved = 1
-        AND Start > '$dateFrom'
-        AND Start < '$dateTo'
-        ORDER BY Start ASC";
+        WHERE OrganiserID = " . $_SESSION['UserID'] . "
+        AND events.Start > '$dateFrom'
+        AND events.Start < '$dateTo'
+        ORDER BY Approved ASC, Start ASC";
 }
 
 $result = $connection->query($event_query);
@@ -75,50 +73,39 @@ if(!$result){
         $endDate = date('l jS F Y', $end);
         $endTime = date('H:i', $end); 
 
-        /* Event Summary Section */
+        // Event Summary Section 
         echo    '<section class = "eventSummarySection">';
-        // Event title
-        echo    '<h3>' . $row['Name'] . '</h3>'; 
+        // Event type and title
+        if ($row['Type'] == 0) {
+            $type = "Seminar: ";
+        } else if ($row['Type'] == 1) {
+            $type = "Course: ";
+        } else {
+            $type = "Conference: ";
+        }
+        echo    '<h3>' . $type . $row['Name'] . '</h3>'; 
         // Event image
         echo    '<img src=' . $row['ImageLink'] . ' alt = "Img1" class= "eventImage">'; 
 
-        // Add to calendar button
-        echo    '<span class="addtocalendar atc-style-button-icon atc-style-menu-wb">
-                    <a class="atcb-link">
-                    <i class="fa fa-calendar fa-2x" class="addToCalendar"></i>
-                    </a>';
-        // Details to populate event when added to calendar
-        echo    '   <var class="atc_event">';
-        echo    '   <var class="atc_date_start">' . $startDate . ' ' . $startTime . '</var>';
-        echo    '       <var class="atc_date_end">' . $endDate . ' ' . $endTime . '</var>';
-        echo    '       <var class="atc_timezone">Europe/London</var>';
-        echo    '       <var class="atc_title">' . $row['Name'] . '</var>';
-        echo    '       <var class="atc_description">' . $row['Description'] . '</var>';
-        echo    '       <var class="atc_location">' . str_replace("<br>", ", ", $row['Location']) . ", " . $row['Postcode'] . '</var>';
-        echo    '       <var class="atc_organizer">' . $row['Speaker'] . '</var>';
-        echo    '       <var class="atc_organizer_email">a.weasley@ministryofmagic.org</var>';
-        echo    '   </var>';
-        echo    '</span>';
-
-        // Add to favourites button
-
-        // Get star colour
-        $user = $_SESSION['UserID'];
-        $event = $row['EventID'];
-        $checkFave = "SELECT * FROM favourites WHERE EventID = $event AND UserID = $user";
-        $faveResult = $connection->query($checkFave);
-        $starColour = (mysqli_num_rows($faveResult) == 1) ? '"color:gold"' : '""';
-        ?>
-
-        <form action="_php/handleStar.php" method="post" class="favsForm">
-            <input name="EventID" type="hidden" value=<?php echo $event ?>>
-            <input name="Faved" type="hidden" value=<?php echo (mysqli_num_rows($faveResult) == 1) ?>>
-            <button name="starBtn" type="submit" value="addToFavs" class="favButton">
-                <i class="fa fa-star fa-2x" aria-hidden="true" id="clickMe" style=<?php echo $starColour ?>></i>
-            </button>
-        </form>
-
-        <?php
+        // Approval status
+        if ($row['Approved'] == NULL) {
+            $approval = "Pending Approval";
+        } else if ($row['Approved'] == 0) {
+            $approval = "Not Approved";
+        } else {
+            $approval = "Approved";
+        }
+        echo    '<div class="approvalDetails">';
+        echo    '<div class="eventApprovalStatus eventApprovalStatusText">' . $approval . '</div>';
+        if ($approval == "Approved") {
+            $noFaves = $connection->query("SELECT DISTINCT UserID FROM favourites WHERE EventID = " . $row['EventID']);
+            $noAdds = $connection->query("SELECT DISTINCT UserID FROM calendar_adds WHERE EventID = " .$row['EventID']);
+            echo '<div class="infoForOrganiser">';
+            echo    '<div class="noFavourites">' . mysqli_num_rows($noFaves) . ' favourites</div>';
+            echo    '<div class="noCalendarAdds">' . mysqli_num_rows($noAdds) . ' calendar adds</div>';
+            echo '</div>';
+        }
+        echo    '</div>';
         // Event summary details
         echo    '<ul class="eventSummaryDetails">';
         echo    '    <li>' . $row['Speaker'] . '</li>';
@@ -130,7 +117,7 @@ if(!$result){
 
         echo    '</section>';
 
-        /* Further Details Section */
+        // Further Details Section 
 
         $price = ($row['Cost'] == 0) ? 'Free' : '£' . $row['Cost'];
         echo    '<div class="furtherDetails">';
@@ -139,7 +126,7 @@ if(!$result){
         echo    '<p>' . $row['Description'] . '</p>';
         
         // Tags 
-        
+
         $current_id = $row['EventID'];
         $tag_query = "SELECT * FROM event_tags JOIN tags ON event_tags.TagID = tags.TagID
                         WHERE event_tags.EventID = " . $current_id;

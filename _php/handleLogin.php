@@ -9,10 +9,10 @@ session_start();
 
 unset($_SESSION['loginError']);
 
-if (FALSE && isset($_SESSION['userID'])) {
+if (isset($_SESSION['UserID'])) {
 	// User is already logged in (shouldn't happen)
 	// Redirect them back to the main page
-	header('location: indexPHPtest.php'); 
+	include('redirect.php'); 
 	die();
 }
 
@@ -22,8 +22,10 @@ if (isset($_POST['passWord'])) $password = $_POST['passWord'];
 
 if (empty($_POST['emailAddressInput']) ||
 	empty($_POST['passWord'])) {
+	// One of the fields was empty
 	$_SESSION['loginError'] = 'Invalid username or password';
 } else {
+	// Check if Username and Password match an account in the db
 	$username = $_POST['emailAddressInput'];
 	$password = $_POST['passWord'];
 
@@ -32,14 +34,13 @@ if (empty($_POST['emailAddressInput']) ||
 		FROM users
 		WHERE Username = '".$username."' AND Password = '".$password."'";
 
-	//echo $user_query . "<br>";
-
 	$result = $connection->query($user_query);
 
 	if ($result->connect_errno > 0) {
     	die('Unable to connect to database [' . $result->connect_error . ']');
 	}
 
+	// Try to log the user in
 	if (!$result) {
 		echo 'no result<br>';
 	} else if (mysqli_num_rows($result) == 1) {
@@ -58,11 +59,11 @@ if (empty($_POST['emailAddressInput']) ||
 } 
 
 // Redirect to the appropriate page depending on whether login was successful
-if (isset($_SESSION['UserID'])) {
-	echo "<script type='text/javascript'> document.location = 'http://localhost:8887/index.php'; </script>";
-} else {
-	echo "<script type='text/javascript'> document.location = 'http://localhost:8887/login.php'; </script>";
+if (!(isset($_SESSION['UserID']))) {
+	$destination = "login.php";
 }
+
+include('redirect.php');
 die();
 
 ?>

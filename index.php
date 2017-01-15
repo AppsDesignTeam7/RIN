@@ -78,9 +78,9 @@ include('_php/banner.php');
 <!--Footer--> 
 <footer id = "pageFooter">
 <ul id = "footerNav">
-    <li class="footerLink"><a href="tandc.htm"><div class="linkText">Terms and Conditions</div></a></li>
-    <li class="footerLink"><a href ="contact.htm"><div class="linkText">Contact</div></a></li>
-    <li class="footerLink"><a href= "copy.htm"><div class="linkText">Copyright</div></a></li>
+    <li class="footerLink"><a href="help.php"><div class="linkText">Terms and Conditions</div></a></li>
+    <li class="footerLink"><a href="help.php"><div class="linkText">Contact</div></a></li>
+    <li class="footerLink"><a href="help.php"><div class="linkText">Copyright</div></a></li>
 </ul>
 </footer>
 

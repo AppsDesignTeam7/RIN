@@ -1,8 +1,8 @@
-<!doctype html>
+<!DOCTYPE HTML>
 <html lang="en">
 <head>
 <meta charset = "utf-8">
-<title>Sign in Page</title>
+<title>Help Page</title>
 <link rel="stylesheet" type="text/css" href="_css/styles.css">
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -10,58 +10,45 @@
 
 </head>
 
-<body>
-
 <div id="container">
 
 <div id="header">
 
+<!--Banner -->
 <header role = "banner">
-    
-<?php include('_php/banner.php'); ?>
- 
+<?php 
+$subtitle = "Homepage";
+include('_php/banner.php'); 
+?>
+
 </header>
 
 </div>
 
 <div id="body">
 
+<body>
+
 <main>
 
-<h4>Sign In</h4>
+<h4>Help</h4>
 
-<form action="_php/handleLogin.php" method="post">
-
-<input type = "email" name = "emailAddressInput" placeholder = "email address"><br><br>
-<input type="password" name = "passWord" placeholder = "password">
-
-<?php
-// Show error message if there has been an unsuccessful attempt
-session_start();
-if (isset($_SESSION['loginError'])) {
-    echo '<p style="color:red">'.$_SESSION['loginError'].'<p><br>';
-} else {
-    echo '<br><br>';
-}
-?>
-
-<button type = "submit" class="formSubmissionButton" id="signInButton">Sign In</button><br>
-
-</form>
-
-<br>
-
-<br>
+<p class = "helpPageText">
+FAQ
+</p>
     
-<h5 class = "centerText">
-No account? <a href="register.php">Create one!</a>
-</h5>
+<p class = "helpPageText">
+This page will provide help for this site.
+</p>
 
-<br>
-
-<h5 class = "centerText"><a href="resetPassword.htm"> Forgot my password </a></h5>
-
+<p class = "helpPageText">
+ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris placerat, nunc vitae molestie posuere, velit magna eleifend massa, eget ornare tortor dui eget sapien. Praesent congue eros vitae vestibulum sollicitudin. Sed ultricies auctor lacinia. Vivamus accumsan porttitor augue, quis elementum urna maximus ac. Suspendisse id sem ac libero rhoncus venenatis. Integer vehicula sed ligula eu porta. Vivamus enim erat, placerat a tortor in, feugiat condimentum nunc. Donec aliquet elit sit amet dignissim bibendum.
+</p>
+   
+    
 </main>
+
+</body>
 
 </div>
 
@@ -79,5 +66,4 @@ No account? <a href="register.php">Create one!</a>
 </div>
 
 </body>
-
 </html>

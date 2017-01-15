@@ -4,8 +4,19 @@ require_once('_php/config.php');
 
 session_start();
 
-// Used to make sure no events that have passed are displayed
-$now = date("Y-m-d H:i:s", time());
+$_SESSION['faveReturn'] = substr($_SERVER[REQUEST_URI], 1);
+
+if (isset($_SESSION['dateFrom'])) {
+    $dateFrom = $_SESSION['dateFrom'];
+} else {
+    $dateFrom = "2000-00-00 00:00:00";
+}
+
+if (isset($_SESSION['dateTo'])) {
+    $dateTo = $_SESSION['dateTo'];
+} else {
+    $dateTo = "2020-12-31 23:59:59";
+}
 
 if (isset($_SESSION['selectedTags'])) {
     // Query for events with selected tags
@@ -25,7 +36,8 @@ if (isset($_SESSION['selectedTags'])) {
         WHERE events.Type = 2
         AND event_tags.TagID IN ( $selectedTags )
         AND events.Approved = 1
-        AND events.Start > '" . $now . "'
+        AND events.Start > '$dateFrom'
+        AND events.Start < '$dateTo'
         ORDER BY Start ASC";
 } else {
     // Query for all events
@@ -34,7 +46,8 @@ if (isset($_SESSION['selectedTags'])) {
         FROM events
         WHERE Type = 2
         AND Approved = 1
-        AND Start > '" . $now . "'
+        AND Start > '$dateFrom'
+        AND Start < '$dateTo'
         ORDER BY Start ASC";
 }
 
@@ -63,9 +76,10 @@ if(!$result){
         $endTime = date('H:i', $end);
         $abstractResult = $connection->query("
         	SELECT * FROM abstract_deadlines WHERE EventID = " . $row['EventID']);
-        $abstractDate = date('d/m/Y', $abstractResult['Deadline']);
+        $abstractResult = $abstractResult->fetch_assoc();
+        $abstractDate = date('d/m/Y', strtotime($abstractResult['Deadline']));
         // if abstract deadline has passed, say so
-        if ($abstractResult['Deadline'] < time()) {
+        if (strtotime($abstractResult['Deadline']) < time()) {
         	$abstractDate = $abstractDate . " (passed)";
         }
 
@@ -88,19 +102,36 @@ if(!$result){
         echo    '       <var class="atc_timezone">Europe/London</var>';
         echo    '       <var class="atc_title">' . $row['Name'] . '</var>';
         echo    '       <var class="atc_description">' . $row['Description'] . '</var>';
-        echo    '       <var class="atc_location">' . $row['Location'] . '</var>';
+        echo    '       <var class="atc_location">' . str_replace("<br>", ", ", $row['Location']) . ", " . $row['Postcode'] . '</var>';
         echo    '       <var class="atc_organizer">' . $row['Speaker'] . '</var>';
         echo    '       <var class="atc_organizer_email">a.weasley@ministryofmagic.org</var>';
         echo    '   </var>';
         echo    '</span>';
 
         // Add to favourites button
-        // Needs to call an add to favourites script
-        echo    '<i class="fa fa-star fa-2x" aria-hidden="true"></i>';
+
+        // Get star colour
+        $user = $_SESSION['UserID'];
+        $event = $row['EventID'];
+        $checkFave = "SELECT * FROM favourites WHERE EventID = $event AND UserID = $user";
+        $faveResult = $connection->query($checkFave);
+        $starColour = (mysqli_num_rows($faveResult) == 1) ? '"color:gold"' : '""';
+        ?>
+
+        <form action="_php/handleStar.php" method="post" class="favsForm">
+            <input name="EventID" type="hidden" value=<?php echo $event ?>>
+            <input name="Faved" type="hidden" value=<?php echo (mysqli_num_rows($faveResult) == 1) ?>>
+            <button name="starBtn" type="submit" value="addToFavs" class="favButton">
+                <i class="fa fa-star fa-2x" aria-hidden="true" id="clickMe" style=<?php echo $starColour ?>></i>
+            </button>
+        </form>
+
+        <?php
         // Event summary details
         echo    '<ul class="eventSummaryDetails">';
         echo    '    <li>' . $row['Speaker'] . '</li>';
-        echo    '    <li><div class="address">' . $row['Location'] . '</div></li>';
+        echo    '    <li>' . $row['Location'] . '</li>';
+        echo    '    <li><div class="address">' . $row['Postcode'] . '</div></li>';
         echo    '    <li>' . $startTime . '</li>';
         echo    '    <li>' . $startDate . '</li>';
         echo 	'	 <li> Abstract Submission Deadline: ' . $abstractDate . '</li>';
@@ -115,8 +146,25 @@ if(!$result){
         // Price
         echo    '<p>' . $price . '</p>';
         echo    '<p>' . $row['Description'] . '</p>';
-        // Tags - need to figure out how this works...
+        
+        // Tags 
+        
+        $current_id = $row['EventID'];
+        $tag_query = "SELECT * FROM event_tags JOIN tags ON event_tags.TagID = tags.TagID
+                        WHERE event_tags.EventID = " . $current_id;
+        
+        $tag_result = $connection->query($tag_query);
+        $tag_names = array();
+        foreach ($tag_result as $res) {
+            array_push($tag_names, $res['TagName']);
+        }
+        if (!(sizeof($tag_names) == 0)) {
+            $tag_list = "Tags: " .  implode(", ", $tag_names);
+        } else {
+            $tag_list = "No tags";
+        }
 
+        echo    '<p>' . $tag_list . '</p>';
         // Link
         echo    '<p>
                  <a href=' . $row['InfoLink'] . ' class="linkToEventSite">More information</a>

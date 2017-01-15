@@ -34,7 +34,6 @@
 <div id="header">
 <!--Banner-->
 <header role = "banner">
-  
 <?php
 $subtitle = "My Favourites";
 include('_php/banner.php');
@@ -42,7 +41,6 @@ include('_php/banner.php');
 
 <!--Search bar-->
 <?php include('_php/showSearch.php'); ?>
-
 
 </header>
 </div>
@@ -55,7 +53,7 @@ include('_php/banner.php');
 <section id="favourites">
 
 <!--start of favourites accordion-->
-  
+
 <?php
 include('showFavourites.php');
 ?>
@@ -68,13 +66,12 @@ include('showFavourites.php');
 </div>
 
 <div id="footer">
-<!--ZAK - PLEASE PUT THIS FOOTER ON EACH PAGE USING PHP -->
 <!--Footer--> 
 <footer id = "pageFooter">
 <ul id = "footerNav">
-    <li class="footerLink"><a href="tandc.htm"><div class="linkText">Terms and Conditions</div></a></li>
-    <li class="footerLink"><a href ="contact.htm"><div class="linkText">Contact</div></a></li>
-    <li class="footerLink"><a href= "copy.htm"><div class="linkText">Copyright</div></a></li>
+    <li class="footerLink"><a href="help.php"><div class="linkText">Terms and Conditions</div></a></li>
+    <li class="footerLink"><a href ="help.php"><div class="linkText">Contact</div></a></li>
+    <li class="footerLink"><a href= "help.php"><div class="linkText">Copyright</div></a></li>
 </ul>
 </footer>
 <!--END OF FOOTER-->
@@ -89,5 +86,4 @@ include('showFavourites.php');
 </div>
 
 </body>
-
 </html>

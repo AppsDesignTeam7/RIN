@@ -11,16 +11,26 @@
 
 <body>
 
+<div id="container">
+
+<div id="header">
+
+<!-- Banner -->
 <header role = "banner">
 
 <?php include('_php/banner.php'); ?>
 
 </header>
 
+</div>
+
 <!-- if a user is not logged in, redirect to the login page -->
 <?php if (!isset($_SESSION['UserID'])) header('location: login.php'); ?>
 
+<div id="body">
+
 <main>
+
 <h4>Enter Event Details</h4>
 
 <?php
@@ -60,24 +70,32 @@ if (isset($_SESSION['eventCreationError'])) {
     <br>
     <input type="a" name="linkToWebsite" placeholder="Link to Website"><br>
     <br>
+    <input type="a" name="linkToImage" placeholder="Link to Event Image"><br>
+    <br>
     <input type="a" name="tags" placeholder="Tags"><br>
     <br>
-    <input type="a" name="deadline" placeholder="Abstract Deadline (Conferences Only, dd/mm/yyyy)"><br>
+    <div class="promptText">Conferences only:</div><br>
+    <input type="a" name="deadline" placeholder="Abstract Deadline (dd/mm/yyyy)"><br>
     <br>
     <button class="formSubmissionButton" id="createEventButton">Create Event!</button>
     <br>
 </form>
 
 </main>
+</div>
 
 <!--Footer--> 
+<div id="footer">
 <footer id = "pageFooter">
 <ul id = "footerNav">
-    <li class="footerLink"><a href="tandc.htm">Terms and Conditions</a></li>
-    <li class="footerLink"><a href ="contact.htm">Contact</a></li>
-    <li class="footerLink"><a href= "copy.htm">Copyright</a></li>
+    <li class="footerLink"><a href="help.php"><div class="linkText">Terms and Conditions</div></a></li>
+    <li class="footerLink"><a href="help.php"><div class="linkText">Contact</div></a></li>
+    <li class="footerLink"><a href="help.php"><div class="linkText">Copyright</div></a></li>
 </ul>
 </footer>
+</div>
+
+</div>
 
 </body>
 
